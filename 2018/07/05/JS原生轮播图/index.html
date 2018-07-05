@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html >
+
+        <head>
+            
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="author" content="李大玄" />
+
+                
+
+                                        <meta name="description" content="JS 原生轮播图">
+<meta name="keywords" content="分析轮播图每一步进行操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 原生轮播图">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/JS原生轮播图/index.html">
+<meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="JS 原生轮播图">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="c:/Users/win10/AppData/Local/Temp/1530776017081.png">
+<meta property="og:updated_time" content="2018-07-05T08:35:42.691Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS 原生轮播图">
+<meta name="twitter:description" content="JS 原生轮播图">
+<meta name="twitter:image" content="c:/Users/win10/AppData/Local/Temp/1530776017081.png">
+
+                                            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+                                            
+                                                <link rel="alternate" href="/atom.xml" title="李大玄的博客" type="application/atom+xml">
+                                                
+
+                                                    
+                                                        <link rel="shortcut icon" href="/favicon.png">
+                                                        
+
+                                                            
+                                                                <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+                                                                
+
+                                                                    
+                                                                        <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+                                                                        
+
+                                                                            
+                                                                                <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+                                                                                <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+                                                                                
+
+                                                                                    <link rel="stylesheet" href="/css/style.css">
+
+                                                                                        
+
+                                                                                                <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+                                                                                                
+                                                                                                    <title>
+                                                                                                        
+                                                                                                            JS 原生轮播图 |
+                                                                                                                
+                                                                                                                    李大玄的博客
+                                                                                                    </title>
+
+                                                                                                    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+                                                                                                    <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+                                                                                                    <script>
+                                                                                                        var yiliaConfig = {
+                                                                                                            fancybox: true,
+                                                                                                            animate: true,
+                                                                                                            isHome: false,
+                                                                                                            isPost: true,
+                                                                                                            isArchive: false,
+                                                                                                            isTag: false,
+                                                                                                            isCategory: false,
+                                                                                                            fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                                                                                                            scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                                                                                                            search: false
+                                                                                                        }
+                                                                                                    </script>
+
+                                                                                                    
+                                                                                                            <script>
+                                                                                                                yiliaConfig.jquery_ui = [false];
+                                                                                                            </script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                        <script>
+                                                                                                                            yiliaConfig.rootUrl = "\/";
+                                                                                                                        </script>
+                                                                                                                        
+
+                                                                                                                            
+
+                                                                                                                                    
+
+        </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/1.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">李大玄</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础-、js介绍-、变量、-数据类型-、-分支结构/">js基础 、js介绍 、变量、 数据类型 、 分支结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分析轮播图每一步进行操作/">分析轮播图每一步进行操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建GitHub步骤/">搭建GitHub步骤</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">李大玄</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/1.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">李大玄</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-JS原生轮播图" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/05/JS原生轮播图/" class="article-date">
+      <time datetime="2018-07-05T07:14:53.326Z" itemprop="datePublished">2018-07-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS 原生轮播图
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分析轮播图每一步进行操作/">分析轮播图每一步进行操作</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="轮播图步骤解析-注意看注释"><a href="#轮播图步骤解析-注意看注释" class="headerlink" title="轮播图步骤解析 注意看注释"></a>轮播图步骤解析 注意看注释</h1><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步 :"></a>第一步 :</h4><p> 写出轮播图基本样式 : </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt; // 这里的盒子是包含所有的一个大盒子</span><br><span class="line">       &lt;div class=&quot;screen&quot;&gt; // 这里是包含图片的盒子 也可称为可视窗口</span><br><span class="line">           &lt;ul&gt;</span><br><span class="line">           	//  这里 的图片样式可写在外面 这里为了方便</span><br><span class="line">               &lt;li&gt;&lt;img src=&quot;图片路径&quot; width=&quot;图片宽度&quot; height=&quot;图片高度&quot; /&gt;&lt;/li&gt;</span><br><span class="line">               &lt;li&gt;&lt;img src=&quot;图片路径&quot; width=&quot;图片宽度&quot; height=&quot;图片高度&quot; /&gt;&lt;/li&gt;</span><br><span class="line">               &lt;li&gt;&lt;img src=&quot;图片路径&quot; width=&quot;图片宽度&quot; height=&quot;图片高度&quot; /&gt;&lt;/li&gt;</span><br><span class="line">               &lt;li&gt;&lt;img src=&quot;图片路径&quot; width=&quot;图片宽度&quot; height=&quot;图片高度&quot; /&gt;&lt;/li&gt;</span><br><span class="line">               &lt;li&gt;&lt;img src=&quot;图片路径&quot; width=&quot;图片宽度&quot; height=&quot;图片高度&quot; /&gt;&lt;/li&gt;</span><br><span class="line">           &lt;/ul&gt;</span><br><span class="line">           &lt;ol&gt;</span><br><span class="line">			// 这里面存放的是动态创建的 li 标签 也就是点击按钮</span><br><span class="line">           &lt;/ol&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">       &lt;div class=&quot;arr&quot;&gt;</span><br><span class="line">           &lt;span class=&quot;left&quot;&gt;&amp;lt;&lt;/span&gt; //   左箭头</span><br><span class="line">           &lt;span class=&quot;right&quot;&gt;&amp;gt;&lt;/span&gt; //  右箭头</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面为基本样式格式 接下来写css样式 仅供参考</li>
+</ul>
+<hr>
+<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步 :"></a>第二步 :</h4><p>css样式参照  这里推荐使用外联样式 养成好的习惯可以减少一些不必要的麻烦</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding: 0;</span><br><span class="line">    margin: 0;</span><br><span class="line">    list-style: none;</span><br><span class="line">    border: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    padding: 7px;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    margin: 100px auto;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.screen &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    /* overflow: hidden; */</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.screen li &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.screen ul &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0px;</span><br><span class="line">    width: 3000px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box ol &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    right: 10px;</span><br><span class="line">    bottom: 10px;</span><br><span class="line">    line-height: 20px;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box ol li &#123;</span><br><span class="line">    float: left;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 20px;</span><br><span class="line">    background: #fff;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    margin-left: 10px;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box ol li.current &#123;</span><br><span class="line">    background: rgb(113, 226, 211);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.arr &#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.arr span &#123;</span><br><span class="line">    width: 40px;</span><br><span class="line">    height: 40px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 5px;</span><br><span class="line">    top: 50%;</span><br><span class="line">    margin-top: -20px;</span><br><span class="line">    background: #000;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">    line-height: 40px;</span><br><span class="line">    text-align: center;</span><br><span class="line">    font-size: 30px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    opacity: 0.3;</span><br><span class="line">    border: 1px solid #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.arr .right &#123;</span><br><span class="line">    right: 5px;</span><br><span class="line">    left: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\win10\AppData\Local\Temp\1530776017081.png" alt="1530776017081"></p>
+<p>出来的大概样式就是如此了 我把 这里的<code>overflow:hidden</code>注释掉可以看得更直观一些</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.screen &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    /* overflow: hidden; */</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>!! 将所需要的元素从页面中提取出来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> var box = document.getElementById(&apos;box&apos;); //拿到最大的盒子</span><br><span class="line"> var screenBox = box.children[0]; //   拿到大盒子下面的子盒子  也就是显示图片的那个盒子</span><br><span class="line"> var ul = screenBox.children[0]; //  拿到 ul 列表.</span><br><span class="line"> var lisUl = ul.children; // 拿到 ul 标签内的所有存放图片的 li</span><br><span class="line"> var ol = screenBox.children[1]; //   拿到 ol 存放 小方块的 盒子</span><br><span class="line"> var lisOl = ol.children;</span><br><span class="line"> var arrBox = box.children[1]; //  拿到左右箭头的盒子</span><br><span class="line"> var arrBox_left = arrBox.children[0]; //  拿到 左箭头</span><br><span class="line"> var arrBox_right = arrBox.children[1]; // 拿到右箭头</span><br><span class="line"> var imgWidth = screenBox.offsetWidth;</span><br><span class="line"> var count = 0; //    这里定义一个变量 来记录图片的移出张数</span><br><span class="line">这里我将所有一系列需要的全部进行获取</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="上面的样式已近操作完成-接下来分析步骤"><a href="#上面的样式已近操作完成-接下来分析步骤" class="headerlink" title="上面的样式已近操作完成 接下来分析步骤"></a>上面的样式已近操作完成 接下来分析步骤</h3><ul>
+<li><p>首先根据图片的个数创建出动态的<code>ol li</code>标签 这样在修改的时候回更为方便</p>
+</li>
+<li><p>接下来 给 ol 下的第一个li 添加颜色 </p>
+</li>
+<li>第三步 给下面的数字设置点击事件 </li>
+<li>第四步 设置大盒子的鼠标移入 移除事件 此处涉及到冒泡  下面会提及冒泡原由</li>
+<li>第五步 克隆第一张 追加到最后一张的后面   也就是所谓的无缝连接</li>
+<li>第六步 设置右按钮的点击事件 </li>
+<li>第七步 设置左按钮的点击事件</li>
+<li>第八步 设置定时器 及相关一些列操作 </li>
+</ul>
+<h4 id="好-来操作第一步-动态创建-ol-下的-li标签"><a href="#好-来操作第一步-动态创建-ol-下的-li标签" class="headerlink" title="好 ,来操作第一步,动态创建 ol 下的 li标签"></a>好 ,来操作第一步,动态创建 <code>ol 下的 li标签</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0 ; i &lt; lisUl.length ;i++ ) &#123;</span><br><span class="line">    var li = document.createElement(&apos;li&apos;);</span><br><span class="line">    li.innerHTML = i +1;  // 往创建好的li标签内添加数字,当然这一步也可以省略 也可以没有数字</span><br><span class="line">    ol.appendChild(li);   // 将创建好的li标签放入ol列表中</span><br><span class="line">&#125; // 这里需要结合css样式来看</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="操作第二部"><a href="#操作第二部" class="headerlink" title="操作第二部"></a>操作第二部</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lisOl[0].classname = &apos;current&apos;;  //去看css样式</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="第三部操作"><a href="#第三部操作" class="headerlink" title="第三部操作"></a>第三部操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0 ; i &lt; lisOl.length;i++ )&#123;  // 将获取到的ol下的li标签进行循环添加点击事件</span><br><span class="line">    lisOl[i].index = i;  // 记录每一个 i 的索引 当然你也可以打印出来 console.log();</span><br><span class="line">    lisOl[i].onclick = function () &#123;</span><br><span class="line">        for(var i = 0 ; i &lt; lisOl.length ;i++) &#123;  // 由于作用域不一样 这里仍然可以使用 i</span><br><span class="line">            lisOl[i].className = &apos;&apos;; </span><br><span class="line">        &#125;</span><br><span class="line">        this.className = &apos;current&apos;; // 接下来这一步的依据是很重要的 调用一个 运动函数</span><br><span class="line">        move(ul,-this.index * imgWidth);</span><br><span class="line">        count = this.index; </span><br><span class="line">        console.log(count); // 当你点击小方块的时候会将小方块的索引打印出来</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">运动函数 : 由于复杂 不需要会写 需要的时候直接拿出来用就可以</span><br><span class="line">function move(element, target) &#123;</span><br><span class="line">            clearInterval(element.timer); //清除旧的定时器，保证匀速运动，防止加速效果</span><br><span class="line">            element.timer = setInterval(function() &#123;</span><br><span class="line">                //1 获取元素当前位置 使用offsetLeft属性</span><br><span class="line">                var current = element.offsetLeft;</span><br><span class="line">                //2 设置步长</span><br><span class="line">                var step = 17;</span><br><span class="line">                //根据当前位置和目标位置的大小关系进行判断</span><br><span class="line">                step = target &gt; current ? step : -step;</span><br><span class="line">                //5 运动条件设置</span><br><span class="line">     //检测当前位置和目标位置之间的距离，如果满足一个step的距离，可以运动，否则直接运动到目标位置，结束</span><br><span class="line">                if (Math.abs(target - current) &gt; Math.abs(step)) &#123;</span><br><span class="line">                    //3 设置运动公式:元素位置(新) = 元素位置(旧) + 步长;</span><br><span class="line">                    current = current + step;</span><br><span class="line">                    //4 设置给元素的left值运动</span><br><span class="line">                    element.style.left = 0 + &quot;px&quot;;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    //6 让element直接运动到目标位置，再清除定时器</span><br><span class="line">                    element.style.left = target + &quot;px&quot;;</span><br><span class="line">                    clearInterval(element.timer);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, 20);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">box.onmouseover = function() &#123;</span><br><span class="line">     arrBox.style.display = &apos;block&apos;; // 设置它的显示属性</span><br><span class="line">  &#125;</span><br><span class="line">box.onmouseout = function() &#123;</span><br><span class="line">     arrBox.style.display = &apos;none&apos;; // 设置它的影藏属性</span><br><span class="line">  &#125;</span><br><span class="line">  鼠标的移入移出的事件有两种 这一种会触发事件冒泡  当然你也可以试一试</span><br></pre></td></tr></table></figure>
+<h4 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 这里涉及到无缝连接</span><br><span class="line">var pic = lisUl[0].clondNode(true);</span><br><span class="line">ul.appendChild(pic);</span><br></pre></td></tr></table></figure>
+<h4 id="第六步-右按钮的点击事件"><a href="#第六步-右按钮的点击事件" class="headerlink" title="第六步 右按钮的点击事件"></a>第六步 右按钮的点击事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">arrBox_right.onclick = function () &#123;</span><br><span class="line">    if(count == lisUl.length - 1 )&#123;  // 个人习惯如果只判断值是否相等就可以 count记录了图片的索引</span><br><span class="line">        ul.style.left = 0 + &apos;px&apos;;  //  将运动的ul的位置固定到最开始的位置 其始位置</span><br><span class="line">        count = 0;</span><br><span class="line">    &#125; </span><br><span class="line">    count++; // 上面将他改为0 这里需要从新让他依次递加</span><br><span class="line">    move(ul,-count * imgWidth);</span><br><span class="line">    // 还需要操作对应的小方块的颜色进行改变</span><br><span class="line">    for(var i = 0 ; i &lt; lisOl.length ;i++) &#123;</span><br><span class="line">        lisOl[i].className = &apos;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    if(count == lisOl.length -1 )&#123; // 这里的判断条件不进行详解,应该能看懂</span><br><span class="line">        lisOl[0].className = &apos;current&apos;; </span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        lisOl[count].className = &apos;current&apos;; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第七步-左按钮的点击事件"><a href="#第七步-左按钮的点击事件" class="headerlink" title="第七步 左按钮的点击事件"></a>第七步 左按钮的点击事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">arrBox_left.onclick = function() &#123;</span><br><span class="line">      if (count === 0) &#123; //  如果 移出的图片为0 的时候 得抽回到 假的那张图片的位置</span><br><span class="line">            ul.style.left = -(lisUl.length - 1) * imgWidth + &apos;px&apos;;</span><br><span class="line">            count = lisUl.length - 1;</span><br><span class="line">        &#125;</span><br><span class="line">        count--;</span><br><span class="line">        move(ul, -count * imgWidth);</span><br><span class="line">        for (var i = 0; i &lt; lisOl.length; i++) &#123;</span><br><span class="line">            lisOl[i].className = &apos;&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        if (count === lisUl.length - 1) &#123;</span><br><span class="line">            lisOl[0].className = &apos;current&apos;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            lisOl[count].className = &apos;current&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   这里的左按钮点击事件和右按钮的操作相同 , 没有太大出入</span><br></pre></td></tr></table></figure>
+<h4 id="第八步-进行定时器-自动轮播"><a href="#第八步-进行定时器-自动轮播" class="headerlink" title="第八步 进行定时器 自动轮播"></a>第八步 进行定时器 自动轮播</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var timer = null; // 定义一个时间变量</span><br><span class="line">       timer = setInterval(function() &#123;</span><br><span class="line">           arrBox_right.onclick();</span><br><span class="line">       &#125;, 1000);   //  每个一秒 调用一次右按钮的点击事件</span><br><span class="line"></span><br><span class="line">       box.onmouseover = function() &#123;  // 当鼠标移入大盒子的时候 将 按钮箭头显示出来 同时停止 定时器</span><br><span class="line">           arrBox.style.display = &apos;block&apos;;</span><br><span class="line">           clearInterval(timer);</span><br><span class="line">       &#125;;</span><br><span class="line"></span><br><span class="line">       box.onmouseout = function() &#123;// 当鼠标移入大盒子的时候 将 按钮箭头影藏起来 同时启动定时器</span><br><span class="line">           arrBox.style.display = &apos;none&apos;;</span><br><span class="line">           timer = setInterval(function() &#123;   // 将上面的定时器直接拿过来就可以了 </span><br><span class="line">               arrBox_right.onclick();</span><br><span class="line">           &#125;, 1000);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="好了-轮播图就结束了-不知道你有没有看懂-是挺麻烦的-接下来我会出一个-jQuery的轮播图-相对而言会简单许多"><a href="#好了-轮播图就结束了-不知道你有没有看懂-是挺麻烦的-接下来我会出一个-jQuery的轮播图-相对而言会简单许多" class="headerlink" title="好了,轮播图就结束了, 不知道你有没有看懂,是挺麻烦的,接下来我会出一个 jQuery的轮播图 相对而言会简单许多"></a>好了,轮播图就结束了, 不知道你有没有看懂,是挺麻烦的,接下来我会出一个 jQuery的轮播图 相对而言会简单许多</h2>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-07-05, 15:14:53</p>
+        <p><span>最后更新:</span>2018-07-05, 16:35:42</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/05/JS原生轮播图/" title="JS 原生轮播图">http://yoursite.com/2018/07/05/JS原生轮播图/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/07/05/JS原生轮播图/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/07/05/魔板/">
+                    JavaScript基础
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#轮播图步骤解析-注意看注释"><span class="toc-number">1.</span> <span class="toc-text">轮播图步骤解析 注意看注释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一步"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">第一步 :</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二步"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">第二步 :</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上面的样式已近操作完成-接下来分析步骤"><span class="toc-number">1.0.1.</span> <span class="toc-text">上面的样式已近操作完成 接下来分析步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#好-来操作第一步-动态创建-ol-下的-li标签"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">好 ,来操作第一步,动态创建 ol 下的 li标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操作第二部"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">操作第二部</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三部操作"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">第三部操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第四步"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">第四步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第五步"><span class="toc-number">1.0.1.5.</span> <span class="toc-text">第五步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第六步-右按钮的点击事件"><span class="toc-number">1.0.1.6.</span> <span class="toc-text">第六步 右按钮的点击事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第七步-左按钮的点击事件"><span class="toc-number">1.0.1.7.</span> <span class="toc-text">第七步 左按钮的点击事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第八步-进行定时器-自动轮播"><span class="toc-number">1.0.1.8.</span> <span class="toc-text">第八步 进行定时器 自动轮播</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#好了-轮播图就结束了-不知道你有没有看懂-是挺麻烦的-接下来我会出一个-jQuery的轮播图-相对而言会简单许多"><span class="toc-number">1.1.</span> <span class="toc-text">好了,轮播图就结束了, 不知道你有没有看懂,是挺麻烦的,接下来我会出一个 jQuery的轮播图 相对而言会简单许多</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JS 原生轮播图　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/07/05/魔板/" title="下一篇: JavaScript基础">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/魔板/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 李大玄
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
