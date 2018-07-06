@@ -16,18 +16,18 @@
 
                 
 
-                                        <meta name="description" content="如何创建私人Git">
-<meta name="keywords" content="搭建GitHub步骤">
+                                        <meta name="description" content="几道面试题">
+<meta name="keywords" content="闭包  执行栈 执行队列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何创建私人Git">
-<meta property="og:url" content="http://yoursite.com/2018/07/05/如何创建私人Git/index.html">
+<meta property="og:title" content="几道面试题">
+<meta property="og:url" content="http://yoursite.com/2018/07/06/分享几个面试题/index.html">
 <meta property="og:site_name" content="李大玄的博客">
-<meta property="og:description" content="如何创建私人Git">
+<meta property="og:description" content="几道面试题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-05T17:23:37.209Z">
+<meta property="og:updated_time" content="2018-07-06T00:58:05.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何创建私人Git">
-<meta name="twitter:description" content="如何创建私人Git">
+<meta name="twitter:title" content="几道面试题">
+<meta name="twitter:description" content="几道面试题">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +61,7 @@
                                                                                                 
                                                                                                     <title>
                                                                                                         
-                                                                                                            如何创建私人Git |
+                                                                                                            几道面试题 |
                                                                                                                 
                                                                                                                     李大玄的博客
                                                                                                     </title>
@@ -272,11 +272,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-如何创建私人Git" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-分享几个面试题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/07/05/如何创建私人Git/" class="article-date">
-      <time datetime="2018-07-05T07:05:36.327Z" itemprop="datePublished">2018-07-05</time>
+      <a href="/2018/07/06/分享几个面试题/" class="article-date">
+      <time datetime="2018-07-05T17:27:09.642Z" itemprop="datePublished">2018-07-06</time>
 </a>
 
 
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      如何创建私人Git
+      几道面试题
     </h1>
   
 
@@ -302,7 +302,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建GitHub步骤/">搭建GitHub步骤</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包-执行栈-执行队列/">闭包  执行栈 执行队列</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -312,65 +312,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="hexo-搭建自己的私人博客"><a href="#hexo-搭建自己的私人博客" class="headerlink" title="hexo 搭建自己的私人博客"></a>hexo 搭建自己的私人博客</h1><ol>
-<li><p><a href="https://github.com/" target="_blank" rel="noopener">登录github地址</a> 创建并登录自己的github账号</p>
-<ul>
-<li>创建自己的github账号(需要邮箱+验证邮箱)</li>
+        <h3 id="闭包的一道简单类型面试题"><a href="#闭包的一道简单类型面试题" class="headerlink" title="闭包的一道简单类型面试题"></a>闭包的一道简单类型面试题</h3><ul>
+<li>首先给出这样一个结构,问怎样使用闭包形式给每个 li 标签添加点击事件使页面该变颜色 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li id=&quot;btn1&quot;&gt;第一个li标签&lt;/li&gt;</span><br><span class="line">    &lt;li id=&quot;btn2&quot;&gt;第二个li标签&lt;/li&gt;</span><br><span class="line">    &lt;li id=&quot;btn3&quot;&gt;第三个li标签&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
 <ol>
-<li>安装git</li>
-<li>安装 node 等依赖包 安装完成检测包是否安装成功 node -v</li>
-<li>Github账户注册和新建项目，项目必须要遵守格式：账户名.github.io，不然接下来会有很多麻烦。</li>
-<li>在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，访问它，你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。</li>
-<li>安装Hexo，在自己认为合适的地方创个文件夹，我在D盘建了一个blog文件夹。然后通过命令行进入到该文件夹里面</li>
-<li>输入npm install hexo -g，开始安装Hexo ,输入hexo -v，检查hexo是否安装成功</li>
-<li>输入hexo init，初始化该文件夹（有点漫长的等待。。。） 初始化完成会有“Start blogging with Hexo！”</li>
-<li>输入npm install，安装所需要的组件</li>
-<li>输入hexo g，首次体验Hexo hexo s 启动服务默认地址localhost:4000 (问题：假如页面一直无法跳转，那么可能端口被占用了。此时我们ctrl+c停止服务器，接着输入“hexo server -p 端口号”来改变端口号)</li>
+<li>思路进行一步一步分析</li>
 </ol>
-<h2 id="下载hexo相关主题"><a href="#下载hexo相关主题" class="headerlink" title="下载hexo相关主题"></a>下载hexo相关主题</h2><p>下载主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog根目录</span><br><span class="line">$ git clone https://github.com/MOxFIVE/hexo-theme-yelee.git themes/yelee</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>下载完成以后，本地会多出一个文件夹<code>blog/themes/yelee</code></p>
-</li>
-<li><p>这个文件夹就是 yelee 主题相关文件</p>
+<li><p>首先你得明白什么是闭包 ! 那什么是闭包呢?</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">官方解释 : 所谓“闭包”，指的是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。</span><br><span class="line">   相信很少有人能直接看懂这句话，因为他描述的太学术。我想用如何在Javascript中创建一个闭包来告诉你什么是闭包，因为跳过闭包的创建过程直接理解闭包的定义是非常困难的。</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-</ol>
-<p>   使用主题</p>
-<ul>
-<li><p>在blog根目录下找到<code>_config.yml</code>文件，编辑器打开</p>
+<li><p>那么先用最简单而又最繁琐的方法来实现 , 看下面的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var btn1 = document.getElementById(&apos;btn1&apos;);</span><br><span class="line">var btn2 = document.getElementById(&apos;btn2&apos;);</span><br><span class="line">var btn3 = document.getElementById(&apos;btn3&apos;);</span><br><span class="line">btn1.onclick = function() &#123;</span><br><span class="line">    document.body.style.backgroundColor = &apos;blue&apos;;</span><br><span class="line">   &#125;</span><br><span class="line"> .....</span><br></pre></td></tr></table></figure>
+<p>这样看来,是不是出现了大量重复的代码.下面进行优化,进而实现闭包</p>
 </li>
-<li><p>找到 <code>theme:</code> 改成 <code>theme: yelee</code></p>
+<li><p>第二步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function changeColor(color) &#123;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        document.body.style.background = color</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">btn1.onclick = changeColor(&quot;blue&quot;)</span><br></pre></td></tr></table></figure>
+<p>这样一来,将函数作为返回值,就可以实现闭包.也进行了改良,也缩小了代码量,封装函数的最大优点就是可以复用!</p>
 </li>
-<li><p>这时主题已经替换好了</p>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>就可以在本地<code>localhost:4000</code>预览效果了</p>
-<p>主题设置</p>
-</li>
-<li><p>剩下的所有都是主题的对应设置了</p>
-</li>
-<li>所有的设置都在<code>blog/themes/yelee</code>个文件夹下，找到<code>_config.yml</code>文件，编辑器打开进行设置</li>
-<li><a href="http://moxfive.coding.me/yelee/" target="_blank" rel="noopener">主题设置</a></li>
-<li>里面有所有的主题设置，根据自己需要进行设置就行，不设置用人家默认的设置也可以</li>
 </ul>
-<h1 id="将Hexo与Github-page联系起来"><a href="#将Hexo与Github-page联系起来" class="headerlink" title="将Hexo与Github page联系起来"></a>将Hexo与Github page联系起来</h1><p>   设置Git的user name和email（如果是第一次的话）</p>
-<p>   git config –global user.name ‘你的名字’</p>
-<p>   git config –global user.email ‘你的邮箱地址’</p>
-<p>   输入cd ~/.ssh，检查是否由.ssh的文件夹</p>
-<ul>
-<li><p>如果没有 输入ssh-keygen -t rsa -C “<a href="mailto:929762930@qq.com" target="_blank" rel="noopener">929762930@qq.com</a>”，连续三个回车，生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。</p>
-<p>登录Github，点击头像下的settings，添加ssh 将id_rsa.pub 复制粘贴到ssh中</p>
-<p>配置Deployment，在其文件夹中，找到_config.yml文件，修改repo值（在末尾）</p>
-<p>deploy:</p>
-<p>type: git</p>
-<p>repository: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:coolwcg/coolwcg.github.io.git</p>
-<p>branch: master</p>
-<p>在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git –save</p>
-<p>使用编辑器编好文章，那么就可以使用命令：hexo d -g，生成以及部署了</p>
+<h3 id="执行队列与执行栈"><a href="#执行队列与执行栈" class="headerlink" title="执行队列与执行栈"></a>执行队列与执行栈</h3><ul>
+<li><p>这也是一道面试题 考点执行栈与执行队列  问: 下面的代码执行结果是什么?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;开始&apos;);</span><br><span class="line">for   (var i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  (function(index) &#123;</span><br><span class="line">       setTimeout(function() &#123;</span><br><span class="line">           console.log(index)</span><br><span class="line">       &#125;, 0);</span><br><span class="line">   &#125;)(i)</span><br><span class="line">   &#125;</span><br><span class="line">console.log(&apos;结束&apos;);</span><br></pre></td></tr></table></figure>
+<p>打印结果为 <code>开始  结束  1 2 3</code></p>
+<p>这里就设计到了执行栈与执行队列问题了,那么什么是执行队列呢?执行队列就是一些鼠标,键盘事件,还有计时器的事件,带码的执行顺序是从上往下执行的,但是当所有的都执行完毕之后,才会执行 setTimeout 函数,console.log(),是执行栈里面的执行的,会优先被执行,而setTimeout是执行队列里面的,会在最后执行. </p>
 </li>
 </ul>
 
@@ -381,13 +350,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/06/分享几个面试题/">几道面试题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
-        <p><span>发布时间:</span>2018-07-05, 15:05:36</p>
-        <p><span>最后更新:</span>2018-07-06, 01:23:37</p>
+        <p><span>发布时间:</span>2018-07-06, 01:27:09</p>
+        <p><span>最后更新:</span>2018-07-06, 08:58:05</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/07/05/如何创建私人Git/" title="如何创建私人Git">http://yoursite.com/2018/07/05/如何创建私人Git/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/07/05/如何创建私人Git/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/06/分享几个面试题/" title="几道面试题">http://yoursite.com/2018/07/06/分享几个面试题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/07/06/分享几个面试题/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -399,16 +368,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/07/05/魔板/">
-                    JavaScript基础
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/07/05/JavaScript基础/">
-                    JavaScript基础
+                <a href="/2018/07/05/JS原生轮播图/">
+                    JS 原生轮播图
                 </a>
             </div>
         
@@ -420,7 +383,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-搭建自己的私人博客"><span class="toc-number">1.</span> <span class="toc-text">hexo 搭建自己的私人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载hexo相关主题"><span class="toc-number">1.1.</span> <span class="toc-text">下载hexo相关主题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将Hexo与Github-page联系起来"><span class="toc-number">2.</span> <span class="toc-text">将Hexo与Github page联系起来</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包的一道简单类型面试题"><span class="toc-number">1.</span> <span class="toc-text">闭包的一道简单类型面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行队列与执行栈"><span class="toc-number">2.</span> <span class="toc-text">执行队列与执行栈</span></a></li></ol>
         
     </div>
     <style>
@@ -456,7 +419,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"如何创建私人Git　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"几道面试题　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -476,15 +439,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/07/05/魔板/" title="上一篇: JavaScript基础">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/07/05/JavaScript基础/" title="下一篇: JavaScript基础">
+            <a href="/2018/07/05/JS原生轮播图/" title="下一篇: JS 原生轮播图">
                 <i class="fa fa-angle-right"></i>
             </a>
         
