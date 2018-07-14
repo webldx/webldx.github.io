@@ -15,19 +15,17 @@
                 <meta name="author" content="李大玄" />
 
                 
+                    
+                            
+                                    
 
-                                        <meta name="description" content="几道面试题">
-<meta name="keywords" content="闭包  执行栈 执行队列">
-<meta property="og:type" content="article">
-<meta property="og:title" content="几道面试题">
-<meta property="og:url" content="http://yoursite.com/2018/07/06/分享几个面试题/index.html">
+                                        <meta property="og:type" content="website">
+<meta property="og:title" content="李大玄的博客">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="李大玄的博客">
-<meta property="og:description" content="几道面试题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-06T00:58:05.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="几道面试题">
-<meta name="twitter:description" content="几道面试题">
+<meta name="twitter:title" content="李大玄的博客">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -55,14 +53,18 @@
                                                                                     <link rel="stylesheet" href="/css/style.css">
 
                                                                                         
+                                                                                            <style>
+                                                                                                .article {
+                                                                                                    opacity: 0;
+                                                                                                }
+                                                                                            </style>
+                                                                                            
 
                                                                                                 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
                                                                                                 
                                                                                                     <title>
                                                                                                         
-                                                                                                            几道面试题 |
-                                                                                                                
                                                                                                                     李大玄的博客
                                                                                                     </title>
 
@@ -73,8 +75,8 @@
                                                                                                         var yiliaConfig = {
                                                                                                             fancybox: true,
                                                                                                             animate: true,
-                                                                                                            isHome: false,
-                                                                                                            isPost: true,
+                                                                                                            isHome: true,
+                                                                                                            isPost: false,
                                                                                                             isArchive: false,
                                                                                                             isTag: false,
                                                                                                             isCategory: false,
@@ -272,11 +274,13 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-分享几个面试题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/07/06/分享几个面试题/" class="article-date">
-      <time datetime="2018-07-05T17:27:09.642Z" itemprop="datePublished">2018-07-06</time>
+      <a href="/2018/07/04/hello-world/" class="article-date">
+      <time datetime="2018-07-04T10:23:35.334Z" itemprop="datePublished">2018-07-04</time>
 </a>
 
 
@@ -290,147 +294,43 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      几道面试题
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/04/hello-world/">Hello World</a>
     </h1>
   
 
       </header>
       
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包-执行栈-执行队列/">闭包  执行栈 执行队列</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
     
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="闭包的一道简单类型面试题"><a href="#闭包的一道简单类型面试题" class="headerlink" title="闭包的一道简单类型面试题"></a>闭包的一道简单类型面试题</h3><ul>
-<li>首先给出这样一个结构,问怎样使用闭包形式给每个 li 标签添加点击事件使页面该变颜色 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li id=&quot;btn1&quot;&gt;第一个li标签&lt;/li&gt;</span><br><span class="line">    &lt;li id=&quot;btn2&quot;&gt;第二个li标签&lt;/li&gt;</span><br><span class="line">    &lt;li id=&quot;btn3&quot;&gt;第三个li标签&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>思路进行一步一步分析</li>
-</ol>
-<ul>
-<li><p>首先你得明白什么是闭包 ! 那什么是闭包呢?</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">官方解释 : 所谓“闭包”，指的是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。</span><br><span class="line">   相信很少有人能直接看懂这句话，因为他描述的太学术。我想用如何在Javascript中创建一个闭包来告诉你什么是闭包，因为跳过闭包的创建过程直接理解闭包的定义是非常困难的。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>那么先用最简单而又最繁琐的方法来实现 , 看下面的代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var btn1 = document.getElementById(&apos;btn1&apos;);</span><br><span class="line">var btn2 = document.getElementById(&apos;btn2&apos;);</span><br><span class="line">var btn3 = document.getElementById(&apos;btn3&apos;);</span><br><span class="line">btn1.onclick = function() &#123;</span><br><span class="line">    document.body.style.backgroundColor = &apos;blue&apos;;</span><br><span class="line">   &#125;</span><br><span class="line"> .....</span><br></pre></td></tr></table></figure>
-<p>这样看来,是不是出现了大量重复的代码.下面进行优化,进而实现闭包</p>
-</li>
-<li><p>第二步</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function changeColor(color) &#123;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        document.body.style.background = color</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">btn1.onclick = changeColor(&quot;blue&quot;)</span><br></pre></td></tr></table></figure>
-<p>这样一来,将函数作为返回值,就可以实现闭包.也进行了改良,也缩小了代码量,封装函数的最大优点就是可以复用!</p>
-</li>
-</ul>
-<h3 id="执行队列与执行栈"><a href="#执行队列与执行栈" class="headerlink" title="执行队列与执行栈"></a>执行队列与执行栈</h3><ul>
-<li><p>这也是一道面试题 考点执行栈与执行队列  问: 下面的代码执行结果是什么?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;开始&apos;);</span><br><span class="line">for   (var i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  (function(index) &#123;</span><br><span class="line">       setTimeout(function() &#123;</span><br><span class="line">           console.log(index)</span><br><span class="line">       &#125;, 0);</span><br><span class="line">   &#125;)(i)</span><br><span class="line">   &#125;</span><br><span class="line">console.log(&apos;结束&apos;);</span><br></pre></td></tr></table></figure>
-<p>打印结果为 <code>开始  结束  1 2 3</code></p>
-<p>这里就设计到了执行栈与执行队列问题了,那么什么是执行队列呢?执行队列就是一些鼠标,键盘事件,还有计时器的事件,带码的执行顺序是从上往下执行的,但是当所有的都执行完毕之后,才会执行 setTimeout 函数,console.log(),是执行栈里面的执行的,会优先被执行,而setTimeout是执行队列里面的,会在最后执行. </p>
-</li>
-</ul>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
     </div>
     
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/07/06/分享几个面试题/">几道面试题</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
-        <p><span>发布时间:</span>2018-07-06, 01:27:09</p>
-        <p><span>最后更新:</span>2018-07-06, 08:58:05</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/07/06/分享几个面试题/" title="几道面试题">http://yoursite.com/2018/07/06/分享几个面试题/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/07/06/分享几个面试题/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
     </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/07/09/NAN的定义与用法/">
-                    NaN的定义与用法
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/07/05/JS原生轮播图/">
-                    JS 原生轮播图
-                </a>
-            </div>
-        
-    </nav>
-
+    
+  </div>
   
 </article>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包的一道简单类型面试题"><span class="toc-number">1.</span> <span class="toc-text">闭包的一道简单类型面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行队列与执行栈"><span class="toc-number">2.</span> <span class="toc-text">执行队列与执行栈</span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"几道面试题　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
 
 
 
@@ -438,35 +338,13 @@
 
 
 
-    
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/07/09/NAN的定义与用法/" title="上一篇: NaN的定义与用法">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2018/07/05/JS原生轮播图/" title="下一篇: JS 原生轮播图">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/WEB api/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/魔板/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">

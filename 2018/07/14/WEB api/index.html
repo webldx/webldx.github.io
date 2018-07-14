@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html >
+
+        <head>
+            
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="author" content="李大玄" />
+
+                
+
+                                        <meta name="description" content="JavaScript基础">
+<meta name="keywords" content="js基础 、js介绍 、变量、 数据类型 、 分支结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript基础">
+<meta property="og:url" content="http://yoursite.com/2018/07/14/WEB api/index.html">
+<meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="JavaScript基础">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://coolwcg.github.io/2018/05/12/Web-API/1496912475691.png">
+<meta property="og:image" content="https://coolwcg.github.io/2018/05/12/Web-API/1497154623955.png">
+<meta property="og:image" content="https://coolwcg.github.io/2018/05/12/Web-API/1497165666684.png">
+<meta property="og:image" content="https://coolwcg.github.io/2018/05/12/Web-API/1498743216279.png">
+<meta property="og:image" content="https://coolwcg.github.io/2018/05/12/Web-API/1498743269100.png">
+<meta property="og:image" content="https://coolwcg.github.io/2018/05/12/Web-API/1498743288621.png">
+<meta property="og:image" content="https://coolwcg.github.io/2018/05/12/Web-API/1497169919418.png">
+<meta property="og:updated_time" content="2018-07-14T09:12:12.360Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript基础">
+<meta name="twitter:description" content="JavaScript基础">
+<meta name="twitter:image" content="https://coolwcg.github.io/2018/05/12/Web-API/1496912475691.png">
+
+                                            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+                                            
+                                                <link rel="alternate" href="/atom.xml" title="李大玄的博客" type="application/atom+xml">
+                                                
+
+                                                    
+                                                        <link rel="shortcut icon" href="/favicon.png">
+                                                        
+
+                                                            
+                                                                <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+                                                                
+
+                                                                    
+                                                                        <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+                                                                        
+
+                                                                            
+                                                                                <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+                                                                                <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+                                                                                
+
+                                                                                    <link rel="stylesheet" href="/css/style.css">
+
+                                                                                        
+
+                                                                                                <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+                                                                                                
+                                                                                                    <title>
+                                                                                                        
+                                                                                                            JavaScript基础 |
+                                                                                                                
+                                                                                                                    李大玄的博客
+                                                                                                    </title>
+
+                                                                                                    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+                                                                                                    <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+                                                                                                    <script>
+                                                                                                        var yiliaConfig = {
+                                                                                                            fancybox: true,
+                                                                                                            animate: true,
+                                                                                                            isHome: false,
+                                                                                                            isPost: true,
+                                                                                                            isArchive: false,
+                                                                                                            isTag: false,
+                                                                                                            isCategory: false,
+                                                                                                            fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                                                                                                            scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                                                                                                            search: false
+                                                                                                        }
+                                                                                                    </script>
+
+                                                                                                    
+                                                                                                            <script>
+                                                                                                                yiliaConfig.jquery_ui = [false];
+                                                                                                            </script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                        <script>
+                                                                                                                            yiliaConfig.rootUrl = "\/";
+                                                                                                                        </script>
+                                                                                                                        
+
+                                                                                                                            
+
+                                                                                                                                    
+
+        </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/825027295030334316.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">李大玄</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/get方法封装步骤/">$.get方法封装步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NaN的定义与用法/">NaN的定义与用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript中filter的用法/">javascript中filter的用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础-、js介绍-、变量、-数据类型-、-分支结构/">js基础 、js介绍 、变量、 数据类型 、 分支结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分析轮播图每一步进行操作/">分析轮播图每一步进行操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建GitHub步骤/">搭建GitHub步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域请求-服务器代理-cors-跨域资源共享-jsonp/">跨域请求 服务器代理  cors(跨域资源共享) jsonp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包-执行栈-执行队列/">闭包  执行栈 执行队列</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">李大玄</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/825027295030334316.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">李大玄</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-WEB api" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/14/WEB api/" class="article-date">
+      <time datetime="2018-07-14T09:10:27.940Z" itemprop="datePublished">2018-07-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript基础
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js基础-、js介绍-、变量、-数据类型-、-分支结构/">js基础 、js介绍 、变量、 数据类型 、 分支结构</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="Web-API"><a href="#Web-API" class="headerlink" title="Web API"></a>Web API</h1><ul>
+<li><a href="https://coolwcg.github.io/tags/DOM%E6%93%8D%E4%BD%9C%E3%80%81BOM%E6%93%8D%E4%BD%9C%E3%80%81%E7%89%B9%E6%95%88%E8%BF%9B%E9%98%B6/" target="_blank" rel="noopener">DOM操作、BOM操作、特效进阶</a></li>
+</ul>
+<h1 id="Web-API-1"><a href="#Web-API-1" class="headerlink" title="Web API"></a>Web API</h1><h2 id="Web-API介绍"><a href="#Web-API介绍" class="headerlink" title="Web API介绍"></a>Web API介绍</h2><h3 id="API的概念"><a href="#API的概念" class="headerlink" title="API的概念"></a>API的概念</h3><p>API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。</p>
+<ul>
+<li>任何开发语言都有自己的API</li>
+<li>API的特征输入和输出(I/O)</li>
+<li>API的使用方法(console.log())</li>
+</ul>
+<h3 id="Web-API的概念"><a href="#Web-API的概念" class="headerlink" title="Web API的概念"></a>Web API的概念</h3><p>浏览器提供的一套操作浏览器功能和页面元素的API(BOM和DOM)</p>
+<p>此处的Web API特指浏览器提供的API(一组方法)，Web API在后面的课程中有其它含义</p>
+<h3 id="掌握常见的浏览器提供的API的调用方式"><a href="#掌握常见的浏览器提供的API的调用方式" class="headerlink" title="掌握常见的浏览器提供的API的调用方式"></a>掌握常见的浏览器提供的API的调用方式</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API" target="_blank" rel="noopener">MDN-Web API</a></p>
+<h3 id="JavaScript的组成"><a href="#JavaScript的组成" class="headerlink" title="JavaScript的组成"></a>JavaScript的组成</h3><p><a href="https://coolwcg.github.io/2018/05/12/Web-API/1496912475691.png" target="_blank" rel="noopener"><img src="https://coolwcg.github.io/2018/05/12/Web-API/1496912475691.png" alt="1496912475691"></a></p>
+<h4 id="ECMAScript-JavaScript的核心"><a href="#ECMAScript-JavaScript的核心" class="headerlink" title="ECMAScript - JavaScript的核心"></a>ECMAScript - JavaScript的核心</h4><p>定义了javascript的语法规范</p>
+<p>JavaScript的核心，描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关</p>
+<h4 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM - 浏览器对象模型"></a>BOM - 浏览器对象模型</h4><p>一套操作浏览器功能的API</p>
+<p>通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等</p>
+<h4 id="DOM-文档对象模型"><a href="#DOM-文档对象模型" class="headerlink" title="DOM - 文档对象模型"></a>DOM - 文档对象模型</h4><p>一套操作页面元素的API</p>
+<p>DOM可以把HTML看做是文档树，通过DOM提供的API可以对树上的节点进行操作</p>
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><h3 id="BOM的概念"><a href="#BOM的概念" class="headerlink" title="BOM的概念"></a>BOM的概念</h3><p>BOM(Browser Object Model) 是指浏览器对象模型，浏览器对象模型提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。BOM由多个对象组成，其中代表浏览器窗口的Window对象是BOM的顶层对象，其他对象都是该对象的子对象。</p>
+<p>我们在浏览器中的一些操作都可以使用BOM的方式进行编程处理，</p>
+<p>比如：刷新浏览器、后退、前进、在浏览器中输入URL等</p>
+<h3 id="BOM的顶级对象window"><a href="#BOM的顶级对象window" class="headerlink" title="BOM的顶级对象window"></a>BOM的顶级对象window</h3><p>window是浏览器的顶级对象，当调用window下的属性和方法时，可以省略window<br>注意：window下一个特殊的属性 window.name</p>
+<h3 id="对话框"><a href="#对话框" class="headerlink" title="对话框"></a>对话框</h3><ul>
+<li>alert()</li>
+<li>prompt()</li>
+<li>confirm()</li>
+</ul>
+<h3 id="页面加载事件"><a href="#页面加载事件" class="headerlink" title="页面加载事件"></a>页面加载事件</h3><ul>
+<li>onload</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function () &#123;</span><br><span class="line">  // 当页面加载完成执行</span><br><span class="line">  // 当页面完全加载所有内容（包括图像、脚本文件、CSS 文件等）执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>onunload</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function () &#123;</span><br><span class="line">  // 当用户退出页面时执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><h4 id="setTimeout-和clearTimeout"><a href="#setTimeout-和clearTimeout" class="headerlink" title="setTimeout()和clearTimeout()"></a>setTimeout()和clearTimeout()</h4><p>在指定的毫秒数到达之后执行指定的函数，只执行一次</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个定时器，1000毫秒后执行，返回定时器的标示</span><br><span class="line">var timerId = setTimeout(function () &#123;</span><br><span class="line">  console.log(&apos;Hello World&apos;);</span><br><span class="line">&#125;, 1000);</span><br><span class="line"></span><br><span class="line">// 取消定时器的执行</span><br><span class="line">clearTimeout(timerId);</span><br></pre></td></tr></table></figure>
+<h4 id="setInterval-和clearInterval"><a href="#setInterval-和clearInterval" class="headerlink" title="setInterval()和clearInterval()"></a>setInterval()和clearInterval()</h4><p>定时调用的函数，可以按照给定的时间(单位毫秒)周期调用函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个定时器，每隔1秒调用一次</span><br><span class="line">var timerId = setInterval(function () &#123;</span><br><span class="line">  var date = new Date();</span><br><span class="line">  console.log(date.toLocaleTimeString());</span><br><span class="line">&#125;, 1000);</span><br><span class="line"></span><br><span class="line">// 取消定时器的执行</span><br><span class="line">clearInterval(timerId);</span><br></pre></td></tr></table></figure>
+<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p>location对象是window对象下的一个属性，时候的时候可以省略window对象</p>
+<p>location可以获取或者设置浏览器地址栏的URL</p>
+<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p>统一资源定位符 (Uniform Resource Locator, URL)</p>
+<ul>
+<li>URL的组成</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">scheme://host:port/path?query#fragment</span><br><span class="line">scheme:通信协议</span><br><span class="line">	常用的http,ftp,maito等</span><br><span class="line">host:主机</span><br><span class="line">	服务器(计算机)域名系统 (DNS) 主机名或 IP 地址。</span><br><span class="line">port:端口号</span><br><span class="line">	整数，可选，省略时使用方案的默认端口，如http的默认端口为80。</span><br><span class="line">path:路径</span><br><span class="line">	由零或多个&apos;/&apos;符号隔开的字符串，一般用来表示主机上的一个目录或文件地址。</span><br><span class="line">query:查询</span><br><span class="line">	可选，用于给动态网页传递参数，可有多个参数，用&apos;&amp;&apos;符号隔开，每个参数的名和值用&apos;=&apos;符号隔开。例如：name=zs</span><br><span class="line">fragment:信息片断</span><br><span class="line">	字符串，锚点.</span><br></pre></td></tr></table></figure>
+<h4 id="location有哪些成员？"><a href="#location有哪些成员？" class="headerlink" title="location有哪些成员？"></a>location有哪些成员？</h4><ul>
+<li><p>使用chrome的控制台查看</p>
+</li>
+<li><p>查MDN</p>
+<p><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a></p>
+</li>
+<li><p>成员</p>
+<ul>
+<li>assign()/reload()/replace()</li>
+<li>hash/host/hostname/search/href……</li>
+</ul>
+</li>
+</ul>
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>解析URL中的query，并返回对象的形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function getQuery(queryStr) &#123;</span><br><span class="line">  var query = &#123;&#125;;</span><br><span class="line">  if (queryStr.indexOf(&apos;?&apos;) &gt; -1) &#123;</span><br><span class="line">    var index = queryStr.indexOf(&apos;?&apos;);</span><br><span class="line">    queryStr = queryStr.substr(index + 1);</span><br><span class="line">    var array = queryStr.split(&apos;&amp;&apos;);</span><br><span class="line">    for (var i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">      var tmpArr = array[i].split(&apos;=&apos;);</span><br><span class="line">      if (tmpArr.length === 2) &#123;</span><br><span class="line">        query[tmpArr[0]] = tmpArr[1];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return query;</span><br><span class="line">&#125;</span><br><span class="line">console.log(getQuery(location.search));</span><br><span class="line">console.log(getQuery(location.href));</span><br></pre></td></tr></table></figure>
+<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><ul>
+<li>back()</li>
+<li>forward()</li>
+<li>go()</li>
+</ul>
+<h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><ul>
+<li>userAgent</li>
+</ul>
+<p>通过userAgent可以判断用户浏览器的类型</p>
+<ul>
+<li>platform</li>
+</ul>
+<p>通过platform可以判断浏览器所在的系统平台类型.</p>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="DOM的概念"><a href="#DOM的概念" class="headerlink" title="DOM的概念"></a>DOM的概念</h3><p>文档对象模型（Document Object Model，简称DOM），是<a href="http://baike.baidu.com/item/W3C" target="_blank" rel="noopener">W3C</a>组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。Document Object Model的历史可以追溯至1990年代后期微软与<a href="http://baike.baidu.com/item/Netscape" target="_blank" rel="noopener">Netscape</a>的“浏览器大战”，双方为了在<a href="http://baike.baidu.com/item/JavaScript" target="_blank" rel="noopener">JavaScript</a>与<a href="http://baike.baidu.com/item/JScript" target="_blank" rel="noopener">JScript</a>一决生死，于是大规模的赋予浏览器强大的功能。微软在网页技术上加入了不少专属事物，既有<a href="http://baike.baidu.com/item/VBScript" target="_blank" rel="noopener">VBScript</a>、<a href="http://baike.baidu.com/item/ActiveX" target="_blank" rel="noopener">ActiveX</a>、以及微软自家的<a href="http://baike.baidu.com/item/DHTML" target="_blank" rel="noopener">DHTML</a>格式等，使不少网页使用非微软平台及浏览器无法正常显示。DOM即是当时蕴酿出来的杰作。</p>
+<p>DOM又称为文档树模型</p>
+<p><a href="https://coolwcg.github.io/2018/05/12/Web-API/1497154623955.png" target="_blank" rel="noopener"><img src="https://coolwcg.github.io/2018/05/12/Web-API/1497154623955.png" alt="1497154623955"></a></p>
+<ul>
+<li>文档：一个网页可以称为文档</li>
+<li>节点：网页中的所有内容都是节点（标签、属性、文本、注释等）</li>
+<li>元素：网页中的标签</li>
+<li>属性：标签的属性</li>
+</ul>
+<h3 id="模拟文档树结构"><a href="#模拟文档树结构" class="headerlink" title="模拟文档树结构"></a>模拟文档树结构</h3><p><a href="https://coolwcg.github.io/2018/05/12/Web-API/1497165666684.png" target="_blank" rel="noopener"><img src="https://coolwcg.github.io/2018/05/12/Web-API/1497165666684.png" alt="1497165666684"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">function Element(option) &#123;</span><br><span class="line">  this.id = option.id || &apos;&apos;;</span><br><span class="line">  this.nodeName = option.nodeName || &apos;&apos;;</span><br><span class="line">  this.nodeValue = option.nodeValue || &apos;&apos;;</span><br><span class="line">  this.nodeType = 1;</span><br><span class="line">  this.children = option.children || [];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var doc = new Element(&#123;</span><br><span class="line">  nodeName: &apos;html&apos;</span><br><span class="line">&#125;);</span><br><span class="line">var head = new Element(&#123;</span><br><span class="line">  nodeName: &apos;head&apos;</span><br><span class="line">&#125;);</span><br><span class="line">var body = new Element(&#123;</span><br><span class="line">  nodeName: &apos;body&apos;</span><br><span class="line">&#125;)</span><br><span class="line">doc.children.push(head);</span><br><span class="line">doc.children.push(body);</span><br><span class="line"></span><br><span class="line">var div = new Element(&#123;</span><br><span class="line">  nodeName: &apos;div&apos;,</span><br><span class="line">  nodeValue: &apos;haha&apos;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var p = new Element(&#123;</span><br><span class="line">  nodeName: &apos;p&apos;,</span><br><span class="line">  nodeValue: &apos;段落&apos;</span><br><span class="line">&#125;)</span><br><span class="line">body.children.push(div);</span><br><span class="line">body.children.push(p);</span><br><span class="line"></span><br><span class="line">function getChildren(ele) &#123;</span><br><span class="line">  for(var i = 0; i &lt; ele.children.length; i++) &#123;</span><br><span class="line">    var child = ele.children[i];</span><br><span class="line">    console.log(child.nodeName);</span><br><span class="line">    getChildren(child);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">getChildren(doc);</span><br></pre></td></tr></table></figure>
+<h3 id="DOM经常进行的操作"><a href="#DOM经常进行的操作" class="headerlink" title="DOM经常进行的操作"></a>DOM经常进行的操作</h3><ul>
+<li>获取元素</li>
+<li>动态创建元素</li>
+<li>对元素进行操作(设置其属性或调用其方法)</li>
+<li>事件(什么时机做相应的操作)</li>
+</ul>
+<h2 id="获取页面元素"><a href="#获取页面元素" class="headerlink" title="获取页面元素"></a>获取页面元素</h2><h2 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h2><p>1.点击按钮弹出对话框<br>2.点击按钮修改超链接的地址和热点文字<br>3.点击(每个)图片弹出对话框<br>4.点击图片设置自身宽和高<br>5.点击按钮修改每个图片的title属性<br>6.点击按钮显示哈哈(排他功能)<br>7.点击按钮显示和隐藏div<br>8.显示和隐藏二维码<br>9.点击按钮修改所有p标签内容<br>10.点击按钮修改所有文本框内容<br>11.点击按钮切换图片<br>12.点击超链接停止跳转页面<br>13.点击小图显示大图<br>14.美女相册<br>15点击按钮选中性别和兴趣</p>
+<h3 id="为什么要获取页面元素"><a href="#为什么要获取页面元素" class="headerlink" title="为什么要获取页面元素"></a>为什么要获取页面元素</h3><p>例如：我们想要操作页面上的某部分(显示/隐藏，动画)，需要先获取到该部分对应的元素，才进行后续操作</p>
+<h3 id="根据id获取元素"><a href="#根据id获取元素" class="headerlink" title="根据id获取元素"></a>根据id获取元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var div = document.getElementById(&apos;main&apos;);</span><br><span class="line">console.log(div);</span><br><span class="line"></span><br><span class="line">// 获取到的数据类型 HTMLDivElement，对象都是有类型的</span><br><span class="line">// HTMLDivElement &lt;-- HTMLElement &lt;-- Element  &lt;-- Node  &lt;-- EventTarget</span><br></pre></td></tr></table></figure>
+<p>注意：由于id名具有唯一性，部分浏览器支持直接使用id名访问元素，但不是标准方式，不推荐使用。</p>
+<h3 id="根据标签名获取元素"><a href="#根据标签名获取元素" class="headerlink" title="根据标签名获取元素"></a>根据标签名获取元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var divs = document.getElementsByTagName(&apos;div&apos;);</span><br><span class="line">for (var i = 0; i &lt; divs.length; i++) &#123;</span><br><span class="line">  var div = divs[i];</span><br><span class="line">  console.log(div);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="根据name获取元素"><a href="#根据name获取元素" class="headerlink" title="根据name获取元素*"></a>根据name获取元素*</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var inputs = document.getElementsByName(&apos;hobby&apos;);</span><br><span class="line">for (var i = 0; i &lt; inputs.length; i++) &#123;</span><br><span class="line">  var input = inputs[i];</span><br><span class="line">  console.log(input);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="根据类名获取元素"><a href="#根据类名获取元素" class="headerlink" title="根据类名获取元素"></a>根据类名获取元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var mains = document.getElementsByClassName(&apos;main&apos;);</span><br><span class="line">for (var i = 0; i &lt; mains.length; i++) &#123;</span><br><span class="line">  var main = mains[i];</span><br><span class="line">  console.log(main);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="根据选择器获取元素"><a href="#根据选择器获取元素" class="headerlink" title="根据选择器获取元素"></a>根据选择器获取元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var text = document.querySelector(&apos;#text&apos;);</span><br><span class="line">console.log(text);</span><br><span class="line"></span><br><span class="line">var boxes = document.querySelectorAll(&apos;.box&apos;);</span><br><span class="line">for (var i = 0; i &lt; boxes.length; i++) &#123;</span><br><span class="line">  var box = boxes[i];</span><br><span class="line">  console.log(box);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>总结</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">掌握</span><br><span class="line">	getElementById()</span><br><span class="line">	getElementsByTagName()</span><br><span class="line">了解</span><br><span class="line">	getElementsByName()</span><br><span class="line">	getElementsByClassName()</span><br><span class="line">	querySelector()</span><br><span class="line">	querySelectorAll()</span><br></pre></td></tr></table></figure>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件：触发-响应机制</p>
+<p>Event接口表示在DOM中发生的任何事件，一些是用户生成的（例如鼠标或键盘事件），而其他由API生成。</p>
+<h3 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h3><ul>
+<li>事件源:触发(被)事件的元素</li>
+<li>事件类型:事件的触发方式(例如鼠标点击或键盘点击)</li>
+<li>事件处理程序:事件触发后要执行的代码(函数形式)</li>
+</ul>
+<h3 id="事件的基本使用"><a href="#事件的基本使用" class="headerlink" title="事件的基本使用"></a>事件的基本使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">box.onclick = function() &#123;</span><br><span class="line">  console.log(&apos;代码会在box被点击后执行&apos;);  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="案例-2"><a href="#案例-2" class="headerlink" title="案例"></a>案例</h3><ul>
+<li>点击按钮弹出提示框</li>
+<li>点击按钮修改元素的样式</li>
+</ul>
+<h2 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h2><h3 id="非表单元素的属性"><a href="#非表单元素的属性" class="headerlink" title="非表单元素的属性"></a>非表单元素的属性</h3><p>href、title、id、src、className</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var link = document.getElementById(&apos;link&apos;);</span><br><span class="line">console.log(link.href);</span><br><span class="line">console.log(link.title);</span><br><span class="line"></span><br><span class="line">var pic = document.getElementById(&apos;pic&apos;);</span><br><span class="line">console.log(pic.src);</span><br></pre></td></tr></table></figure>
+<p>案例：</p>
+<p> 点击按钮，切换img标签里的图片</p>
+<p> 点击按钮显示隐藏div</p>
+<ul>
+<li>innerHTML和innerText</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">box.innerHTML = &apos;我是文本&lt;p&gt;我会生成为标签&lt;/p&gt;&apos;;</span><br><span class="line">console.log(box.innerHTML);</span><br><span class="line">box.innerText = &apos;我是文本&lt;p&gt;我不会生成为标签&lt;/p&gt;&apos;;</span><br><span class="line">console.log(box.innerText);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>HTML转义符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;		&amp;quot;</span><br><span class="line">‘		&amp;apos;</span><br><span class="line">&amp;		&amp;amp;</span><br><span class="line">&lt;		&amp;lt;    //less than  小于</span><br><span class="line">&gt;		&amp;gt;   // greater than  大于</span><br><span class="line">空格	   &amp;nbsp;</span><br><span class="line">©		&amp;copy;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>innerHTML和innerText的区别</li>
+<li>innerText的兼容性处理</li>
+</ul>
+<h3 id="表单元素属性"><a href="#表单元素属性" class="headerlink" title="表单元素属性"></a>表单元素属性</h3><ul>
+<li>value 用于大部分表单元素的内容获取(option除外)</li>
+<li>type 可以获取input标签的类型(输入框或复选框等)</li>
+<li>disabled 禁用属性</li>
+<li>checked 复选框选中属性</li>
+<li>selected 下拉菜单选中属性</li>
+</ul>
+<h3 id="案例-3"><a href="#案例-3" class="headerlink" title="案例"></a>案例</h3><ul>
+<li>给文本框赋值，获取文本框的值</li>
+<li>点击按钮禁用文本框</li>
+<li>搜索文本框</li>
+<li>检测用户名是否是3-6位，密码是否是6-8位，如果不满足要求高亮显示文本框</li>
+<li>设置下拉框中的选中项</li>
+<li>全选反选</li>
+</ul>
+<h3 id="自定义属性操作"><a href="#自定义属性操作" class="headerlink" title="自定义属性操作"></a>自定义属性操作</h3><ul>
+<li>getAttribute() 获取标签行内属性</li>
+<li>setAttribute() 设置标签行内属性</li>
+<li>removeAttribute() 移除标签行内属性</li>
+<li>与element.属性的区别: 上述三个方法用于获取任意的行内属性。</li>
+</ul>
+<h3 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h3><ul>
+<li>使用style方式设置的样式显示在标签行内</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">box.style.width = &apos;100px&apos;;</span><br><span class="line">box.style.height = &apos;100px&apos;;</span><br><span class="line">box.style.backgroundColor = &apos;red&apos;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>注意</p>
+<p>通过样式属性设置宽高、位置的属性类型是字符串，需要加上px</p>
+</li>
+</ul>
+<h3 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h3><ul>
+<li>修改标签的className属性相当于直接修改标签的类名</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">box.className = &apos;clearfix&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="案例-4"><a href="#案例-4" class="headerlink" title="案例"></a>案例</h3><ul>
+<li>开关灯</li>
+<li>点击按钮变色</li>
+<li>图片切换二维码案例</li>
+<li>当前输入的文本框高亮显示</li>
+<li>点击按钮改变div的大小和位置</li>
+<li>列表隔行变色、高亮显示</li>
+<li>京东商品展示</li>
+<li>tab选项卡切换</li>
+</ul>
+<h2 id="创建元素的三种方式"><a href="#创建元素的三种方式" class="headerlink" title="创建元素的三种方式"></a>创建元素的三种方式</h2><h3 id="document-write"><a href="#document-write" class="headerlink" title="document.write()"></a>document.write()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.write(&apos;新设置的内容&lt;p&gt;标签也可以生成&lt;/p&gt;&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">box.innerHTML = &apos;新内容&lt;p&gt;新标签&lt;/p&gt;&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="document-createElement"><a href="#document-createElement" class="headerlink" title="document.createElement()"></a>document.createElement()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div = document.createElement(&apos;div&apos;);</span><br><span class="line">document.body.appendChild(div);</span><br></pre></td></tr></table></figure>
+<h3 id="性能问题"><a href="#性能问题" class="headerlink" title="性能问题"></a>性能问题</h3><ul>
+<li>innerHTML方法由于会对字符串进行解析，需要避免在循环内多次使用。</li>
+<li>可以借助字符串或数组的方式进行替换，再设置给innerHTML</li>
+<li>优化后与document.createElement性能相近</li>
+</ul>
+<h3 id="案例-5"><a href="#案例-5" class="headerlink" title="案例"></a>案例</h3><ul>
+<li>动态创建列表，高亮显示</li>
+<li>根据数据动态创建表格</li>
+<li>模拟百度搜索文本框</li>
+</ul>
+<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var body = document.body;</span><br><span class="line">var div = document.createElement(&apos;div&apos;);</span><br><span class="line">body.appendChild(div);</span><br><span class="line"></span><br><span class="line">var firstEle = body.children[0];</span><br><span class="line">body.insertBefore(div,firstEle);</span><br><span class="line"></span><br><span class="line">body.removeChild(firstEle);</span><br><span class="line"></span><br><span class="line">var text = document.createElement(&apos;p&apos;);</span><br><span class="line">body.replaceChild(text, div);</span><br></pre></td></tr></table></figure>
+<p>案例：</p>
+<p> 权限选择</p>
+<h3 id="节点层级"><a href="#节点层级" class="headerlink" title="节点层级"></a>节点层级</h3><p>重点讲父子属性，兄弟属性画图讲解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">console.log(box.parentNode);</span><br><span class="line">console.log(box.childNodes);</span><br><span class="line">console.log(box.children);</span><br><span class="line">console.log(box.nextSibling);</span><br><span class="line">console.log(box.previousSibling);</span><br><span class="line">console.log(box.firstChild);</span><br><span class="line">console.log(box.lastChild);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>注意</p>
+<p>childNodes和children的区别，childNodes获取的是子节点，children获取的是子元素</p>
+<p>nextSibling和previousSibling获取的是节点，获取元素对应的属性是nextElementSibling和previousElementSibling获取的是元素</p>
+<p> nextElementSibling和previousElementSibling有兼容性问题，IE9以后才支持</p>
+</li>
+<li><p>总结</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">节点操作，方法</span><br><span class="line">	appendChild()</span><br><span class="line">	insertBefore()</span><br><span class="line">	removeChild()</span><br><span class="line">	replaceChild()</span><br><span class="line">节点层次，属性</span><br><span class="line">	parentNode</span><br><span class="line">	childNodes</span><br><span class="line">	children</span><br><span class="line">	nextSibling/previousSibling</span><br><span class="line">	firstChild/lastChild</span><br></pre></td></tr></table></figure>
+<h2 id="事件详解"><a href="#事件详解" class="headerlink" title="事件详解"></a>事件详解</h2><h3 id="注册-移除事件的三种方式"><a href="#注册-移除事件的三种方式" class="headerlink" title="注册/移除事件的三种方式"></a>注册/移除事件的三种方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">box.onclick = function () &#123;</span><br><span class="line">  console.log(&apos;点击后执行&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">box.onclick = null;</span><br><span class="line"></span><br><span class="line">box.addEventListener(&apos;click&apos;, eventCode, false);</span><br><span class="line">box.removeEventListener(&apos;click&apos;, eventCode, false);</span><br><span class="line"></span><br><span class="line">box.attachEvent(&apos;onclick&apos;, eventCode);</span><br><span class="line">box.detachEvent(&apos;onclick&apos;, eventCode);</span><br><span class="line"></span><br><span class="line">function eventCode() &#123;</span><br><span class="line">  console.log(&apos;点击后执行&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="兼容代码"><a href="#兼容代码" class="headerlink" title="兼容代码"></a>兼容代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function addEventListener(element, type, fn) &#123;</span><br><span class="line">  if (element.addEventListener) &#123;</span><br><span class="line">    element.addEventListener(type, fn, false);</span><br><span class="line">  &#125; else if (element.attachEvent)&#123;</span><br><span class="line">    element.attachEvent(&apos;on&apos; + type,fn);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    element[&apos;on&apos;+type] = fn;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function removeEventListener(element, type, fn) &#123;</span><br><span class="line">  if (element.removeEventListener) &#123;</span><br><span class="line">    element.removeEventListener(type, fn, false);</span><br><span class="line">  &#125; else if (element.detachEvent) &#123;</span><br><span class="line">    element.detachEvent(&apos;on&apos; + type, fn);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    element[&apos;on&apos;+type] = null;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="事件的三个阶段"><a href="#事件的三个阶段" class="headerlink" title="事件的三个阶段"></a>事件的三个阶段</h3><ol>
+<li><p>捕获阶段</p>
+</li>
+<li><p>当前目标阶段</p>
+</li>
+<li><p>冒泡阶段</p>
+<p>事件对象.eventPhase属性可以查看事件触发时所处的阶段</p>
+</li>
+</ol>
+<h3 id="事件对象的属性和方法"><a href="#事件对象的属性和方法" class="headerlink" title="事件对象的属性和方法"></a>事件对象的属性和方法</h3><ul>
+<li>event.type 获取事件类型</li>
+<li>clientX/clientY 所有浏览器都支持，窗口位置</li>
+<li>pageX/pageY IE8以前不支持，页面位置</li>
+<li>event.target || event.srcElement 用于获取触发事件的元素</li>
+<li>event.preventDefault() 取消默认行为</li>
+</ul>
+<h4 id="案例-6"><a href="#案例-6" class="headerlink" title="案例"></a>案例</h4><ul>
+<li>跟着鼠标飞的天使</li>
+<li>鼠标点哪图片飞到哪里</li>
+<li>获取鼠标在div内的坐标</li>
+</ul>
+<h3 id="阻止事件传播的方式"><a href="#阻止事件传播的方式" class="headerlink" title="阻止事件传播的方式"></a>阻止事件传播的方式</h3><ul>
+<li>标准方式 event.stopPropagation();</li>
+<li>IE低版本 event.cancelBubble = true; 标准中已废弃</li>
+</ul>
+<h3 id="常用的鼠标和键盘事件"><a href="#常用的鼠标和键盘事件" class="headerlink" title="常用的鼠标和键盘事件"></a>常用的鼠标和键盘事件</h3><ul>
+<li>onmouseup 鼠标按键放开时触发</li>
+<li>onmousedown 鼠标按键按下触发</li>
+<li>onmousemove 鼠标移动触发</li>
+<li>onkeyup 键盘按键按下触发</li>
+<li>onkeydown 键盘按键抬起触发</li>
+</ul>
+<h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><h3 id="偏移量"><a href="#偏移量" class="headerlink" title="偏移量"></a>偏移量</h3><ul>
+<li>offsetParent用于获取定位的父级元素</li>
+<li>offsetParent和parentNode的区别</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">console.log(box.offsetParent);</span><br><span class="line">console.log(box.offsetLeft);</span><br><span class="line">console.log(box.offsetTop);</span><br><span class="line">console.log(box.offsetWidth);</span><br><span class="line">console.log(box.offsetHeight);</span><br></pre></td></tr></table></figure>
+<p><a href="https://coolwcg.github.io/2018/05/12/Web-API/1498743216279.png" target="_blank" rel="noopener"><img src="https://coolwcg.github.io/2018/05/12/Web-API/1498743216279.png" alt="1498743216279"></a></p>
+<h3 id="客户区大小"><a href="#客户区大小" class="headerlink" title="客户区大小"></a>客户区大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">console.log(box.clientLeft);</span><br><span class="line">console.log(box.clientTop);</span><br><span class="line">console.log(box.clientWidth);</span><br><span class="line">console.log(box.clientHeight);</span><br></pre></td></tr></table></figure>
+<p><a href="https://coolwcg.github.io/2018/05/12/Web-API/1498743269100.png" target="_blank" rel="noopener"><img src="https://coolwcg.github.io/2018/05/12/Web-API/1498743269100.png" alt="1498743269100"></a></p>
+<h3 id="滚动偏移"><a href="#滚动偏移" class="headerlink" title="滚动偏移"></a>滚动偏移</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">console.log(box.scrollLeft)</span><br><span class="line">console.log(box.scrollTop)</span><br><span class="line">console.log(box.scrollWidth)</span><br><span class="line">console.log(box.scrollHeight)</span><br></pre></td></tr></table></figure>
+<p><a href="https://coolwcg.github.io/2018/05/12/Web-API/1498743288621.png" target="_blank" rel="noopener"><img src="https://coolwcg.github.io/2018/05/12/Web-API/1498743288621.png" alt="1498743288621"></a></p>
+<h3 id="案例-7"><a href="#案例-7" class="headerlink" title="案例"></a>案例</h3><ul>
+<li>匀速动画函数</li>
+<li>变速动画函数</li>
+<li>回到顶部</li>
+<li>无缝轮播图</li>
+<li>模拟滚动条</li>
+<li>拖拽案例</li>
+<li>放大镜案例</li>
+</ul>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="元素的类型"><a href="#元素的类型" class="headerlink" title="元素的类型"></a>元素的类型</h3><p><a href="https://coolwcg.github.io/2018/05/12/Web-API/1497169919418.png" target="_blank" rel="noopener"><img src="https://coolwcg.github.io/2018/05/12/Web-API/1497169919418.png" alt="0"></a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/07/14/WEB api/">JavaScript基础</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-07-14, 17:10:27</p>
+        <p><span>最后更新:</span>2018-07-14, 17:12:12</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/14/WEB api/" title="JavaScript基础">http://yoursite.com/2018/07/14/WEB api/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/07/14/WEB api/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/07/14/js中filter的使用/">
+                    javascript中filter的用法
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-API"><span class="toc-number">1.</span> <span class="toc-text">Web API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-API-1"><span class="toc-number">2.</span> <span class="toc-text">Web API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-API介绍"><span class="toc-number">2.1.</span> <span class="toc-text">Web API介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API的概念"><span class="toc-number">2.1.1.</span> <span class="toc-text">API的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-API的概念"><span class="toc-number">2.1.2.</span> <span class="toc-text">Web API的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#掌握常见的浏览器提供的API的调用方式"><span class="toc-number">2.1.3.</span> <span class="toc-text">掌握常见的浏览器提供的API的调用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript的组成"><span class="toc-number">2.1.4.</span> <span class="toc-text">JavaScript的组成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ECMAScript-JavaScript的核心"><span class="toc-number">2.1.4.1.</span> <span class="toc-text">ECMAScript - JavaScript的核心</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BOM-浏览器对象模型"><span class="toc-number">2.1.4.2.</span> <span class="toc-text">BOM - 浏览器对象模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DOM-文档对象模型"><span class="toc-number">2.1.4.3.</span> <span class="toc-text">DOM - 文档对象模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM"><span class="toc-number">2.2.</span> <span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BOM的概念"><span class="toc-number">2.2.1.</span> <span class="toc-text">BOM的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BOM的顶级对象window"><span class="toc-number">2.2.2.</span> <span class="toc-text">BOM的顶级对象window</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对话框"><span class="toc-number">2.2.3.</span> <span class="toc-text">对话框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面加载事件"><span class="toc-number">2.2.4.</span> <span class="toc-text">页面加载事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定时器"><span class="toc-number">2.2.5.</span> <span class="toc-text">定时器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#setTimeout-和clearTimeout"><span class="toc-number">2.2.5.1.</span> <span class="toc-text">setTimeout()和clearTimeout()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#setInterval-和clearInterval"><span class="toc-number">2.2.5.2.</span> <span class="toc-text">setInterval()和clearInterval()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#location对象"><span class="toc-number">2.2.6.</span> <span class="toc-text">location对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#URL"><span class="toc-number">2.2.6.1.</span> <span class="toc-text">URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#location有哪些成员？"><span class="toc-number">2.2.6.2.</span> <span class="toc-text">location有哪些成员？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#案例"><span class="toc-number">2.2.6.3.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history对象"><span class="toc-number">2.2.7.</span> <span class="toc-text">history对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#navigator对象"><span class="toc-number">2.2.8.</span> <span class="toc-text">navigator对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM"><span class="toc-number">2.3.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM的概念"><span class="toc-number">2.3.1.</span> <span class="toc-text">DOM的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模拟文档树结构"><span class="toc-number">2.3.2.</span> <span class="toc-text">模拟文档树结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM经常进行的操作"><span class="toc-number">2.3.3.</span> <span class="toc-text">DOM经常进行的操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取页面元素"><span class="toc-number">2.4.</span> <span class="toc-text">获取页面元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例-1"><span class="toc-number">2.5.</span> <span class="toc-text">案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要获取页面元素"><span class="toc-number">2.5.1.</span> <span class="toc-text">为什么要获取页面元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据id获取元素"><span class="toc-number">2.5.2.</span> <span class="toc-text">根据id获取元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据标签名获取元素"><span class="toc-number">2.5.3.</span> <span class="toc-text">根据标签名获取元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据name获取元素"><span class="toc-number">2.5.4.</span> <span class="toc-text">根据name获取元素*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据类名获取元素"><span class="toc-number">2.5.5.</span> <span class="toc-text">根据类名获取元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据选择器获取元素"><span class="toc-number">2.5.6.</span> <span class="toc-text">根据选择器获取元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-number">2.6.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件三要素"><span class="toc-number">2.6.1.</span> <span class="toc-text">事件三要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件的基本使用"><span class="toc-number">2.6.2.</span> <span class="toc-text">事件的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例-2"><span class="toc-number">2.6.3.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性操作"><span class="toc-number">2.7.</span> <span class="toc-text">属性操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#非表单元素的属性"><span class="toc-number">2.7.1.</span> <span class="toc-text">非表单元素的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单元素属性"><span class="toc-number">2.7.2.</span> <span class="toc-text">表单元素属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例-3"><span class="toc-number">2.7.3.</span> <span class="toc-text">案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义属性操作"><span class="toc-number">2.7.4.</span> <span class="toc-text">自定义属性操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#样式操作"><span class="toc-number">2.7.5.</span> <span class="toc-text">样式操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类名操作"><span class="toc-number">2.7.6.</span> <span class="toc-text">类名操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例-4"><span class="toc-number">2.7.7.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建元素的三种方式"><span class="toc-number">2.8.</span> <span class="toc-text">创建元素的三种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#document-write"><span class="toc-number">2.8.1.</span> <span class="toc-text">document.write()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#innerHTML"><span class="toc-number">2.8.2.</span> <span class="toc-text">innerHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document-createElement"><span class="toc-number">2.8.3.</span> <span class="toc-text">document.createElement()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性能问题"><span class="toc-number">2.8.4.</span> <span class="toc-text">性能问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例-5"><span class="toc-number">2.8.5.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#节点操作"><span class="toc-number">2.9.</span> <span class="toc-text">节点操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#节点层级"><span class="toc-number">2.9.1.</span> <span class="toc-text">节点层级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件详解"><span class="toc-number">2.10.</span> <span class="toc-text">事件详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注册-移除事件的三种方式"><span class="toc-number">2.10.1.</span> <span class="toc-text">注册/移除事件的三种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容代码"><span class="toc-number">2.10.2.</span> <span class="toc-text">兼容代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件的三个阶段"><span class="toc-number">2.10.3.</span> <span class="toc-text">事件的三个阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对象的属性和方法"><span class="toc-number">2.10.4.</span> <span class="toc-text">事件对象的属性和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#案例-6"><span class="toc-number">2.10.4.1.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阻止事件传播的方式"><span class="toc-number">2.10.5.</span> <span class="toc-text">阻止事件传播的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的鼠标和键盘事件"><span class="toc-number">2.10.6.</span> <span class="toc-text">常用的鼠标和键盘事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特效"><span class="toc-number">2.11.</span> <span class="toc-text">特效</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#偏移量"><span class="toc-number">2.11.1.</span> <span class="toc-text">偏移量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户区大小"><span class="toc-number">2.11.2.</span> <span class="toc-text">客户区大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#滚动偏移"><span class="toc-number">2.11.3.</span> <span class="toc-text">滚动偏移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例-7"><span class="toc-number">2.11.4.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录"><span class="toc-number">2.12.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#元素的类型"><span class="toc-number">2.12.1.</span> <span class="toc-text">元素的类型</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JavaScript基础　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/07/14/js中filter的使用/" title="下一篇: javascript中filter的用法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/WEB api/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/魔板/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 李大玄
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
