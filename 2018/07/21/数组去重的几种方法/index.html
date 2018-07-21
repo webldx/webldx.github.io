@@ -16,18 +16,18 @@
 
                 
 
-                                        <meta name="description" content="javascript中filter的用法">
-<meta name="keywords" content="javascript中filter的用法">
+                                        <meta name="description" content="数组去重的几种方法">
+<meta name="keywords" content="数组去重的几种方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript中filter的用法">
-<meta property="og:url" content="http://yoursite.com/2018/07/14/js中filter的使用/index.html">
+<meta property="og:title" content="数组去重的几种方法">
+<meta property="og:url" content="http://yoursite.com/2018/07/21/数组去重的几种方法/index.html">
 <meta property="og:site_name" content="李大玄的博客">
-<meta property="og:description" content="javascript中filter的用法">
+<meta property="og:description" content="数组去重的几种方法">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-14T08:59:05.995Z">
+<meta property="og:updated_time" content="2018-07-21T05:50:19.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript中filter的用法">
-<meta name="twitter:description" content="javascript中filter的用法">
+<meta name="twitter:title" content="数组去重的几种方法">
+<meta name="twitter:description" content="数组去重的几种方法">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +61,7 @@
                                                                                                 
                                                                                                     <title>
                                                                                                         
-                                                                                                            javascript中filter的用法 |
+                                                                                                            数组去重的几种方法 |
                                                                                                                 
                                                                                                                     李大玄的博客
                                                                                                     </title>
@@ -272,11 +272,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-js中filter的使用" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-数组去重的几种方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/07/14/js中filter的使用/" class="article-date">
-      <time datetime="2018-07-14T08:52:24.036Z" itemprop="datePublished">2018-07-14</time>
+      <a href="/2018/07/21/数组去重的几种方法/" class="article-date">
+      <time datetime="2018-07-21T04:58:18.479Z" itemprop="datePublished">2018-07-21</time>
 </a>
 
 
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      javascript中filter的用法
+      数组去重的几种方法
     </h1>
   
 
@@ -302,7 +302,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript中filter的用法/">javascript中filter的用法</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组去重的几种方法/">数组去重的几种方法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -312,24 +312,43 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="javascript中filter的用法"><a href="#javascript中filter的用法" class="headerlink" title="javascript中filter的用法"></a>javascript中filter的用法</h1><h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><p>filter也是一个常用的操作，它用于把<code>Array</code>的某些元素过滤掉，然后返回剩下的元素。</p>
-<p>和<code>map()</code>类似，<code>Array</code>的<code>filter()</code>也接收一个函数。和<code>map()</code>不同的是，<code>filter()</code>把传入的函数依次作用于每个元素，然后根据返回值是<code>true</code>还是<code>false</code>决定保留还是丢弃该元素。</p>
-<p>例如，在一个<code>Array</code>中，删掉偶数，只保留奇数，可以这么写： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 var arr = [1, 2, 4, 5, 6, 9, 10, 15];</span><br><span class="line">2 var r = arr.filter(function (x) &#123;</span><br><span class="line">3     return x % 2 !== 0;</span><br><span class="line">4 &#125;);</span><br><span class="line">5 r; // [1, 5, 9, 15]</span><br></pre></td></tr></table></figure>
-<p>把一个<code>Array</code>中的空字符串删掉，可以这么写： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 var arr = [&apos;A&apos;, &apos;&apos;, &apos;B&apos;, null, undefined, &apos;C&apos;, &apos;  &apos;];</span><br><span class="line">2 var r = arr.filter(function (s) &#123;</span><br><span class="line">3     return s &amp;&amp; s.trim(); // 注意：IE9以下的版本没有trim()方法</span><br><span class="line">4 &#125;);</span><br><span class="line">5 r; // [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;]</span><br></pre></td></tr></table></figure>
-<p>可见用<code>filter()</code>这个高阶函数，关键在于正确实现一个“筛选”函数。 </p>
-<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p><code>filter()</code>接收的回调函数，其实可以有多个参数。通常我们仅使用第一个参数，表示<code>Array</code>的某个元素。回调函数还可以接收另外两个参数，表示元素的位置和数组本身：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;];</span><br><span class="line">var r = arr.filter(function (element, index, self) &#123;</span><br><span class="line">    console.log(element); // 依次打印&apos;A&apos;, &apos;B&apos;, &apos;C&apos;</span><br><span class="line">    console.log(index); // 依次打印0, 1, 2</span><br><span class="line">    console.log(self); // self就是变量arr</span><br><span class="line">    return true;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>利用<code>filter</code>，可以巧妙地去除<code>Array</code>的重复元素： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 &apos;use strict&apos;;</span><br><span class="line">2 </span><br><span class="line">3 var</span><br><span class="line">4     r,</span><br><span class="line">5     arr = [&apos;apple&apos;, &apos;strawberry&apos;, &apos;banana&apos;, &apos;pear&apos;, &apos;apple&apos;, &apos;orange&apos;, &apos;orange&apos;, &apos;strawberry&apos;];</span><br><span class="line">6 r = arr.filter(function (element, index, self) &#123;</span><br><span class="line">7     return self.indexOf(element) === index;</span><br><span class="line">8 &#125;);</span><br><span class="line">9 console.log(r.toString());</span><br></pre></td></tr></table></figure>
-<p>运行结果:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apple,strawberry,banana,pear,orange</span><br></pre></td></tr></table></figure>
-<p>去除重复元素依靠的是<code>indexOf</code>总是返回第一个元素的位置，后续的重复元素位置与<code>indexOf</code>返回的位置不相等，因此被<code>filter</code>滤掉了。 </p>
-<p>尝试用<code>filter()</code>筛选出素数 : </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"> 1 &apos;use strict&apos;;</span><br><span class="line"> 2 </span><br><span class="line"> 3 function get_primes(arr) &#123;</span><br><span class="line"> 4     var i;</span><br><span class="line"> 5     return arr.filter(function (element) &#123;  </span><br><span class="line"> 6             var flag=true;  </span><br><span class="line"> 7             if(element&lt;2)&#123;  </span><br><span class="line"> 8             flag=false;  </span><br><span class="line"> 9         &#125;else &#123;  </span><br><span class="line">10             for(var i=2;i&lt;element;i++)&#123;  </span><br><span class="line">11                 if (element%i==0)&#123;  </span><br><span class="line">12                     flag=false;  </span><br><span class="line">13                     break;  </span><br><span class="line">14                 &#125;  </span><br><span class="line">15             &#125;  </span><br><span class="line">16         &#125;  </span><br><span class="line">17         return flag;  </span><br><span class="line">18     &#125;);</span><br><span class="line">19 &#125;</span><br><span class="line">20 </span><br><span class="line">21 // 测试:</span><br><span class="line">22 var</span><br><span class="line">23     x,</span><br><span class="line">24     r,</span><br><span class="line">25     arr = [];</span><br><span class="line">26 for (x = 1; x &lt; 100; x++) &#123;</span><br><span class="line">27     arr.push(x);</span><br><span class="line">28 &#125;</span><br><span class="line">29 r = get_primes(arr);</span><br><span class="line">30 if (r.toString() === [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97].toString()) &#123;</span><br><span class="line">31     console.log(&apos;测试通过!&apos;);</span><br><span class="line">32 &#125; else &#123;</span><br><span class="line">33     console.log(&apos;测试失败: &apos; + r.toString());</span><br><span class="line">34 &#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">通过测试!</span><br><span class="line">--------------------</span><br></pre></td></tr></table></figure>
+        <h4 id="数组去重-这个知识点很重要-很多面试的地方都会问这个这个问题-我总结了一下"><a href="#数组去重-这个知识点很重要-很多面试的地方都会问这个这个问题-我总结了一下" class="headerlink" title="数组去重,这个知识点很重要,很多面试的地方都会问这个这个问题,我总结了一下"></a>数组去重,这个知识点很重要,很多面试的地方都会问这个这个问题,我总结了一下</h4><ol>
+<li>第一种方法 ,最基本的去重方法,</li>
+</ol>
+<ul>
+<li><p>思路: 定义一个新数组,并存放原数组中的第一个元素,然后将旧数组的元素一一与新数组的元素进行对比,如果不相同就放到新数组中</p>
+</li>
+<li><p>代码实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">        function unique(arr) &#123;</span><br><span class="line">            //定义一个新数组,新数组里面只有一个数,这个数是旧数组的第一个值</span><br><span class="line">            var res = [arr[0]];</span><br><span class="line">            // console.log(res);  // 这不放心可以打印一下</span><br><span class="line">            // </span><br><span class="line">            for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                var repeat = false;</span><br><span class="line">                for (var j = 0; j &lt; res.length; j++) &#123;</span><br><span class="line">                    if (arr[i] == res[j]) &#123;</span><br><span class="line">                        repeat = true;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                if (!repeat) &#123;</span><br><span class="line">                    res.push(arr[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">      console.log(unique(arr));   //(10) [1, 2, 5, 8, 9, 6, 3, 4, 0, 7]</span><br></pre></td></tr></table></figure>
+<p>每一步进行解释:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">           //定义一个新数组,新数组里面只有一个数,这个数是旧数组的第一个值</span><br><span class="line">           var res = [arr[0]];</span><br><span class="line">           // console.log(res);  // 这不放心可以打印一下</span><br><span class="line">           // 遍历旧数组</span><br><span class="line">           for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">               // 这里定义一个变量为false</span><br><span class="line">               var repeat = false;</span><br><span class="line">               // 接着遍历 新数组</span><br><span class="line">               for (var j = 0; j &lt; res.length; j++) &#123;</span><br><span class="line">                   // 这里进行判断,如果变量到的这个旧数组中的这个数和新数组的这个数相等,将开关定义为true  并破坏循环,下面的将不执行,也就是内层循环不执行</span><br><span class="line">                   if (arr[i] == res[j]) &#123;</span><br><span class="line">                       repeat = true;</span><br><span class="line">                       break;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">               // 上面的代码执行完之后如果 repeat 为true的话,说明相等,如果不想等的话,这个repeat就是false 取反就是 true ,将循环到的旧数组中的这个数推送到,新数组中,然后,在此循环</span><br><span class="line">               if (!repeat) &#123;</span><br><span class="line">                   res.push(arr[i]);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           return res;</span><br><span class="line">       &#125;</span><br><span class="line">       console.log(unique(arr));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>先排序在进行去重</li>
+</ol>
+<ul>
+<li>思路: 先将原数组进行排序,在与相邻的进行比较, 如果不同,就放到新数组中</li>
+<li>代码实现 : </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">    function unique(arr) &#123;</span><br><span class="line">        var arr2 = arr.sort();</span><br><span class="line">        var res = [arr2[0]];</span><br><span class="line">        for (var i = 1; i &lt; arr2.length; i++) &#123;</span><br><span class="line">            if (arr2[i] != res[res.length - 1]) &#123;</span><br><span class="line">                res.push(arr2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;;</span><br><span class="line">    console.log(unique(arr));</span><br></pre></td></tr></table></figure>
+<p>每一步进行解释: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">        function unique(arr) &#123;</span><br><span class="line">            // 将旧数组进行升序排序</span><br><span class="line">            var arr2 = arr.sort();</span><br><span class="line">   			//console.log(arr2); --&gt; [0, 0, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 7, 8, 9]</span><br><span class="line">            // 新数组中存放旧数组中的第一个值</span><br><span class="line">            var res = [arr2[0]];</span><br><span class="line">            // 变量旧数组,从第二个数进行开始,</span><br><span class="line">            for (var i = 1; i &lt; arr2.length; i++) &#123;</span><br><span class="line">                // 因为是进行排序过得数组,进行判断,如果旧数组中循环到的值不等于旧数组中的最后一个,就将这个数推送到新数组中</span><br><span class="line">                if (arr2[i] != res[res.length - 1]) &#123;</span><br><span class="line">                    res.push(arr2[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;;</span><br><span class="line">        console.log(unique(arr));  --&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>利用对象的属性进行去重 : </li>
+</ol>
+<ul>
+<li>思路:每次取出原数组中的元素,然后在对象中访问这个元素,,如果在说明重复</li>
+<li>代码实现 : </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">function unique(arr) &#123;</span><br><span class="line">            var res = [];</span><br><span class="line">            var obj = &#123;&#125;;</span><br><span class="line">            for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                if (!obj[arr[i]]) &#123;</span><br><span class="line">                    res.push(arr[i]);</span><br><span class="line">                    obj[arr[i]] = 1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(unique(arr));</span><br></pre></td></tr></table></figure>
+<p>每一步进行解释: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">function unique(arr) &#123;</span><br><span class="line">            var res = [];</span><br><span class="line">            var obj = &#123;&#125;;</span><br><span class="line">            for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            // 如果这个对象中有这个属性,取反就是false,里面代码不执行,如果没有,取反为true,执行里面的代码,将旧数组中的这个数,推送到新数组中,</span><br><span class="line">                if (!obj[arr[i]]) &#123;</span><br><span class="line">                    res.push(arr[i]);</span><br><span class="line">                    obj[arr[i]] = 1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(unique(arr));</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>利用下标进行查询 : </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    var newArr = [];</span><br><span class="line">    for(var i = 0 ;i &lt; arr.length ;i++)&#123;</span><br><span class="line">        if(newArr.indexof(arr[i]) == -1)&#123;</span><br><span class="line">            newArr.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return newArr;</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(arr));</span><br></pre></td></tr></table></figure>
+<p>进过实验,上面代码没有什么问题,如果有问题,请指出!!</p>
 
       
     </div>
@@ -338,13 +357,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
-        <p><span>发布时间:</span>2018-07-14, 16:52:24</p>
-        <p><span>最后更新:</span>2018-07-14, 16:59:05</p>
+        <p><span>发布时间:</span>2018-07-21, 12:58:18</p>
+        <p><span>最后更新:</span>2018-07-21, 13:50:19</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/07/14/js中filter的使用/" title="javascript中filter的用法">http://yoursite.com/2018/07/14/js中filter的使用/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/07/14/js中filter的使用/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/21/数组去重的几种方法/" title="数组去重的几种方法">http://yoursite.com/2018/07/21/数组去重的几种方法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/07/21/数组去重的几种方法/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -356,16 +375,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/07/17/jQuery版轮播图/">
-                    jQuery版轮播图
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/07/14/跨域请求/">
-                    跨域请求
+                <a href="/2018/07/18/session和cookie的区别/">
+                    JSP中session与cookie的区别
                 </a>
             </div>
         
@@ -377,7 +390,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript中filter的用法"><span class="toc-number">1.</span> <span class="toc-text">javascript中filter的用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#filter"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">filter</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回调函数"><span class="toc-number">1.0.1.</span> <span class="toc-text">回调函数</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组去重-这个知识点很重要-很多面试的地方都会问这个这个问题-我总结了一下"><span class="toc-number">1.</span> <span class="toc-text">数组去重,这个知识点很重要,很多面试的地方都会问这个这个问题,我总结了一下</span></a></li></ol>
         
     </div>
     <style>
@@ -413,7 +426,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"javascript中filter的用法　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"数组去重的几种方法　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -433,15 +446,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/07/17/jQuery版轮播图/" title="上一篇: jQuery版轮播图">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/07/14/跨域请求/" title="下一篇: 跨域请求">
+            <a href="/2018/07/18/session和cookie的区别/" title="下一篇: JSP中session与cookie的区别">
                 <i class="fa fa-angle-right"></i>
             </a>
         
