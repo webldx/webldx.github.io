@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html >
+
+        <head>
+            
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="author" content="李大玄" />
+
+                
+
+                                        <meta name="description" content="函数中的继承">
+<meta name="keywords" content="原型继承 借用构造函数 组合继承">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数中的继承">
+<meta property="og:url" content="http://yoursite.com/2018/08/01/函数中的继承/index.html">
+<meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="函数中的继承">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="e:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/01.png">
+<meta property="og:image" content="e:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/02.png">
+<meta property="og:image" content="e:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/03.png">
+<meta property="og:image" content="e:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/04.png">
+<meta property="og:image" content="e:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/05.png">
+<meta property="og:image" content="e:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/06.png">
+<meta property="og:updated_time" content="2018-08-01T09:15:27.896Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数中的继承">
+<meta name="twitter:description" content="函数中的继承">
+<meta name="twitter:image" content="e:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/01.png">
+
+                                            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+                                            
+                                                <link rel="alternate" href="/atom.xml" title="李大玄的博客" type="application/atom+xml">
+                                                
+
+                                                    
+                                                        <link rel="shortcut icon" href="/img/favicon.ICO">
+                                                        
+
+                                                            
+                                                                <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+                                                                
+
+                                                                    
+                                                                        <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+                                                                        
+
+                                                                            
+                                                                                <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+                                                                                <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+                                                                                
+
+                                                                                    <link rel="stylesheet" href="/css/style.css">
+
+                                                                                        
+
+                                                                                                <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+                                                                                                
+                                                                                                    <title>
+                                                                                                        
+                                                                                                            函数中的继承 |
+                                                                                                                
+                                                                                                                    李大玄的博客
+                                                                                                    </title>
+
+                                                                                                    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+                                                                                                    <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+                                                                                                    <script>
+                                                                                                        var yiliaConfig = {
+                                                                                                            fancybox: true,
+                                                                                                            animate: true,
+                                                                                                            isHome: false,
+                                                                                                            isPost: true,
+                                                                                                            isArchive: false,
+                                                                                                            isTag: false,
+                                                                                                            isCategory: false,
+                                                                                                            fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                                                                                                            scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                                                                                                            search: false
+                                                                                                        }
+                                                                                                    </script>
+
+                                                                                                    
+                                                                                                            <script>
+                                                                                                                yiliaConfig.jquery_ui = [false];
+                                                                                                            </script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                        <script>
+                                                                                                                            yiliaConfig.rootUrl = "\/";
+                                                                                                                        </script>
+                                                                                                                        
+
+                                                                                                                            
+
+                                                                                                                                    
+
+        </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">李大玄</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/get方法封装步骤/">$.get方法封装步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP中session与cookie的区别/">JSP中session与cookie的区别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NaN的定义与用法/">NaN的定义与用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript中filter的用法/">javascript中filter的用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础-、js介绍-、变量、-数据类型-、-分支结构/">js基础 、js介绍 、变量、 数据类型 、 分支结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown基本语法/">markdown基本语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公式/">公式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数的创建-函数本身-函数中的this指向-函数的其它成员/">函数的创建 函数本身 函数中的this指向 函数的其它成员</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分析轮播图每一步进行操作/">分析轮播图每一步进行操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区别-引用/">区别 引用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型继承-借用构造函数-组合继承/">原型继承 借用构造函数 组合继承</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建GitHub步骤/">搭建GitHub步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组去重的几种方法/">数组去重的几种方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据分析-进行样式/">根据分析,进行样式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板/">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域请求-服务器代理-cors-跨域资源共享-jsonp/">跨域请求 服务器代理  cors(跨域资源共享) jsonp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包-执行栈-执行队列/">闭包  执行栈 执行队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雪花飘落/">雪花飘落</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">李大玄</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">李大玄</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-函数中的继承" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/01/函数中的继承/" class="article-date">
+      <time datetime="2018-08-01T09:12:50.717Z" itemprop="datePublished">2018-08-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      函数中的继承
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型继承-借用构造函数-组合继承/">原型继承 借用构造函数 组合继承</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="一-继承【知道】"><a href="#一-继承【知道】" class="headerlink" title="一. 继承【知道】"></a>一. 继承【知道】</h2><h3 id="1-1-什么是继承"><a href="#1-1-什么是继承" class="headerlink" title="1.1 什么是继承"></a>1.1 什么是继承</h3><ul>
+<li>生活中的继承<br><strong>子承父业</strong> </li>
+<li>程序中的继承<br>​        <strong>子类型继承父类型的成员</strong> （把多个子类型的共同成员提取到父类型中）<ul>
+<li>学生</li>
+<li>老师</li>
+<li>人</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-对象的“继承”"><a href="#1-2-对象的“继承”" class="headerlink" title="1.2 对象的“继承”"></a>1.2 对象的“继承”</h3><ul>
+<li><p>概念：继承是类型和类型之间的关系，对象的“继承”本质是对象的拷贝，把一个对象的所有成员拷贝给另一个对象。</p>
+</li>
+<li><p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一个对象</span></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>:<span class="string">'张三'</span>, <span class="attr">age</span>:<span class="number">18</span>&#125;;</span><br><span class="line"><span class="comment">// 第二个对象</span></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">	name:<span class="string">'李四'</span>, </span><br><span class="line">	age:<span class="number">17</span>, </span><br><span class="line">	sex:<span class="string">'男'</span>, </span><br><span class="line">	sayHi:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'大家好,我叫'</span> + <span class="keyword">this</span>.name)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 把一个对象中的属性和方法，拷贝到另一个对象中</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span> (<span class="params">parent,child</span>) </span>&#123;</span><br><span class="line">    			<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> parent) &#123;</span><br><span class="line">	    			<span class="keyword">if</span> (child[key] === <span class="literal">undefined</span>) &#123;</span><br><span class="line">	    				child[key] = parent[key];</span><br><span class="line">	    			&#125;</span><br><span class="line">    			&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 拷贝之前的obj1</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1); <span class="comment">// &#123;name: "张三", age: 18&#125;</span></span><br><span class="line"><span class="comment">// 把obj2中的属性或方法拷贝到obj1中</span></span><br><span class="line">extend(obj2,obj1);</span><br><span class="line"><span class="comment">// 拷贝之后的obj1</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1); <span class="comment">// &#123;name: "张三", age: 18, sex: "男", sayHi: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+<p>​<br>​</p>
+</li>
+</ul>
+<h3 id="1-3-原型继承"><a href="#1-3-原型继承" class="headerlink" title="1.3 原型继承"></a>1.3 原型继承</h3><ul>
+<li><p>继承：类型和类型之间的关系</p>
+</li>
+<li><p>案例：学生类型、老师类型  继承 Person类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 人构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">'名字'</span>;</span><br><span class="line">	<span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">'大家好，我叫'</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 学生构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">stuId</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.stuId = stuId;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 老师构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span> (<span class="params">money</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.money = money;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过学生的原型让学生继承人</span></span><br><span class="line">Student.prototype = <span class="keyword">new</span> Person(); </span><br><span class="line">Student.prototype.constructor = Student;</span><br><span class="line"><span class="comment">// 通过老师的原型让老师继承人</span></span><br><span class="line">Teacher.prototype = <span class="keyword">new</span> Person();</span><br><span class="line">Teacher.prototype.constructor = Teacher;</span><br><span class="line"><span class="comment">// 创建学生对象</span></span><br><span class="line"><span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="number">10010</span>);</span><br><span class="line"><span class="built_in">console</span>.log(stu1);</span><br><span class="line"><span class="comment">// 创建老师对象</span></span><br><span class="line"><span class="keyword">var</span> t1 = <span class="keyword">new</span> Teacher(<span class="number">100</span>);</span><br><span class="line"><span class="built_in">console</span>.log(t1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图解<br><img src="E:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/01.png" alt=""> <img src="E:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/02.png" alt=""></p>
+</li>
+</ul>
+<blockquote>
+<p>注意：当设置了构造函数的prototype之后，别忘记设置constructor</p>
+<p>问题：原型继承，无法设置构造函数的参数<strong>Student.prototype = new Person();</strong>只执行一次，无法给属性传值，可以方便的继承父类型的原型中的方法，但是属性的继承无意义</p>
+</blockquote>
+<h3 id="1-4-借用构造函数"><a href="#1-4-借用构造函数" class="headerlink" title="1.4 借用构造函数"></a>1.4 借用构造函数</h3><ul>
+<li><p>call方法<br>​    使用call可以改变函数中的this，并且可以立即调用函数<br>​    和bind不同的是，bind会返回一个新函数，而<strong>call是直接调用</strong> 。</p>
+<ul>
+<li><p>语法：函数名或方法名.call(obj [,params]);</p>
+<ul>
+<li>obj：函数名或方法名对应的函数体中的this的指向。</li>
+<li>params, 函数名或方法名调用时需要传入的参数（一个或多个），可选。</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 规则：this 的指向是在代码执行时决定的。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params">age</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 直接调用函数</span></span><br><span class="line">fn(<span class="number">50</span>);  <span class="comment">// 当直接调用时，函数中的this执向window。 window.fn(50),window可以省略;</span></span><br><span class="line"><span class="comment">// 创建要给对象</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="comment">// 通过call让obj去借用window的fn,并立即执行</span></span><br><span class="line">fn.call(obj,<span class="number">100</span>); <span class="comment">// 函数中this指向obj</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>借用构造函数实现继承</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 人构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">'大家好，我叫'</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 学生构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name,age,stuId</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 借用Person</span></span><br><span class="line">	Person.call(<span class="keyword">this</span>,name,age);</span><br><span class="line">	<span class="keyword">this</span>.stuId = stuId;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 老师构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span> (<span class="params">name,age,money</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 借用Person</span></span><br><span class="line">	Person.call(<span class="keyword">this</span>,name,age);</span><br><span class="line">	<span class="keyword">this</span>.money = money;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建学生对象</span></span><br><span class="line"><span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'张三'</span>,<span class="number">17</span>,<span class="string">'10086'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(stu1);</span><br><span class="line"><span class="comment">// 创建老师对象</span></span><br><span class="line"><span class="keyword">var</span> t1 = <span class="keyword">new</span> Teacher(<span class="string">'孔子'</span>,<span class="number">18</span>,<span class="number">10000000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(t1);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>借用构造函数继承的问题：无法继承方法</p>
+</blockquote>
+<h3 id="1-5-组合继承"><a href="#1-5-组合继承" class="headerlink" title="1.5 组合继承"></a>1.5 组合继承</h3><ul>
+<li><p>什么是组合继承？<br>​    就是让原型继承 和 借用继承一起使用。</p>
+</li>
+<li><p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 人构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">'大家好，我叫'</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 学生构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name,age,stuId</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 借用Person</span></span><br><span class="line">	Person.call(<span class="keyword">this</span>,name,age);</span><br><span class="line">	<span class="keyword">this</span>.stuId = stuId;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 继承人原型中的方法</span></span><br><span class="line">Student.prototype = Person.prototype;</span><br><span class="line"><span class="comment">// 老师构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span> (<span class="params">name,age,money</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 借用Person</span></span><br><span class="line">	Person.call(<span class="keyword">this</span>,name,age);</span><br><span class="line">	<span class="keyword">this</span>.money = money;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 继承人原型中的方法</span></span><br><span class="line">Teacher.prototype = Person.prototype;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建学生对象</span></span><br><span class="line"><span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'张三'</span>,<span class="number">17</span>,<span class="string">'10086'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(stu1);</span><br><span class="line"><span class="comment">// 创建老师对象</span></span><br><span class="line"><span class="keyword">var</span> t1 = <span class="keyword">new</span> Teacher(<span class="string">'孔子'</span>,<span class="number">18</span>,<span class="number">10000000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(t1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新的问题</p>
+<ul>
+<li><p>问题：若给学生的原型上增加一个考试方法exam,老师类型也会出现exam方法。</p>
+</li>
+<li><p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Student.prototype.exam = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">'学生考试'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(stu1);</span><br><span class="line"><span class="built_in">console</span>.log(t1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图示结果：</p>
+<p><img src="E:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/03.png" alt=""> <img src="E:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/04.png" alt=""></p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><p>解决问题代码：</p>
+<ul>
+<li><p>原因：Student的引用 和 Teacher的引用 指向同一个对象。</p>
+</li>
+<li><p>解决方式：为两个类型单独拷贝</p>
+</li>
+<li><p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 把一个对象中的属性和方法，拷贝到另一个对象中</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span> (<span class="params">parent,child</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> parent) &#123;</span><br><span class="line">		<span class="keyword">if</span> (child[key] === <span class="literal">undefined</span>) &#123;</span><br><span class="line">			child[key] = parent[key];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 人构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">'大家好，我叫'</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 学生构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span> (<span class="params">name,age,stuId</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 借用Person</span></span><br><span class="line">	Person.call(<span class="keyword">this</span>,name,age);</span><br><span class="line">	<span class="keyword">this</span>.stuId = stuId;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 拷贝人原型中的方法</span></span><br><span class="line">extend(Person.prototype, Student.prototype);</span><br><span class="line"><span class="comment">// 老师构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span> (<span class="params">name,age,money</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 借用Person</span></span><br><span class="line">	Person.call(<span class="keyword">this</span>,name,age);</span><br><span class="line">	<span class="keyword">this</span>.money = money;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 拷贝人原型中的方法</span></span><br><span class="line">extend(Person.prototype, Teacher.prototype);</span><br><span class="line"><span class="comment">// 创建学生对象</span></span><br><span class="line"><span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'张三'</span>,<span class="number">17</span>,<span class="string">'10086'</span>);</span><br><span class="line"><span class="comment">// 创建老师对象</span></span><br><span class="line"><span class="keyword">var</span> t1 = <span class="keyword">new</span> Teacher(<span class="string">'孔子'</span>,<span class="number">18</span>,<span class="number">10000000</span>);</span><br><span class="line"><span class="comment">// 给学生原型单独加上一个方法</span></span><br><span class="line">Student.prototype.exam = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">'学生考试'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(stu1);</span><br><span class="line"><span class="built_in">console</span>.log(t1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图示结果：<br><img src="E:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/05.png" alt=""> <img src="E:/A%E9%BB%91%E9%A9%AC/%E6%9D%8E%E7%BB%A7%E7%8E%84%20%E5%B0%B1%E4%B8%9A%E7%8F%AD/4%20%20.JS%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7/%E8%AE%B2%E4%B9%89-JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%89%E5%A4%A9/media/06.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/01/函数中的继承/">函数中的继承</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-08-01, 17:12:50</p>
+        <p><span>最后更新:</span>2018-08-01, 17:15:27</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/01/函数中的继承/" title="函数中的继承">http://yoursite.com/2018/08/01/函数中的继承/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/01/函数中的继承/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/08/01/js中的函数进价/">
+                    js中的函数进价
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/01/markdown基本语法/">
+                    markdown基本语法
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-继承【知道】"><span class="toc-number">1.</span> <span class="toc-text">一. 继承【知道】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-什么是继承"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 什么是继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-对象的“继承”"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 对象的“继承”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-原型继承"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 原型继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-借用构造函数"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 借用构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-组合继承"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 组合继承</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"函数中的继承　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/08/01/js中的函数进价/" title="上一篇: js中的函数进价">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/01/markdown基本语法/" title="下一篇: markdown基本语法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 李大玄
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
