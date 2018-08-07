@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html >
+
+        <head>
+            
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="author" content="李大玄" />
+
+                
+
+                                        <meta name="description" content="封装移动端手势事件">
+<meta name="keywords" content="封装移动端手势事件 touchstart touchmove touchend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="封装移动端手势事件">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/封装移动端手势事件/index.html">
+<meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="封装移动端手势事件">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-06T12:22:12.519Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="封装移动端手势事件">
+<meta name="twitter:description" content="封装移动端手势事件">
+
+                                            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+                                            
+                                                <link rel="alternate" href="/atom.xml" title="李大玄的博客" type="application/atom+xml">
+                                                
+
+                                                    
+                                                        <link rel="shortcut icon" href="/img/favicon.ICO">
+                                                        
+
+                                                            
+                                                                <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+                                                                
+
+                                                                    
+                                                                        <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+                                                                        
+
+                                                                            
+                                                                                <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+                                                                                <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+                                                                                
+
+                                                                                    <link rel="stylesheet" href="/css/style.css">
+
+                                                                                        
+
+                                                                                                <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+                                                                                                
+                                                                                                    <title>
+                                                                                                        
+                                                                                                            封装移动端手势事件 |
+                                                                                                                
+                                                                                                                    李大玄的博客
+                                                                                                    </title>
+
+                                                                                                    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+                                                                                                    <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+                                                                                                    <script>
+                                                                                                        var yiliaConfig = {
+                                                                                                            fancybox: true,
+                                                                                                            animate: true,
+                                                                                                            isHome: false,
+                                                                                                            isPost: true,
+                                                                                                            isArchive: false,
+                                                                                                            isTag: false,
+                                                                                                            isCategory: false,
+                                                                                                            fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                                                                                                            scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                                                                                                            search: false
+                                                                                                        }
+                                                                                                    </script>
+
+                                                                                                    
+                                                                                                            <script>
+                                                                                                                yiliaConfig.jquery_ui = [false];
+                                                                                                            </script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                        <script>
+                                                                                                                            yiliaConfig.rootUrl = "\/";
+                                                                                                                        </script>
+                                                                                                                        
+
+                                                                                                                            
+
+                                                                                                                                    
+
+        </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">李大玄</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/get方法封装步骤/">$.get方法封装步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/3D切割轮播图-思路分析-代码实现/">3D切割轮播图 思路分析 代码实现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP中session与cookie的区别/">JSP中session与cookie的区别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NaN的定义与用法/">NaN的定义与用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css清除浮动-四种方式/">css清除浮动, 四种方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript中filter的用法/">javascript中filter的用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础-、js介绍-、变量、-数据类型-、-分支结构/">js基础 、js介绍 、变量、 数据类型 、 分支结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown基本语法/">markdown基本语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公式/">公式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数的创建-函数本身-函数中的this指向-函数的其它成员/">函数的创建 函数本身 函数中的this指向 函数的其它成员</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分析轮播图每一步进行操作/">分析轮播图每一步进行操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试题整理/">前端面试题整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区别-引用/">区别 引用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型继承-借用构造函数-组合继承/">原型继承 借用构造函数 组合继承</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/封装移动端手势事件-touchstart-touchmove-touchend/">封装移动端手势事件 touchstart touchmove touchend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建GitHub步骤/">搭建GitHub步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组去重的几种方法/">数组去重的几种方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据分析-进行样式/">根据分析,进行样式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据用户需求分析-思路-步骤/">根据用户需求分析 思路 步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板/">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域请求-服务器代理-cors-跨域资源共享-jsonp/">跨域请求 服务器代理  cors(跨域资源共享) jsonp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包-执行栈-执行队列/">闭包  执行栈 执行队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雪花飘落/">雪花飘落</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">李大玄</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">李大玄</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-封装移动端手势事件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/06/封装移动端手势事件/" class="article-date">
+      <time datetime="2018-08-06T10:32:25.215Z" itemprop="datePublished">2018-08-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      封装移动端手势事件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/封装移动端手势事件-touchstart-touchmove-touchend/">封装移动端手势事件 touchstart touchmove touchend</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="封装移动端手势事件"><a href="#封装移动端手势事件" class="headerlink" title="封装移动端手势事件"></a>封装移动端手势事件</h4><p>整体思路,以及代码实现,每一步进行分析,完善,通过移动端的三大事件进行封装,我会将思路写在代码中,这样方便理解!!</p>
+<p>开始: action!!!</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;大玄!!&lt;/title&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        function swipe(ele, options) &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 1.首先将元素绑定 触摸开始事件,并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventlistener('touchstart', function(e) &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 2.将元素绑定 触摸移动事件, 并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventistener('touchmove', function(e) &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 3.将元素绑定 触摸结束事件,并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventlistener('touchend', function() &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        var html = document.documentElement;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+<p>不要着急,先将整体思路理一下,通过三大事件进行模拟<strong>swipe事件</strong>,然后对每一步进行完善!!!</p>
+<hr>
+<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;大玄!!&lt;/title&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        function swipt(ele, options) &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 5.定义全局变量</span></span><br><span class="line"><span class="regexp">            var startX;</span></span><br><span class="line"><span class="regexp">            var startY;</span></span><br><span class="line"><span class="regexp">            var moveX;</span></span><br><span class="line"><span class="regexp">            var moveY;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 7.1</span></span><br><span class="line"><span class="regexp">            var isMove = false;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 1.首先将元素绑定 触摸开始事件,并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventlistener('touchstart', function(e) &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 4.在这里记录开始滑动的坐标,这里的变量需要外面进行访问, so 使用全局变量</span></span><br><span class="line"><span class="regexp">                startX = e.touches[0].pageX;</span></span><br><span class="line"><span class="regexp">                startY = e.touches[0].pageY;</span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 2.将元素绑定 触摸移动事件, 并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventistener('touchmove', function(e) &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 6.开始的坐标记录好了,开始记录移动过程中大的坐标,由于在移动过程中,后面的值会将上一次移动的值进行覆盖,所以拿到最后一次的值就OK了</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 接着定义全局变量</span></span><br><span class="line"><span class="regexp">                moveX = e.touches[0].pageX;</span></span><br><span class="line"><span class="regexp">                moveY = e.touches[0].pageY;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 7.2 如果用户划拉了,将开关重新赋值,</span></span><br><span class="line"><span class="regexp">                isMove = true;</span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 3.将元素绑定 触摸结束事件,并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventlistener('touchend', function() &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 7.怎样才能判断用户开启了触摸移动事件呢? 定义一个开关 相当于flag</span></span><br><span class="line"><span class="regexp">                if (isMove) &#123;</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 8 .开始的坐标有了,结束的坐标也有了,接下来咱们是不是该判断了,用户到底是水平方向划拉还是垂直向下划拉..</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 8.1 取绝对值</span></span><br><span class="line"><span class="regexp">                    var absX = Math.abs(moveX - startX);</span></span><br><span class="line"><span class="regexp">                    var absY = Math.abs(moveY - startY);</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 9.进行判断如果X轴大于Y轴,拿将是水平方向划拉,否则反之</span></span><br><span class="line"><span class="regexp">                    if (absX &gt; absY) &#123;</span></span><br><span class="line"><span class="regexp">                        console.log('水平方向滑动');</span></span><br><span class="line"><span class="regexp">                    &#125; else &#123;</span></span><br><span class="line"><span class="regexp">                        console.log('垂直方向滑动');</span></span><br><span class="line"><span class="regexp">                    &#125;</span></span><br><span class="line"><span class="regexp">                &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        var html = document.documentElement;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        swipe(html, &#123;</span></span><br><span class="line"><span class="regexp">            swipeLeft: function() &#123;</span></span><br><span class="line"><span class="regexp">                alert('向左滑动')</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            swipeRight: function() &#123;</span></span><br><span class="line"><span class="regexp">                alert('向右滑动')</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​    好了,大概这个样子就可以了,但是你还会发现一个问题,就是这些方法,是不是用户全部都得传入才可以啊,如果不传的话,就要报错了,所以这里面就会用到默认值,在函数里面咱们进行定义,如果没有传入的话,就使用默认值,要是穿入了的话,就使用用户传入的值.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;大玄!!&lt;/title&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        function swipt(ele, options) &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 5.定义全局变量</span></span><br><span class="line"><span class="regexp">            var startX;</span></span><br><span class="line"><span class="regexp">            var startY;</span></span><br><span class="line"><span class="regexp">            var moveX;</span></span><br><span class="line"><span class="regexp">            var moveY;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 7.1</span></span><br><span class="line"><span class="regexp">            var isMove = false;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 1.首先将元素绑定 触摸开始事件,并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventlistener('touchstart', function(e) &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 4.在这里记录开始滑动的坐标,这里的变量需要外面进行访问, so 使用全局变量</span></span><br><span class="line"><span class="regexp">                startX = e.touches[0].pageX;</span></span><br><span class="line"><span class="regexp">                startY = e.touches[0].pageY;</span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 2.将元素绑定 触摸移动事件, 并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventistener('touchmove', function(e) &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 6.开始的坐标记录好了,开始记录移动过程中大的坐标,由于在移动过程中,后面的值会将上一次移动的值进行覆盖,所以拿到最后一次的值就OK了</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 接着定义全局变量</span></span><br><span class="line"><span class="regexp">                moveX = e.touches[0].pageX;</span></span><br><span class="line"><span class="regexp">                moveY = e.touches[0].pageY;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 7.2 如果用户划拉了,将开关重新赋值,</span></span><br><span class="line"><span class="regexp">                isMove = true;</span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 3.将元素绑定 触摸结束事件,并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventlistener('touchend', function() &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 7.怎样才能判断用户开启了触摸移动事件呢? 定义一个开关 相当于flag</span></span><br><span class="line"><span class="regexp">                if (isMove) &#123;</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 8 .开始的坐标有了,结束的坐标也有了,接下来咱们是不是该判断了,用户到底是水平方向划拉还是垂直向下划拉..</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 8.1 取绝对值</span></span><br><span class="line"><span class="regexp">                    var absX = Math.abs(moveX - startX);</span></span><br><span class="line"><span class="regexp">                    var absY = Math.abs(moveY - startY);</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 9.进行判断如果X轴大于Y轴,拿将是水平方向划拉,否则反之</span></span><br><span class="line"><span class="regexp">                    if (absX &gt; absY) &#123;</span></span><br><span class="line"><span class="regexp">                        /</span><span class="regexp">/ console.log('水平方向滑动');</span></span><br><span class="line"><span class="regexp">                        /</span><span class="regexp">/ 10.由于一个周是两个方向,so 有正向与反向两种说法,接下来进一步进行判断</span></span><br><span class="line"><span class="regexp">                        /</span><span class="regexp">/ 如果移动的距离大于起始距离的话,那就是向右划拉,如果小于的话就是向左划拉</span></span><br><span class="line"><span class="regexp">                        if (moveX - startX &gt; 0) &#123;</span></span><br><span class="line"><span class="regexp">                            /</span><span class="regexp">/ console.log('这是向右滑动');</span></span><br><span class="line"><span class="regexp">                            options.swipeRight();</span></span><br><span class="line"><span class="regexp">                        &#125; else &#123;</span></span><br><span class="line"><span class="regexp">                            /</span><span class="regexp">/ console.log('这是向左滑动');</span></span><br><span class="line"><span class="regexp">                            options.swipeLeft();</span></span><br><span class="line"><span class="regexp">                        &#125;</span></span><br><span class="line"><span class="regexp">                    &#125; else &#123; /</span><span class="regexp">/  这里判断完了,咱们要的结果不是打印什么,而是要执行什么方法,所以采用对象的方式进行传值</span></span><br><span class="line"><span class="regexp">                        /</span><span class="regexp">/ console.log('垂直方向滑动');</span></span><br><span class="line"><span class="regexp">                        if (moveY - startY &gt; 0) &#123;</span></span><br><span class="line"><span class="regexp">                            /</span><span class="regexp">/ console.log('这是向下滑动');</span></span><br><span class="line"><span class="regexp">                            options.swipeDown();</span></span><br><span class="line"><span class="regexp">                        &#125; else &#123;</span></span><br><span class="line"><span class="regexp">                            /</span><span class="regexp">/ console.log('这是向上滑动');</span></span><br><span class="line"><span class="regexp">                            options.swipeUp();</span></span><br><span class="line"><span class="regexp">                        &#125;</span></span><br><span class="line"><span class="regexp">                    &#125;</span></span><br><span class="line"><span class="regexp">                &#125;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 在结束的时候,不管触发没有,都要将开关重新赋值回去</span></span><br><span class="line"><span class="regexp"> 				isMove = false;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        var html = document.documentElement;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        swipe(html, &#123;</span></span><br><span class="line"><span class="regexp">            swipeLeft: function() &#123;</span></span><br><span class="line"><span class="regexp">                alert('向左滑动')</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            swipeRight: function() &#123;</span></span><br><span class="line"><span class="regexp">                alert('向右滑动')</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            swipeUp: function() &#123;</span></span><br><span class="line"><span class="regexp">                alert('向上滑动');</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            swipeDown: function() &#123;</span></span><br><span class="line"><span class="regexp">                &#123;</span></span><br><span class="line"><span class="regexp">                    alert('向下滑动');</span></span><br><span class="line"><span class="regexp">                &#125;</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="将函数进行优化-封装的更好一丢丢"><a href="#将函数进行优化-封装的更好一丢丢" class="headerlink" title="将函数进行优化,封装的更好一丢丢"></a>将函数进行优化,封装的更好一丢丢</h4><p>​    下面的代码将是优化完成之后的样子,虽然不能实现什么大的功能,但是基本的移动端的滑动事件可以实现了!!</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;大玄!!&lt;/title&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        function swipe(ele, options) &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 5.定义全局变量</span></span><br><span class="line"><span class="regexp">            var startX;</span></span><br><span class="line"><span class="regexp">            var startY;</span></span><br><span class="line"><span class="regexp">            var moveX;</span></span><br><span class="line"><span class="regexp">            var moveY;</span></span><br><span class="line"><span class="regexp">            var disX;</span></span><br><span class="line"><span class="regexp">            var disY;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 7.1</span></span><br><span class="line"><span class="regexp">            var isMove = false;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 12.设置默认值</span></span><br><span class="line"><span class="regexp">            var defaults = &#123;</span></span><br><span class="line"><span class="regexp">                swipeRight: function() &#123;&#125;,</span></span><br><span class="line"><span class="regexp">                swipeLeft: function() &#123;&#125;,</span></span><br><span class="line"><span class="regexp">                swipeDown: function() &#123;&#125;,</span></span><br><span class="line"><span class="regexp">                swipeUp: function() &#123;&#125;,</span></span><br><span class="line"><span class="regexp">                drag: function() &#123;&#125;</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 13.不传的话,就要报错了,所以这里面就会用到默认值,在函数里面咱们进行定义,如果没有传入的话,就使用默认值,要是穿入了的话,就使用用户传入的值.</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ for (var k in defaults) &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/     defaults[k] = options[k];</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 上面是一种方法,这里介绍另一种方法对象覆盖的方法</span></span><br><span class="line"><span class="regexp">            Object.assign(defaults, options);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 1.首先将元素绑定 触摸开始事件,并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventListener('touchstart', function(e) &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 4.在这里记录开始滑动的坐标,这里的变量需要外面进行访问, so 使用全局变量</span></span><br><span class="line"><span class="regexp">                startX = e.touches[0].pageX;</span></span><br><span class="line"><span class="regexp">                startY = e.touches[0].pageY;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">                disX = startX - ele.offsetLeft;</span></span><br><span class="line"><span class="regexp">                disY = startY - ele.offsetTop;</span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 2.将元素绑定 触摸移动事件, 并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventListener('touchmove', function(e) &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 6.开始的坐标记录好了,开始记录移动过程中大的坐标,由于在移动过程中,后面的值会将上一次移动的值进行覆盖,所以拿到最后一次的值就OK了</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 接着定义全局变量</span></span><br><span class="line"><span class="regexp">                moveX = e.touches[0].pageX;</span></span><br><span class="line"><span class="regexp">                moveY = e.touches[0].pageY;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 7.2 如果用户划拉了,将开关重新赋值,</span></span><br><span class="line"><span class="regexp">                isMove = true;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">                e.info = &#123;</span></span><br><span class="line"><span class="regexp">                    startX: startX,</span></span><br><span class="line"><span class="regexp">                    startY: startY,</span></span><br><span class="line"><span class="regexp">                    disX: disX,</span></span><br><span class="line"><span class="regexp">                    disY: disY</span></span><br><span class="line"><span class="regexp">                &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 13.将在touchmove事件发生的时候要做的事情写在函数外面 =&gt; drag</span></span><br><span class="line"><span class="regexp">                defaults.drag.call(ele, e);</span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 3.将元素绑定 触摸结束事件,并将事件对象传入</span></span><br><span class="line"><span class="regexp">            ele.addEventListener('touchend', function() &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 7.怎样才能判断用户开启了触摸移动事件呢? 定义一个开关 相当于flag</span></span><br><span class="line"><span class="regexp">                if (isMove) &#123;</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 8 .开始的坐标有了,结束的坐标也有了,接下来咱们是不是该判断了,用户到底是水平方向划拉还是垂直向下划拉..</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 8.1 取绝对值</span></span><br><span class="line"><span class="regexp">                    var absX = Math.abs(moveX - startX);</span></span><br><span class="line"><span class="regexp">                    var absY = Math.abs(moveY - startY);</span></span><br><span class="line"><span class="regexp">                    /</span><span class="regexp">/ 9.进行判断如果X轴大于Y轴,拿将是水平方向划拉,否则反之</span></span><br><span class="line"><span class="regexp">                    if (absX &gt; absY) &#123;</span></span><br><span class="line"><span class="regexp">                        /</span><span class="regexp">/ console.log('水平方向滑动');</span></span><br><span class="line"><span class="regexp">                        /</span><span class="regexp">/ 10.由于一个周是两个方向,so 有正向与反向两种说法,接下来进一步进行判断</span></span><br><span class="line"><span class="regexp">                        /</span><span class="regexp">/ 如果移动的距离大于起始距离的话,那就是向右划拉,如果小于的话就是向左划拉</span></span><br><span class="line"><span class="regexp">                        if (moveX - startX &gt; 0) &#123;</span></span><br><span class="line"><span class="regexp">                            /</span><span class="regexp">/ console.log('这是向右滑动');</span></span><br><span class="line"><span class="regexp">                            options.swipeRight();</span></span><br><span class="line"><span class="regexp">                        &#125; else &#123;</span></span><br><span class="line"><span class="regexp">                            /</span><span class="regexp">/ console.log('这是向左滑动');</span></span><br><span class="line"><span class="regexp">                            options.swipeLeft();</span></span><br><span class="line"><span class="regexp">                        &#125;</span></span><br><span class="line"><span class="regexp">                    &#125; else &#123; /</span><span class="regexp">/  这里判断完了,咱们要的结果不是打印什么,而是要执行什么方法,所以采用对象的方式进行传值</span></span><br><span class="line"><span class="regexp">                        /</span><span class="regexp">/ console.log('垂直方向滑动');</span></span><br><span class="line"><span class="regexp">                        if (moveY - startY &gt; 0) &#123;</span></span><br><span class="line"><span class="regexp">                            /</span><span class="regexp">/ console.log('这是向下滑动');</span></span><br><span class="line"><span class="regexp">                            options.swipeDown();</span></span><br><span class="line"><span class="regexp">                        &#125; else &#123;</span></span><br><span class="line"><span class="regexp">                            /</span><span class="regexp">/ console.log('这是向上滑动');</span></span><br><span class="line"><span class="regexp">                            options.swipeUp();</span></span><br><span class="line"><span class="regexp">                        &#125;</span></span><br><span class="line"><span class="regexp">                    &#125;</span></span><br><span class="line"><span class="regexp">                &#125;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 11.在结束的时候,不管触发没有,都要将开关重新赋值回去</span></span><br><span class="line"><span class="regexp">                isMove = false;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        var html = document.documentElement;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        swipe(html, &#123;</span></span><br><span class="line"><span class="regexp">            swipeLeft: function() &#123;</span></span><br><span class="line"><span class="regexp">                console.log('向左滑动')</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            swipeRight: function() &#123;</span></span><br><span class="line"><span class="regexp">                console.log('向右滑动')</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            swipeUp: function() &#123;</span></span><br><span class="line"><span class="regexp">                console.log('向上滑动');</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            swipeDown: function() &#123;</span></span><br><span class="line"><span class="regexp">                console.log('向下滑动');</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            drag: function(e) &#123;</span></span><br><span class="line"><span class="regexp">                console.log('拖拽事件');</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 在拖拽的时候需要获取到移动过程中的 pageX与pageY,由于在外面是获取不到函数内部的属性,所以在函数内部进行对象输出</span></span><br><span class="line"><span class="regexp">                console.log('开始的X距离是' + e.info.startX);</span></span><br><span class="line"><span class="regexp">                console.log('开始的Y距离是' + e.info.startY);</span></span><br><span class="line"><span class="regexp">                console.log('盒子内部的X距离是' + e.info.disX);</span></span><br><span class="line"><span class="regexp">                console.log('盒子内部的Y距离是' + e.info.disY);</span></span><br><span class="line"><span class="regexp">                a = e.touches[0].pageX - e.info.disX + 'px';</span></span><br><span class="line"><span class="regexp">                b = e.touches[0].pageY - e.info.disY + 'px';</span></span><br><span class="line"><span class="regexp">                console.log(a);</span></span><br><span class="line"><span class="regexp">                console.log(b);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-08-06, 18:32:25</p>
+        <p><span>最后更新:</span>2018-08-06, 20:22:12</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/06/封装移动端手势事件/" title="封装移动端手势事件">http://yoursite.com/2018/08/06/封装移动端手势事件/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/06/封装移动端手势事件/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/06/前端面试题整理/">
+                    前端面试题整理
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#封装移动端手势事件"><span class="toc-number">1.</span> <span class="toc-text">封装移动端手势事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二步"><span class="toc-number">2.</span> <span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将函数进行优化-封装的更好一丢丢"><span class="toc-number">3.</span> <span class="toc-text">将函数进行优化,封装的更好一丢丢</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"封装移动端手势事件　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/06/前端面试题整理/" title="下一篇: 前端面试题整理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/前端面试题整理/">前端面试题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/css中清除浮动/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/3D切割轮播图/">模板3D切割轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 李大玄
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
