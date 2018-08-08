@@ -16,18 +16,21 @@
 
                 
 
-                                        <meta name="description" content="数组去重的几种方法">
-<meta name="keywords" content="数组去重的几种方法">
+                                        <meta name="description" content="对于页面适配，你应该使用px还是rem">
+<meta name="keywords" content="对于页面适配，你应该使用px还是rem em rem px">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组去重的几种方法">
-<meta property="og:url" content="http://yoursite.com/2018/07/21/数组去重的几种方法/index.html">
+<meta property="og:title" content="对于页面适配，你应该使用px还是rem">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/对于页面适配，你应该使用px还是rem/index.html">
 <meta property="og:site_name" content="李大玄的博客">
-<meta property="og:description" content="数组去重的几种方法">
+<meta property="og:description" content="对于页面适配，你应该使用px还是rem">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-21T05:50:19.361Z">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/btsCOHx9LAOTOsKGBsw17ia7YdVMQTqDlicsU7OaGsZG5orCKiaZWwjoyXeckwv4zJLbjGomSq6v7LVQOrJtrqGyA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/btsCOHx9LAOTOsKGBsw17ia7YdVMQTqDlWHH5cshFKibx2aP4WoEibqI3xmSiaw0gQocJjG323ZSfV7vVEbqkiaBOFg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:updated_time" content="2018-08-08T04:51:22.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数组去重的几种方法">
-<meta name="twitter:description" content="数组去重的几种方法">
+<meta name="twitter:title" content="对于页面适配，你应该使用px还是rem">
+<meta name="twitter:description" content="对于页面适配，你应该使用px还是rem">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/btsCOHx9LAOTOsKGBsw17ia7YdVMQTqDlicsU7OaGsZG5orCKiaZWwjoyXeckwv4zJLbjGomSq6v7LVQOrJtrqGyA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +64,7 @@
                                                                                                 
                                                                                                     <title>
                                                                                                         
-                                                                                                            数组去重的几种方法 |
+                                                                                                            对于页面适配，你应该使用px还是rem |
                                                                                                                 
                                                                                                                     李大玄的博客
                                                                                                     </title>
@@ -272,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-数组去重的几种方法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-对于页面适配，你应该使用px还是rem" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/07/21/数组去重的几种方法/" class="article-date">
-      <time datetime="2018-07-21T04:58:18.479Z" itemprop="datePublished">2018-07-21</time>
+      <a href="/2018/08/08/对于页面适配，你应该使用px还是rem/" class="article-date">
+      <time datetime="2018-08-08T04:49:43.589Z" itemprop="datePublished">2018-08-08</time>
 </a>
 
 
@@ -291,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数组去重的几种方法
+      对于页面适配，你应该使用px还是rem
     </h1>
   
 
@@ -302,7 +305,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组去重的几种方法/">数组去重的几种方法</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/对于页面适配，你应该使用px还是rem-em-rem-px/">对于页面适配，你应该使用px还是rem em rem px</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -312,43 +315,113 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="数组去重-这个知识点很重要-很多面试的地方都会问这个这个问题-我总结了一下"><a href="#数组去重-这个知识点很重要-很多面试的地方都会问这个这个问题-我总结了一下" class="headerlink" title="数组去重,这个知识点很重要,很多面试的地方都会问这个这个问题,我总结了一下"></a>数组去重,这个知识点很重要,很多面试的地方都会问这个这个问题,我总结了一下</h4><ol>
-<li>第一种方法 ,最基本的去重方法,</li>
-</ol>
-<ul>
-<li><p>思路: 定义一个新数组,并存放原数组中的第一个元素,然后将旧数组的元素一一与新数组的元素进行对比,如果不相同就放到新数组中</p>
-</li>
-<li><p>代码实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">        function unique(arr) &#123;</span><br><span class="line">            //定义一个新数组,新数组里面只有一个数,这个数是旧数组的第一个值</span><br><span class="line">            var res = [arr[0]];</span><br><span class="line">            // console.log(res);  // 这不放心可以打印一下</span><br><span class="line">            // </span><br><span class="line">            for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                var repeat = false;</span><br><span class="line">                for (var j = 0; j &lt; res.length; j++) &#123;</span><br><span class="line">                    if (arr[i] == res[j]) &#123;</span><br><span class="line">                        repeat = true;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                if (!repeat) &#123;</span><br><span class="line">                    res.push(arr[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">      console.log(unique(arr));   //(10) [1, 2, 5, 8, 9, 6, 3, 4, 0, 7]</span><br></pre></td></tr></table></figure>
-<p>每一步进行解释:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">           //定义一个新数组,新数组里面只有一个数,这个数是旧数组的第一个值</span><br><span class="line">           var res = [arr[0]];</span><br><span class="line">           // console.log(res);  // 这不放心可以打印一下</span><br><span class="line">           // 遍历旧数组</span><br><span class="line">           for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">               // 这里定义一个变量为false</span><br><span class="line">               var repeat = false;</span><br><span class="line">               // 接着遍历 新数组</span><br><span class="line">               for (var j = 0; j &lt; res.length; j++) &#123;</span><br><span class="line">                   // 这里进行判断,如果变量到的这个旧数组中的这个数和新数组的这个数相等,将开关定义为true  并破坏循环,下面的将不执行,也就是内层循环不执行</span><br><span class="line">                   if (arr[i] == res[j]) &#123;</span><br><span class="line">                       repeat = true;</span><br><span class="line">                       break;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">               // 上面的代码执行完之后如果 repeat 为true的话,说明相等,如果不想等的话,这个repeat就是false 取反就是 true ,将循环到的旧数组中的这个数推送到,新数组中,然后,在此循环</span><br><span class="line">               if (!repeat) &#123;</span><br><span class="line">                   res.push(arr[i]);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           return res;</span><br><span class="line">       &#125;</span><br><span class="line">       console.log(unique(arr));</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="2">
-<li>先排序在进行去重</li>
-</ol>
-<ul>
-<li>思路: 先将原数组进行排序,在与相邻的进行比较, 如果不同,就放到新数组中</li>
-<li>代码实现 : </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">    function unique(arr) &#123;</span><br><span class="line">        var arr2 = arr.sort();</span><br><span class="line">        var res = [arr2[0]];</span><br><span class="line">        for (var i = 1; i &lt; arr2.length; i++) &#123;</span><br><span class="line">            if (arr2[i] != res[res.length - 1]) &#123;</span><br><span class="line">                res.push(arr2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;;</span><br><span class="line">    console.log(unique(arr));</span><br></pre></td></tr></table></figure>
-<p>每一步进行解释: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">        function unique(arr) &#123;</span><br><span class="line">            // 将旧数组进行升序排序</span><br><span class="line">            var arr2 = arr.sort();</span><br><span class="line">   			//console.log(arr2); --&gt; [0, 0, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 7, 8, 9]</span><br><span class="line">            // 新数组中存放旧数组中的第一个值</span><br><span class="line">            var res = [arr2[0]];</span><br><span class="line">            // 变量旧数组,从第二个数进行开始,</span><br><span class="line">            for (var i = 1; i &lt; arr2.length; i++) &#123;</span><br><span class="line">                // 因为是进行排序过得数组,进行判断,如果旧数组中循环到的值不等于旧数组中的最后一个,就将这个数推送到新数组中</span><br><span class="line">                if (arr2[i] != res[res.length - 1]) &#123;</span><br><span class="line">                    res.push(arr2[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;;</span><br><span class="line">        console.log(unique(arr));  --&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>利用对象的属性进行去重 : </li>
-</ol>
-<ul>
-<li>思路:每次取出原数组中的元素,然后在对象中访问这个元素,,如果在说明重复</li>
-<li>代码实现 : </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">function unique(arr) &#123;</span><br><span class="line">            var res = [];</span><br><span class="line">            var obj = &#123;&#125;;</span><br><span class="line">            for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                if (!obj[arr[i]]) &#123;</span><br><span class="line">                    res.push(arr[i]);</span><br><span class="line">                    obj[arr[i]] = 1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(unique(arr));</span><br></pre></td></tr></table></figure>
-<p>每一步进行解释: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 5, 8, 9, 6, 3, 4, 0, 4, 7, 5, 2, 0, 3];</span><br><span class="line"></span><br><span class="line">function unique(arr) &#123;</span><br><span class="line">            var res = [];</span><br><span class="line">            var obj = &#123;&#125;;</span><br><span class="line">            for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            // 如果这个对象中有这个属性,取反就是false,里面代码不执行,如果没有,取反为true,执行里面的代码,将旧数组中的这个数,推送到新数组中,</span><br><span class="line">                if (!obj[arr[i]]) &#123;</span><br><span class="line">                    res.push(arr[i]);</span><br><span class="line">                    obj[arr[i]] = 1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(unique(arr));</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>利用下标进行查询 : </li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    var newArr = [];</span><br><span class="line">    for(var i = 0 ;i &lt; arr.length ;i++)&#123;</span><br><span class="line">        if(newArr.indexof(arr[i]) == -1)&#123;</span><br><span class="line">            newArr.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return newArr;</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(arr));</span><br></pre></td></tr></table></figure>
-<p>进过实验,上面代码没有什么问题,如果有问题,请指出!!</p>
+        <h3 id="对于页面适配，你应该使用px还是rem"><a href="#对于页面适配，你应该使用px还是rem" class="headerlink" title="对于页面适配，你应该使用px还是rem"></a>对于页面适配，你应该使用px还是rem</h3><p>css中的单位很多，%、px、em、rem，以及比较新的vw、vh等。每个单位都有特定的用途，比如当需要设置一个矩形的宽高比为16:9，并且随屏幕宽度自适应时，除了用%，其他单位是很难做到的。所以不存在说某个单位是错误的，某个单位是最好的这种说法。</p>
+<p>那本文说的页面适配，指的是同样的布局，在不同大小的屏幕上怎么进行缩放、控制间距、宽高、字号等大小。</p>
+<p>页面适配的方式有很多：</p>
+<blockquote>
+<p>使用px，结合Media Query进行阶梯式的适配；</p>
+<p>使用%，按百分比自适应布局；</p>
+<p>使用rem，结合html元素的font-size来根据屏幕宽度适配；</p>
+<p>使用vw、vh，直接根据视口宽高适配。</p>
+</blockquote>
+<p>在这些大前提下，还需针对一些小的细节做微调。比如使用px的时候，可能在小屏幕中，要对某个容器进行transform: scale(.8)，适当缩小处理。使用rem的时候，需要固定页面的左右间距为10px等。</p>
+<p>所以对我来说，尽管网上曾对px、rem和em等单位的优缺点争论过很多，但我的观点可能是，具体情况具体分析。有同学可能要炸了，你这跟没说有啥区别？</p>
+<p>对，我的意思跟开篇一样，单论某个单位的好坏是没意义的。我们最关注的是：什么场景中，使用什么单位最合适。</p>
+<p>也不卖关子了，我就直接列一些自己觉得比较好的实践方式，这些都是根据自己多年的开发经验和大量的调研得到的结论：</p>
+<blockquote>
+<p>1、在视觉稿要求固定尺寸的元素上使用px。比如1px线，4px的圆角边框。</p>
+<p>2、在字号、（大多数）间距上使用rem。</p>
+<p>3、慎用em。</p>
+</blockquote>
+<p>为什么我标题没提到%、vw、vh这几个呢？这几个都是按比例适配，只不过参考对象不一样。</p>
+<p>%是参考父容器，vw和vh是参考视口。他们的使用场景是非常固定的，比如上文提到的16:9的容器，除了用%，还有更合适的方式吗？另外，1vw = 1%的视口宽度。所以就真正需要按视口大小适配的时候再用这个单位吧，使用场景相对固定。</p>
+<p>接下来我会详细介绍一下这3个结论的由来。</p>
+<h2 id="为什么慎用em？"><a href="#为什么慎用em？" class="headerlink" title="为什么慎用em？"></a><strong>为什么慎用em？</strong></h2><p><strong>em会叠加计算。</strong>在这个机制下太容易犯错了，因为你不知道这段css指定的字号具体是多少。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; // HTML&lt;span&gt;    abc    &lt;span&gt;def&lt;/span&gt;    abc&lt;/span&gt;// CSSspan &#123;font-size: 1.5em;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>实际的效果是这样的：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/btsCOHx9LAOTOsKGBsw17ia7YdVMQTqDlicsU7OaGsZG5orCKiaZWwjoyXeckwv4zJLbjGomSq6v7LVQOrJtrqGyA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="em-compound"></p>
+<p>先要搞清楚em的计算原理，它是根据<strong>当前元素的字号</strong>按比例计算的。</p>
+<p>外层span的字号是16px（浏览器默认值），所以1.5em之后是24px。由于字号是继承的，导致内层span的字号继承过来是24px，再经过1.5em之后就成了36px。</p>
+<p>所以，就算要用em的话，尽量不要用在继承属性（font-size）上，除非你真的清楚你在做什么！</p>
+<p>比如你想根据字号自动调整字符间距，可以这么做：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; .content &#123;    font-size: 1rem;    letter-spacing: .03em;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>但再仔细想一下，letter-spacing由.content的字号决定，而它又由html的字号决定。那为什么letter-spacing不直接用rem呢？</p>
+<h2 id="rem-vs-px"><a href="#rem-vs-px" class="headerlink" title="rem vs. px"></a><strong>rem vs. px</strong></h2><p>px是我比较喜欢的一个单位，简单又直接。但理性驱使，还是要合理考虑使用场景。</p>
+<p>px的性质决定了它只能用于固定尺寸。也就是说，如果视觉设计师规定，这个边框宽度必须是2px。那这种情况下就不需要讨论了。</p>
+<p>除了固定尺寸用px，其他大部分情况都可以使用rem。</p>
+<p>现在考虑一个实际的开发场景，一般来说都是先有视觉稿才能开发。两种情况：一、假设视觉稿按iPhone 6和iPhone 6+，及其他尺寸各出了一份，那你就按照Media Query去适配。二、设计师只给你一种机型的视觉稿，以iPhone 6为例，750x1334，2倍屏下转换后是375x667。</p>
+<p>第一种情况也不讨论了，通过Media Query断点适配后，其实你处理的还是第二种情况。</p>
+<p>那第二种的意思是，你要根据宽度为375px的稿子，扩展到适配任意<strong>宽度</strong>的屏幕。（页面高度跟业务有关，不用关心，宽度肯定是固定的）</p>
+<p>接下来拿到视觉稿如下：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/btsCOHx9LAOTOsKGBsw17ia7YdVMQTqDlWHH5cshFKibx2aP4WoEibqI3xmSiaw0gQocJjG323ZSfV7vVEbqkiaBOFg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="视觉稿"></p>
+<p>测量后主要参数如下：</p>
+<blockquote>
+<p>1、页面间距10px</p>
+<p>2、文字间距10px，字号16px</p>
+<p>3、A高度100px</p>
+<p>4、B高度50px，上间距30px</p>
+</blockquote>
+<p>很快就能写出HTML结构和CSS。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;div class=&quot;box box-1&quot;&gt;A. 第一段内容&lt;/div&gt;&lt;div class=&quot;box box-2&quot;&gt;B. 第二段内容&lt;/div&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; body &#123;    padding: 10px;    background: #f6f0ee;&#125;.box &#123;    padding: 10px;    font-size: 16px;    color: #fff;    box-sizing: border-box;&#125;.box-1 &#123;    height: 100px;    background: #1daedc;&#125;.box-2 &#123;    margin-top: 30px;    height: 50px;    background: #ddbe97;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>完美符合要求。</p>
+<p>然后视觉开始提要求了，大屏上要把字体放大、间距放大。</p>
+<p>这时候的一个选择是，问设计师是要适配哪种屏幕，字号是多少，间距是多少。技术上再通过Media Query微调。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; @media(min-width: 414px) &#123;    // 这里不写了，按视觉要求量化即可&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>另一个选择可以反过来做。首先按rem作为字号、容器高度、外间距的单位。那么代码可以改为：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; html &#123;    font-size: 16px;&#125;.box &#123;    font-size: 1rem;&#125;.box-1 &#123;    height: 6.25rem;&#125;.box-2 &#123;    margin-top: 1.875rem;    height: 3.125rem;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>其他的样式规则不变，目前的结果和之前的是等价的。如果再加一点魔法，通过Media Query改变iPhone 6+的html字号，其他元素的属性就会自动变化。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; @media(min-width: 414px) &#123;    html &#123;        font-size: 17.664px;    &#125;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>17.664 = 414 * 16 / 375。</p>
+<p>由此可以得到html的font-size计算公式为：fontSize = deviceWidth * 16 / 375;</p>
+<p>前提是你的html有这条meta属性：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;meta name=&quot;viewport&quot; </span><br><span class="line">&gt; content=&quot;width=device-width,</span><br><span class="line">&gt;  initial-scale=1.0, maximum-scale=1.0,</span><br><span class="line">&gt;   user-scalable=0,user-scalable=no&quot;&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>至于为何是16px，这个后面再介绍。所以rem有个明显的优点，它可以<strong>通过少量代码解决大部分问题</strong>。</p>
+<p>如果还存在某些细节不够满意，那再用Media Query微调。这种主观的“好看”、“不好看”，可能注定没法自动化解决吧。</p>
+<p><strong>关于rem兼容性</strong>。桌面端的话仅在IE9+支持。vw和vh一样。所以如果要考虑IE8的兼容性，那没别的选择只能用px吧。至于移动端，支持情况不错，可以在生产环境使用。</p>
+<h2 id="html的font-size该如何设置"><a href="#html的font-size该如何设置" class="headerlink" title="html的font-size该如何设置"></a><strong>html的font-size该如何设置</strong></h2><p>由于（大部分）浏览器的默认字号为16px，所以一般来说把html的font-size归一化为16px是比较合适的实践方式。同时可以参考这篇文章。</p>
+<p>为了大家以后参考方便，我列了一些常用的Media Query断点（以iPhone 6为基准）。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; @media only screen and (min-width: 320px) &#123;    html &#123;        font-size: 13.65px;    &#125;&#125;@media only screen and (min-width: 360px) &#123;    html &#123;        font-size: 15.36px;    &#125;&#125;@media only screen and (min-width: 375px) &#123;    html &#123;        font-size: 16px;    &#125;&#125;@media only screen and (min-width: 390px) &#123;    html &#123;        font-size: 16.64px;    &#125;&#125;@media only screen and (min-width: 414px) &#123;    html &#123;        font-size: 17.664px;    &#125;&#125;@media screen and (min-width: 640px) &#123;    html &#123;        font-size: 27.31px;    &#125;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>大家可能还会看到一些文章中建议把html字号设成62.5%。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; html &#123;    font-size: 62.5%;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>因为刚提到浏览器默认的字号为16px，因此换算成百分比就是62.5% = 1 / 16。</p>
+<p>那为什么要用百分比呢？因为考虑到辅助功能和浏览器设置。对于部分用户，可能会在手机或浏览器的设置中增大手机字号，这意味着对方平时看字是很费力的，所以他才要放大。那把html的字号设置成百分比就很贴心了，会随着手机设置改变页面的字号。</p>
+<p>在手机上设置默认字号是很常见的现象，所以如果是一个充满人道主义的排版，我觉得用百分比是非常高尚的。它不仅从视觉角度去考虑美，更加做到了“用户至上”这四个字。</p>
+<p>好，回到现实环境。只有国外那些对Accessibility要求比较高的国家，才会真正去落实这些。但国内的话，老实说，更注重外观的美。从来没有哪家互联网公司的页面会去兼容Screen Reader，也很少做Keyboard Shortcut。</p>
+<p>扯远了，就算你看到用62.5%的情况，有些间距也是不合理的，都做的不太好，特别是把文案做到图片上的，对字号根本不敏感。如果出发点不是为了用户的视觉接受能力，那就别用62.5%；如果想做，就把缩放考虑到位了，别做半吊子。</p>
+<p>另外，针对本小节开头用16px的情况，这里再给大家提供一招（我调研了一下目前没人这么用，也是灵光一现才想到的）。</p>
+<p>用Media Query的缺点是什么？它是分段函数，对于宽度在[320, 360)区间内的屏幕，会适用同一套方案。最完美的应该是线性函数，怎么做？很简单，用vw即可。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; html &#123;    font-size: 4.266667vw;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>用1行代码代替之前6个冗长的Media Query，还不错吧。</p>
+<h2 id="如何提高rem的可读性"><a href="#如何提高rem的可读性" class="headerlink" title="如何提高rem的可读性"></a>如何提高rem的可读性</h2><p>我们来谈最后一个话题。</p>
+<p>当你知道html的font-size怎么设置后，肯定想问，难道我每次写代码时，还得做个除法，把rem的值计算出来吗？</p>
+<p>我相信稍微“现代”一点的开发者，都会用到CSS预处理。基于这个工具，事情就很好办了，以LESS为例，两步操作如下：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; // 1\. 按iPhone 6的视觉稿，基准字号为16px，</span><br><span class="line">&gt; 因此可以设置一个LESS变量。@px: 16rem;// 2\. 通过LESS内置的除法自动运算。</span><br><span class="line">&gt; 比如用到16px的字号时，写成16/@px即可，最后会计算成1rem。.example &#123;    font-size: 16/@px;    margin: 20/@px 0;    padding: 20/@px 10/@px;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本文给大家介绍了rem的适配方式，如何设置html的font-size，如何更快地书写rem的值。</p>
 
       
     </div>
@@ -357,13 +430,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></p>
+        <p><span>本文标题:</span><a href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
-        <p><span>发布时间:</span>2018-07-21, 12:58:18</p>
-        <p><span>最后更新:</span>2018-07-21, 13:50:19</p>
+        <p><span>发布时间:</span>2018-08-08, 12:49:43</p>
+        <p><span>最后更新:</span>2018-08-08, 12:51:22</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/07/21/数组去重的几种方法/" title="数组去重的几种方法">http://yoursite.com/2018/07/21/数组去重的几种方法/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/07/21/数组去重的几种方法/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/08/对于页面适配，你应该使用px还是rem/" title="对于页面适配，你应该使用px还是rem">http://yoursite.com/2018/08/08/对于页面适配，你应该使用px还是rem/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/08/对于页面适配，你应该使用px还是rem/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -375,16 +448,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/07/28/雪花飘落/">
-                    雪花飘落
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/07/18/session和cookie的区别/">
-                    JSP中session与cookie的区别
+                <a href="/2018/08/08/移动端轮播图/">
+                    移动端轮播图
                 </a>
             </div>
         
@@ -396,7 +463,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组去重-这个知识点很重要-很多面试的地方都会问这个这个问题-我总结了一下"><span class="toc-number">1.</span> <span class="toc-text">数组去重,这个知识点很重要,很多面试的地方都会问这个这个问题,我总结了一下</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#对于页面适配，你应该使用px还是rem"><span class="toc-number">1.</span> <span class="toc-text">对于页面适配，你应该使用px还是rem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么慎用em？"><span class="toc-number"></span> <span class="toc-text">为什么慎用em？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rem-vs-px"><span class="toc-number"></span> <span class="toc-text">rem vs. px</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html的font-size该如何设置"><span class="toc-number"></span> <span class="toc-text">html的font-size该如何设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何提高rem的可读性"><span class="toc-number"></span> <span class="toc-text">如何提高rem的可读性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-number"></span> <span class="toc-text">小结</span></a>
         
     </div>
     <style>
@@ -432,7 +499,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"数组去重的几种方法　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"对于页面适配，你应该使用px还是rem　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -452,15 +519,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/07/28/雪花飘落/" title="上一篇: 雪花飘落">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/07/18/session和cookie的区别/" title="下一篇: JSP中session与cookie的区别">
+            <a href="/2018/08/08/移动端轮播图/" title="下一篇: 移动端轮播图">
                 <i class="fa fa-angle-right"></i>
             </a>
         
