@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html >
+
+        <head>
+            
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="author" content="李大玄" />
+
+                
+
+                                        <meta name="description" content="JS中this关键字详解">
+<meta name="keywords" content="JS中this关键字详解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中this关键字详解">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/JS中this关键字详解/index.html">
+<meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="JS中this关键字详解">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:updated_time" content="2018-08-08T09:29:50.175Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS中this关键字详解">
+<meta name="twitter:description" content="JS中this关键字详解">
+<meta name="twitter:image" content="https://common.cnblogs.com/images/copycode.gif">
+
+                                            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+                                            
+                                                <link rel="alternate" href="/atom.xml" title="李大玄的博客" type="application/atom+xml">
+                                                
+
+                                                    
+                                                        <link rel="shortcut icon" href="/img/favicon.ICO">
+                                                        
+
+                                                            
+                                                                <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+                                                                
+
+                                                                    
+                                                                        <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+                                                                        
+
+                                                                            
+                                                                                <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+                                                                                <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+                                                                                
+
+                                                                                    <link rel="stylesheet" href="/css/style.css">
+
+                                                                                        
+
+                                                                                                <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+                                                                                                
+                                                                                                    <title>
+                                                                                                        
+                                                                                                            JS中this关键字详解 |
+                                                                                                                
+                                                                                                                    李大玄的博客
+                                                                                                    </title>
+
+                                                                                                    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+                                                                                                    <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+                                                                                                    <script>
+                                                                                                        var yiliaConfig = {
+                                                                                                            fancybox: true,
+                                                                                                            animate: true,
+                                                                                                            isHome: false,
+                                                                                                            isPost: true,
+                                                                                                            isArchive: false,
+                                                                                                            isTag: false,
+                                                                                                            isCategory: false,
+                                                                                                            fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                                                                                                            scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                                                                                                            search: false
+                                                                                                        }
+                                                                                                    </script>
+
+                                                                                                    
+                                                                                                            <script>
+                                                                                                                yiliaConfig.jquery_ui = [false];
+                                                                                                            </script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                        <script>
+                                                                                                                            yiliaConfig.rootUrl = "\/";
+                                                                                                                        </script>
+                                                                                                                        
+
+                                                                                                                            
+
+                                                                                                                                    
+
+        </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">李大玄</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/get方法封装步骤/">$.get方法封装步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/3D切割轮播图-思路分析-代码实现/">3D切割轮播图 思路分析 代码实现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP中session与cookie的区别/">JSP中session与cookie的区别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS中this关键字详解/">JS中this关键字详解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NaN的定义与用法/">NaN的定义与用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css清除浮动-四种方式/">css清除浮动, 四种方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript中filter的用法/">javascript中filter的用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础-、js介绍-、变量、-数据类型-、-分支结构/">js基础 、js介绍 、变量、 数据类型 、 分支结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown基本语法/">markdown基本语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公式/">公式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数的创建-函数本身-函数中的this指向-函数的其它成员/">函数的创建 函数本身 函数中的this指向 函数的其它成员</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分析轮播图每一步进行操作/">分析轮播图每一步进行操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试题整理/">前端面试题整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区别-引用/">区别 引用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型继承-借用构造函数-组合继承/">原型继承 借用构造函数 组合继承</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对于页面适配，你应该使用px还是rem-em-rem-px/">对于页面适配，你应该使用px还是rem em rem px</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/封装移动端手势事件-touchstart-touchmove-touchend/">封装移动端手势事件 touchstart touchmove touchend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建GitHub步骤/">搭建GitHub步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组去重的几种方法/">数组去重的几种方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据分析-进行样式/">根据分析,进行样式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据用户需求分析-思路-步骤/">根据用户需求分析 思路 步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板/">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端轮播图-移动端三大事件/">移动端轮播图 移动端三大事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域请求-服务器代理-cors-跨域资源共享-jsonp/">跨域请求 服务器代理  cors(跨域资源共享) jsonp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包-执行栈-执行队列/">闭包  执行栈 执行队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雪花飘落/">雪花飘落</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">李大玄</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">李大玄</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-JS中this关键字详解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/08/JS中this关键字详解/" class="article-date">
+      <time datetime="2018-08-08T09:28:44.264Z" itemprop="datePublished">2018-08-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS中this关键字详解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS中this关键字详解/">JS中this关键字详解</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>首先，必须搞清楚在JS里面，函数的几种调用方式:</p>
+<ul>
+<li>普通函数调用</li>
+<li>作为方法来调用</li>
+<li>作为构造函数来调用</li>
+<li>使用apply/call方法来调用</li>
+<li>Function.prototype.bind方法</li>
+<li>es6箭头函数</li>
+</ul>
+<p>但是不管函数是按哪种方法来调用的，请记住一点：谁调用这个函数或方法,this关键字就指向谁。</p>
+<p>接下来就分情况来讨论下这些不同的情况：</p>
+<h2 id="普通函数调用"><a href="#普通函数调用" class="headerlink" title="普通函数调用"></a>普通函数调用</h2><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1     function person()&#123;</span><br><span class="line">2         this.name=&quot;xl&quot;;</span><br><span class="line">3         console.log(this);</span><br><span class="line">4         console.log(this.name);</span><br><span class="line">5     &#125;</span><br><span class="line">6     </span><br><span class="line">7     person();  //输出  window  xl   </span><br><span class="line">8</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>在这段代码中<code>person</code>函数作为普通函数调用，实际上<code>person</code>是作为全局对象<code>window</code>的一个方法来进行调用的,即<code>window.person()</code>;<br>所以这个地方是<code>window</code>对象调用了<code>person</code>方法,那么<code>person</code>函数当中的<code>this</code>即指<code>window</code>,同时<code>window</code>还拥有了另外一个属性<code>name</code>,值为<code>xl</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1     var name=&quot;xl&quot;;</span><br><span class="line">2     function person()&#123;</span><br><span class="line">3         console.log(this.name);</span><br><span class="line">4     &#125;</span><br><span class="line">5     person(); //输出 xl</span><br></pre></td></tr></table></figure>
+<p>同样这个地方<code>person</code>作为<code>window</code>的方法来调用，在代码的一开始定义了一个全局变量<code>name</code>，值为<code>xl</code>,它相当于<code>window</code>的一个属性,即<code>window.name=&quot;xl&quot;</code>,又因为在调用<code>person</code>的时候<code>this</code>是指向<code>window</code>的，因此这里会输出<code>xl</code>.</p>
+<h2 id="作为方法来调用"><a href="#作为方法来调用" class="headerlink" title="作为方法来调用"></a>作为方法来调用</h2><p>在上面的代码中，普通函数的调用即是作为<code>window</code>对象的方法进行调用。显然<code>this</code>关键字指向了<code>window</code>对象.</p>
+<p>再来看下其他的形式</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> var name=&quot;XL&quot;;</span><br><span class="line"> var person=&#123;</span><br><span class="line">     name:&quot;xl&quot;,</span><br><span class="line">     showName:function()&#123;</span><br><span class="line">         console.log(this.name);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> person.showName();  //输出  xl</span><br><span class="line">//这里是person对象调用showName方法，很显然this关键字是指向person对象的，所以会输出name</span><br><span class="line"> </span><br><span class="line"> var showNameA=person.showName;</span><br><span class="line"> showNameA();    //输出  XL</span><br><span class="line"> //这里将person.showName方法赋给showNameA变量，此时showNameA变量相当于window对象的一个属性，因此showNameA()执行的时候相当于window.showNameA(),即window对象调用showNameA这个方法，所以this关键字指向window</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>再换种形式：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var personA=&#123;</span><br><span class="line">    name:&quot;xl&quot;,</span><br><span class="line">    showName:function()&#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var personB=&#123;</span><br><span class="line">    name:&quot;XL&quot;,</span><br><span class="line">    sayName:personA.showName</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">personB.sayName();  //输出 XL</span><br><span class="line">//虽然showName方法是在personA这个对象中定义，但是调用的时候却是在personB这个对象中调用，因此this对象指向</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<h2 id="作为构造函数来调用"><a href="#作为构造函数来调用" class="headerlink" title="作为构造函数来调用"></a>作为构造函数来调用</h2><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> 1     function  Person(name)&#123;</span><br><span class="line"> 2         this.name=name;</span><br><span class="line"> 3     &#125;</span><br><span class="line"> 4     var personA=Person(&quot;xl&quot;);   </span><br><span class="line"> 5     console.log(personA.name); // 输出  undefined</span><br><span class="line"> 6     console.log(window.name);//输出  xl</span><br><span class="line"> 7     //上面代码没有进行new操作，相当于window对象调用Person(&quot;xl&quot;)方法，那么this指向window对象，并进行赋值操作window.name=&quot;xl&quot;.</span><br><span class="line"> 8     </span><br><span class="line"> 9     var personB=new Person(&quot;xl&quot;);</span><br><span class="line">10     console.log(personB.name);// 输出 xl</span><br><span class="line">11     //这部分代码的解释见下</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<h3 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h3><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//下面这段代码模拟了new操作符(实例化对象)的内部过程</span><br><span class="line">  function person(name)&#123;</span><br><span class="line">      var o=&#123;&#125;;</span><br><span class="line">      o.__proto__=Person.prototype;  //原型继承</span><br><span class="line">      Person.call(o,name);</span><br><span class="line">      return o;</span><br><span class="line">  &#125;</span><br><span class="line">  var personB=person(&quot;xl&quot;);</span><br><span class="line">  </span><br><span class="line">  console.log(personB.name);  // 输出  xl</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>​     这段代码涉及到了<em>proto</em>及prototype的概念，如果有需要了解，请<a href="https://github.com/dreamapplehappy/hacking-with-javascript/blob/master/points/understand-prototype-__proto__.md" target="_blank" rel="noopener">点击链接</a></p>
+<ul>
+<li><p>在<code>person</code>里面首先创建一个空对象o，将o的proto指向Person.prototype完成对原型的属性和方法的继承</p>
+</li>
+<li><p><code>Person.call(o,name)</code>这里即函数<code>Person</code>作为<code>apply/call</code>调用(具体内容下方)，将<code>Person</code>对象里的<code>this</code>改为o，即完成了<code>o.name=name</code>操作</p>
+</li>
+<li><p>返回对象o。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">因此`person(&quot;xl&quot;)`返回了一个继承了`Person.prototype`对象上的属性和方法，以及拥有`name`属性为&quot;xl&quot;的对象，并将它赋给变量`personB`.</span><br><span class="line">所以`console.log(personB.name)`会输出&quot;xl&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="call-apply方法的调用"><a href="#call-apply方法的调用" class="headerlink" title="call/apply方法的调用"></a>call/apply方法的调用</h2><p>在JS里函数也是对象，因此函数也有方法。从Function.prototype上继承到<code>Function.prototype.call/Function.prototype.apply</code>方法<br><code>call/apply</code>方法最大的作用就是能改变<code>this</code>关键字的指向.</p>
+<p><code>Obj.method.apply(AnotherObj,arguments);</code></p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> 1     var name=&quot;XL&quot;;</span><br><span class="line"> 2     var Person=&#123;</span><br><span class="line"> 3         name:&quot;xl&quot;,</span><br><span class="line"> 4         showName:function()&#123;</span><br><span class="line"> 5             console.log(this.name);</span><br><span class="line"> 6         &#125;</span><br><span class="line"> 7     &#125;</span><br><span class="line"> 8     Person.showName.call(); //输出 &quot;XL&quot;</span><br><span class="line"> 9     //这里call方法里面的第一个参数为空，默认指向window。</span><br><span class="line">10     //虽然showName方法定义在Person对象里面，但是使用call方法后，将showName方法里面的this指向了window。因此最后会输出&quot;XL&quot;;</span><br><span class="line">11     funtion FruitA(n1,n2)&#123;</span><br><span class="line">12         this.n1=n1;</span><br><span class="line">13         this.n2=n2;</span><br><span class="line">14         this.change=function(x,y)&#123;</span><br><span class="line">15             this.n1=x;</span><br><span class="line">16             this.n2=y;</span><br><span class="line">17         &#125;</span><br><span class="line">18     &#125;</span><br><span class="line">19     </span><br><span class="line">20     var fruitA=new FruitA(&quot;cheery&quot;,&quot;banana&quot;);</span><br><span class="line">21     var FruitB=&#123;</span><br><span class="line">22         n1:&quot;apple&quot;,</span><br><span class="line">23         n2:&quot;orange&quot;</span><br><span class="line">24     &#125;;</span><br><span class="line">25     fruitA.change.call(FruitB,&quot;pear&quot;,&quot;peach&quot;);</span><br><span class="line">26     </span><br><span class="line">27     console.log(FruitB.n1); //输出 pear</span><br><span class="line">28     console.log(FruitB.n2);// 输出 peach</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p><code>FruitB</code>调用<code>fruitA</code>的<code>change</code>方法，将<code>fruitA</code>中的<code>this</code>绑定到对象<code>FruitB</code>上。</p>
+<h2 id="Function-prototype-bind-方法"><a href="#Function-prototype-bind-方法" class="headerlink" title="Function.prototype.bind()方法"></a>Function.prototype.bind()方法</h2><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var name=&quot;XL&quot;;</span><br><span class="line">function Person(name)&#123;</span><br><span class="line">    this.name=name;</span><br><span class="line">    this.sayName=function()&#123;</span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line">            console.log(&quot;my name is &quot;+this.name);</span><br><span class="line">        &#125;,50)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var person=new Person(&quot;xl&quot;);</span><br><span class="line">person.sayName()  //输出  “my name is XL”;</span><br><span class="line">                   //这里的setTimeout()定时函数,相当于window.setTimeout(),由window这个全局对象对调用,因此this的指向为window, 则this.name则为XL</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>那么如何才能输出<code>&quot;my name is xl&quot;</code>呢？</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var name=&quot;XL&quot;;</span><br><span class="line">function Person(name)&#123;</span><br><span class="line">    this.name=name;</span><br><span class="line">    this.sayName=function()&#123;</span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line">            console.log(&quot;my name is &quot;+this.name);</span><br><span class="line">        &#125;.bind(this),50)  //注意这个地方使用的bind()方法，绑定setTimeout里面的匿名函数的this一直指向Person对象</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var person=new Person(&quot;xl&quot;);</span><br><span class="line">person.sayName(); //输出 “my name is xl”;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>这里<code>setTimeout(function(){console.log(this.name)}.bind(this),50);</code>,匿名函数使用<code>bind(this)</code>方法后创建了新的函数，这个新的函数不管在什么地方执行，<code>this</code>都指向的<code>Person</code>,而非<code>window</code>,因此最后的输出为”my name is xl”而不是”my name is XL”</p>
+<p>另外几个需要注意的地方：<br><code>setTimeout/setInterval/匿名函数执行</code>的时候，<code>this</code>默认指向<code>window对象</code>，除非手动改变this的指向。在《javascript高级程序设计》当中，写到：“超时调用的代码(<code>setTimeout</code>)都是在全局作用域中执行的，因此函数中的this的值，在非严格模式下是指向window对象，在严格模式下是指向undefined”。本文都是在非严格模式下的情况。</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var name=&quot;XL&quot;;</span><br><span class="line">  function Person()&#123;</span><br><span class="line">      this.name=&quot;xl&quot;;</span><br><span class="line">      this.showName=function()&#123;</span><br><span class="line">          console.log(this.name);</span><br><span class="line">      &#125;</span><br><span class="line">      setTimeout(this.showName,50);</span><br><span class="line">  &#125;</span><br><span class="line">  var person=new Person(); //输出 &quot;XL&quot;</span><br><span class="line">  </span><br><span class="line">  //在setTimeout(this.showName,50)语句中，会延时执行this.showName方法</span><br><span class="line">  //this.showName方法即构造函数Person()里面定义的方法。50ms后，执行this.showName方法，this.showName里面的this此时便指向了window对象。则会输出&quot;XL&quot;;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>修改上面的代码：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> 1   var name=&quot;XL&quot;;</span><br><span class="line"> 2     function Person()&#123;</span><br><span class="line"> 3         this.name=&quot;xl&quot;;</span><br><span class="line"> 4         var that=this;</span><br><span class="line"> 5         this.showName=function()&#123;</span><br><span class="line"> 6             console.log(that.name);</span><br><span class="line"> 7         &#125;</span><br><span class="line"> 8         setTimeout(this.showName,50)</span><br><span class="line"> 9     &#125;</span><br><span class="line">10     var person=new Person(); //输出 &quot;xl&quot;</span><br><span class="line">11 </span><br><span class="line">12 </span><br><span class="line">13 </span><br><span class="line">14     //这里在Person函数当中将this赋值给that，即让that保存Person对象，因此在setTimeout(this.showName,50)执行过程当中，console.log(that.name)即会输出Person对象的属性&quot;xl&quot;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>匿名函数：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> 1   var name=&quot;XL&quot;;</span><br><span class="line"> 2     var person=&#123;</span><br><span class="line"> 3         name:&quot;xl&quot;,</span><br><span class="line"> 4         showName:function()&#123;</span><br><span class="line"> 5             console.log(this.name);</span><br><span class="line"> 6         &#125;</span><br><span class="line"> 7         sayName:function()&#123;</span><br><span class="line"> 8             (function(callback)&#123;</span><br><span class="line"> 9                 callback();</span><br><span class="line">10             &#125;)(this.showName)</span><br><span class="line">11         &#125;</span><br><span class="line">12     &#125;</span><br><span class="line">13     person.sayName();  //输出 XL</span><br><span class="line">14     var name=&quot;XL&quot;;</span><br><span class="line">15     var person=&#123;</span><br><span class="line">16         name:&quot;xl&quot;,</span><br><span class="line">17         showName:function()&#123;</span><br><span class="line">18             console.log(this.name);</span><br><span class="line">19         &#125;</span><br><span class="line">20         sayName:function()&#123;</span><br><span class="line">21             var that=this;</span><br><span class="line">22             (function(callback)&#123;</span><br><span class="line">23                 callback();</span><br><span class="line">24             &#125;)(that.showName)</span><br><span class="line">25         &#125;</span><br><span class="line">26     &#125;</span><br><span class="line">27     person.sayName() ;  //输出  &quot;xl&quot;</span><br><span class="line">28     //匿名函数的执行同样在默认情况下this是指向window的，除非手动改变this的绑定对象</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<h2 id="Eval函数"><a href="#Eval函数" class="headerlink" title="Eval函数"></a>Eval函数</h2><p>该函数执行的时候，this绑定到当前作用域的对象上</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var name=&quot;XL&quot;;</span><br><span class="line">var person=&#123;</span><br><span class="line">    name:&quot;xl&quot;,</span><br><span class="line">    showName:function()&#123;</span><br><span class="line">        eval(&quot;console.log(this.name)&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.showName();  //输出  &quot;xl&quot;</span><br><span class="line"></span><br><span class="line">var a=person.showName;</span><br><span class="line">a();  //输出  &quot;XL&quot;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p><code>es6</code>里面<code>this</code>指向固定化，始终指向外部对象，因为箭头函数没有<code>this</code>,因此它自身不能进行<code>new</code>实例化,同时也不能使用<code>call, apply, bind</code>等方法来改变<code>this</code>的指向</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Timer() &#123;</span><br><span class="line">     this.seconds = 0;</span><br><span class="line">     setInterval( () =&gt; this.seconds ++, 1000);</span><br><span class="line"> &#125; </span><br><span class="line"> </span><br><span class="line"> var timer = new Timer();</span><br><span class="line"> </span><br><span class="line"> setTimeout( () =&gt; console.log(timer.seconds), 3100);</span><br><span class="line"> </span><br><span class="line"> // 3</span><br><span class="line">// 在构造函数内部的setInterval()内的回调函数，this始终指向实例化的对象，并获取实例化对象的seconds的属性,每1s这个属性的值都会增加1。否则最后在3s后执行setTimeOut()函数执行后输出的是0</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-08-08, 17:28:44</p>
+        <p><span>最后更新:</span>2018-08-08, 17:29:50</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/08/JS中this关键字详解/" title="JS中this关键字详解">http://yoursite.com/2018/08/08/JS中this关键字详解/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/08/JS中this关键字详解/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/08/37个JavaScript基本面试问题和解答/">
+                    37个JavaScript基本面试问题和解答
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#普通函数调用"><span class="toc-number">1.</span> <span class="toc-text">普通函数调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作为方法来调用"><span class="toc-number">2.</span> <span class="toc-text">作为方法来调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作为构造函数来调用"><span class="toc-number">3.</span> <span class="toc-text">作为构造函数来调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#new操作符"><span class="toc-number">3.1.</span> <span class="toc-text">new操作符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#call-apply方法的调用"><span class="toc-number">4.</span> <span class="toc-text">call/apply方法的调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Function-prototype-bind-方法"><span class="toc-number">5.</span> <span class="toc-text">Function.prototype.bind()方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eval函数"><span class="toc-number">6.</span> <span class="toc-text">Eval函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#箭头函数"><span class="toc-number">7.</span> <span class="toc-text">箭头函数</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JS中this关键字详解　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/08/37个JavaScript基本面试问题和解答/" title="下一篇: 37个JavaScript基本面试问题和解答">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/移动端轮播图/">移动端轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/前端面试题整理/">前端面试题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/css中清除浮动/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/3D切割轮播图/">模板3D切割轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 李大玄
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
