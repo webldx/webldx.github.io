@@ -16,13 +16,18 @@
 
                 
 
-                                        <meta property="og:type" content="website">
-<meta property="og:title" content="李大玄的博客">
-<meta property="og:url" content="http://yoursite.com/tags/模板/index.html">
+                                        <meta name="description" content="JavaScript垃圾回收机制">
+<meta name="keywords" content="JavaScript垃圾回收机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript垃圾回收机制">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/JavaScript垃圾回收机制/index.html">
 <meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="JavaScript垃圾回收机制">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-08T04:55:50.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李大玄的博客">
+<meta name="twitter:title" content="JavaScript垃圾回收机制">
+<meta name="twitter:description" content="JavaScript垃圾回收机制">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -56,7 +61,7 @@
                                                                                                 
                                                                                                     <title>
                                                                                                         
-                                                                                                            Tag: 模板 |
+                                                                                                            JavaScript垃圾回收机制 |
                                                                                                                 
                                                                                                                     李大玄的博客
                                                                                                     </title>
@@ -69,9 +74,9 @@
                                                                                                             fancybox: true,
                                                                                                             animate: true,
                                                                                                             isHome: false,
-                                                                                                            isPost: false,
+                                                                                                            isPost: true,
                                                                                                             isArchive: false,
-                                                                                                            isTag: true,
+                                                                                                            isTag: false,
                                                                                                             isCategory: false,
                                                                                                             fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
                                                                                                             scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -267,56 +272,199 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-JavaScript垃圾回收机制" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/07/31/H5新增的API/" class="archive-article-date">
-      <time datetime="2018-07-31T15:35:34.975Z" itemprop="datePublished">07-31</time>
+    <div class="article-meta">
+      <a href="/2018/08/08/JavaScript垃圾回收机制/" class="article-date">
+      <time datetime="2018-08-08T04:53:38.294Z" itemprop="datePublished">2018-08-08</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/31/H5新增的API/">模板</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript垃圾回收机制
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模板/">模板</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>先简述一下JavaScript引擎内存分配的几种情况：</p>
+<p>1.object</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">new Object();</span><br><span class="line"></span><br><span class="line">new MyConstructor();</span><br><span class="line"></span><br><span class="line">&#123;a:4,b:5&#125;</span><br><span class="line"></span><br><span class="line">Object.create();</span><br></pre></td></tr></table></figure>
+<p>2.数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new Array();</span><br><span class="line"></span><br><span class="line">[1,2,3,4];</span><br></pre></td></tr></table></figure>
+<p>3.字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new String(&quot;hello hyddd&quot;);</span><br><span class="line"></span><br><span class="line">&quot;&lt;p&gt;&quot;+e.innerHTML +&quot;&lt;/p&gt;&quot;</span><br></pre></td></tr></table></figure>
+<p>4.函数对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var x = function () &#123; ... &#125;</span><br><span class="line"></span><br><span class="line">new Function(code);</span><br></pre></td></tr></table></figure>
+<p>5.闭包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function outer(name) &#123;</span><br><span class="line">	var x = name;</span><br><span class="line">	return function inner() &#123;</span><br><span class="line">  		return “Hi, “ + name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>和C#、Java一样JavaScript有自动垃圾回收机制，JavaScript垃圾回收的机制很简单：找出不再使用的变量，然后释放掉其占用的内存，但是这个过程不是时时的，因为其开销比较大，所以垃圾回收器会按照固定的时间间隔周期性的执行。</p>
+<p> Javascript引擎基础GC方案是（simple GC）：mark and sweep（标记清除），即：</p>
+<p>（1）遍历所有可访问的对象。</p>
+<p>（2）回收已不可访问的对象。</p>
+<h3 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h3><p>这是JavaScript最常见的垃圾回收方式，当变量进入执行环境的时候，比如函数中声明一个变量，垃圾回收器将其标记为“进入环境”，当变量离开环境的时候（函数执行结束）将其标记为“离开环境”。至于怎么标记有很多种方式，比如特殊位的反转、维护一个列表等，这些并不重要，重要的是使用什么策略，原则上讲不能够释放进入环境的变量所占的内存，它们随时可能会被调用的到。</p>
+<p>垃圾回收器会在运行的时候给存储在内存中的所有变量加上标记，然后去掉环境中的变量以及被环境中变量所引用的变量（闭包），在这些完成之后仍存在标记的就是要删除的变量了，因为环境中的变量已经无法访问到这些变量了，然后垃圾回收器相会这些带有标记的变量机器所占空间。</p>
+<h3 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h3><p>　　引用计数的含义是跟踪记录每个值被引用的次数。当声明了一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数就是1。如果同一个值又被赋给另一个变量，则该值的引用次数加1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数减1。当这个值的引用次数变成0时，则说明没有办法再访问这个值了，因而就可以将其占用的内存空间回收回来。这样，当垃圾回收器下次再运行时，它就会释放那些引用次数为0的值所占用的内存。</p>
+<p>​                     </p>
+<p>GC的缺陷</p>
+<p>​    和其他语言一样，javascript的GC策略也无法避免一个问题：GC时，停止响应其他操作，这是为了安全考虑。而Javascript的GC在100ms甚至以上，对一般的应用还好，但对于JS游戏，动画对连贯性要求比较高的应用，就麻烦了。这就是新引擎需要优化的点：避免GC造成的长时间停止响应。</p>
+<p> GC优化策略</p>
+<p>（1）分代回收（Generation GC）</p>
+<p> 这个和Java回收策略思想是一致的。目的是通过区分“临时”与“持久”对象；多回收“临时对象”区（young generation），少回收“持久对象”区（tenured generation），减少每次需遍历的对象，从而减少每次GC的耗时</p>
+<p>（2）增量GC</p>
+<p>​    这个方案的思想很简单，就是“每次处理一点，下次再处理一点，如此类推”。</p>
+<p>​    这种方案，虽然耗时短，但中断较多，带来了上下文切换频繁的问题。</p>
+<p>因此：低 (对象/s) 比率时，中断执行GC的频率，simple GC更低些；如果大量对象都是长期“存活”，则分代处理优势也不大</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-08-08, 12:53:38</p>
+        <p><span>最后更新:</span>2018-08-08, 12:55:50</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/08/JavaScript垃圾回收机制/" title="JavaScript垃圾回收机制">http://yoursite.com/2018/08/08/JavaScript垃圾回收机制/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/08/JavaScript垃圾回收机制/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/08/08/37个JavaScript基本面试问题和解答/">
+                    37个JavaScript基本面试问题和解答
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/08/对于页面适配，你应该使用px还是rem/">
+                    对于页面适配，你应该使用px还是rem
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#标记清除"><span class="toc-number">1.</span> <span class="toc-text">标记清除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用计数法"><span class="toc-number">2.</span> <span class="toc-text">引用计数法</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JavaScript垃圾回收机制　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/08/08/37个JavaScript基本面试问题和解答/" title="上一篇: 37个JavaScript基本面试问题和解答">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/08/对于页面适配，你应该使用px还是rem/" title="下一篇: 对于页面适配，你应该使用px还是rem">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/移动端轮播图/">移动端轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/前端面试题整理/">前端面试题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/css中清除浮动/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/3D切割轮播图/">模板3D切割轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
