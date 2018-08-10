@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html >
+
+        <head>
+            
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="author" content="李大玄" />
+
+                
+
+                                        <meta name="description" content="数组的方法">
+<meta name="keywords" content="数组的方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组的方法">
+<meta property="og:url" content="http://yoursite.com/2018/08/10/数组的方法/index.html">
+<meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="数组的方法">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-10T13:04:37.473Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组的方法">
+<meta name="twitter:description" content="数组的方法">
+
+                                            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+                                            
+                                                <link rel="alternate" href="/atom.xml" title="李大玄的博客" type="application/atom+xml">
+                                                
+
+                                                    
+                                                        <link rel="shortcut icon" href="/img/favicon.ICO">
+                                                        
+
+                                                            
+                                                                <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+                                                                
+
+                                                                    
+                                                                        <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+                                                                        
+
+                                                                            
+                                                                                <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+                                                                                <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+                                                                                
+
+                                                                                    <link rel="stylesheet" href="/css/style.css">
+
+                                                                                        
+
+                                                                                                <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+                                                                                                
+                                                                                                    <title>
+                                                                                                        
+                                                                                                            数组的方法 |
+                                                                                                                
+                                                                                                                    李大玄的博客
+                                                                                                    </title>
+
+                                                                                                    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+                                                                                                    <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+                                                                                                    <script>
+                                                                                                        var yiliaConfig = {
+                                                                                                            fancybox: true,
+                                                                                                            animate: true,
+                                                                                                            isHome: false,
+                                                                                                            isPost: true,
+                                                                                                            isArchive: false,
+                                                                                                            isTag: false,
+                                                                                                            isCategory: false,
+                                                                                                            fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                                                                                                            scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                                                                                                            search: false
+                                                                                                        }
+                                                                                                    </script>
+
+                                                                                                    
+                                                                                                            <script>
+                                                                                                                yiliaConfig.jquery_ui = [false];
+                                                                                                            </script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                        <script>
+                                                                                                                            yiliaConfig.rootUrl = "\/";
+                                                                                                                        </script>
+                                                                                                                        
+
+                                                                                                                            
+
+                                                                                                                                    
+
+        </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">李大玄</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/get方法封装步骤/">$.get方法封装步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/3D切割轮播图-思路分析-代码实现/">3D切割轮播图 思路分析 代码实现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSONP的优缺点/">JSONP的优缺点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP中session与cookie的区别/">JSP中session与cookie的区别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS中this关键字详解/">JS中this关键字详解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NaN的定义与用法/">NaN的定义与用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css清除浮动-四种方式/">css清除浮动, 四种方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript中filter的用法/">javascript中filter的用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础-、js介绍-、变量、-数据类型-、-分支结构/">js基础 、js介绍 、变量、 数据类型 、 分支结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown基本语法/">markdown基本语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公式/">公式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数的创建-函数本身-函数中的this指向-函数的其它成员/">函数的创建 函数本身 函数中的this指向 函数的其它成员</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分析轮播图每一步进行操作/">分析轮播图每一步进行操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试题整理/">前端面试题整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区别-引用/">区别 引用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型继承-借用构造函数-组合继承/">原型继承 借用构造函数 组合继承</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串的操作/">字符串的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对于页面适配，你应该使用px还是rem-em-rem-px/">对于页面适配，你应该使用px还是rem em rem px</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/封装移动端手势事件-touchstart-touchmove-touchend/">封装移动端手势事件 touchstart touchmove touchend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建GitHub步骤/">搭建GitHub步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组去重的几种方法/">数组去重的几种方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组的方法/">数组的方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据分析-进行样式/">根据分析,进行样式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据用户需求分析-思路-步骤/">根据用户需求分析 思路 步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板/">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端轮播图-移动端三大事件/">移动端轮播图 移动端三大事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域请求-服务器代理-cors-跨域资源共享-jsonp/">跨域请求 服务器代理  cors(跨域资源共享) jsonp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包-执行栈-执行队列/">闭包  执行栈 执行队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雪花飘落/">雪花飘落</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">李大玄</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">李大玄</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-数组的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/10/数组的方法/" class="article-date">
+      <time datetime="2018-08-10T12:36:27.357Z" itemprop="datePublished">2018-08-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组的方法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组的方法/">数组的方法</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="数组的几种操作方法"><a href="#数组的几种操作方法" class="headerlink" title="数组的几种操作方法"></a>数组的几种操作方法</h3><p> 声明数组的几种方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> 字面量 声明 </span><br><span class="line"> <span class="keyword">var</span> arr = [];</span><br><span class="line"> <span class="keyword">var</span> arr = [<span class="number">12</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">new</span> 一个数组</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>()</span><br></pre></td></tr></table></figure>
+<ol>
+<li>检测是不是数组,</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">12</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> o = &#123;&#125;;</span><br><span class="line"><span class="comment">// instanceof 检测是不是数组</span></span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(o <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(o <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">// true   通俗点 你是不是俺的  前者属不属于后者</span></span><br><span class="line"><span class="comment">// isArray()  </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(arr)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(o)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>push 给数组的末尾追加一个或多个元素,   修改原数组  返回的是新数组的总长度length</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'red'</span>, <span class="string">'green'</span>];</span><br><span class="line">arr.push(<span class="string">'blue'</span>, <span class="string">'pink'</span>); <span class="comment">// 给 arr 末尾添加2个 blue pink</span></span><br><span class="line"><span class="keyword">var</span> ar1 = arr.push(<span class="string">'blue'</span>, <span class="string">'pink'</span>);  <span class="comment">// ar1    4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.push(<span class="string">'blue'</span>, <span class="string">'pink'</span>)); <span class="comment">// push 有返回值 返回的是总的长度 length</span></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//  red  green blue 修改 原数组</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>pop() 给数组的末尾删除一个元素(只能删除一个);;不需要参数,返回的是被删除的元素</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'pink'</span>, <span class="string">'hotpink'</span>, <span class="string">'deeppink'</span>];</span><br><span class="line">arr.pop();   不需要参数</span><br><span class="line"><span class="built_in">console</span>.log(arr.pop()); <span class="comment">// deeppink  返回的 被删除的那个元素 值</span></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//  ["pink", "hotpink"]</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>unshift() 在数组前面添加一个或多个元素,修改原数组,返回一个 长度 length</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'pink'</span>, <span class="string">'hotpink'</span>, <span class="string">'deeppink'</span>];</span><br><span class="line"><span class="comment">// arr.unshift();</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.unshift(<span class="string">'yellow'</span>)); <span class="comment">//  4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);  <span class="comment">// ["yellow", "pink", "hotpink", "deeppink"]</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>shift() 在数组的前面删除一个元素(只能删除一个);;不需要参数 ,返回的被删除的元素</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'pink'</span>, <span class="string">'hotpink'</span>, <span class="string">'deeppink'</span>];</span><br><span class="line"><span class="comment">// arr.shift();</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.shift()); <span class="comment">//  pink</span></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// ["hotpink", "deeppink"]</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>reverse()  翻转,修改原数组</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'pink'</span>, <span class="string">'red'</span>, <span class="string">'blue'</span>];</span><br><span class="line">arr.reverse(); <span class="comment">// 反转数组 修改原数组 </span></span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">返回的结果是 : [<span class="string">"blue"</span>, <span class="string">"red"</span>, <span class="string">"pink"</span>]</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>排序 sort() </li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">4</span>];</span><br><span class="line">arr.sort(); <span class="comment">// 无参数 按照 ascii 排列 </span></span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">31</span>, <span class="number">4</span>];</span><br><span class="line">arr.sort();</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// 修改原数组</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">11</span>, <span class="number">34</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">1</span>];</span><br><span class="line"><span class="comment">// arr.sort(function()&#123;&#125;)</span></span><br><span class="line"><span class="comment">// 公式</span></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> a - b <span class="comment">// 升序排序</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">11</span>, <span class="number">34</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">1</span>];</span><br><span class="line"><span class="comment">// arr.sort(function()&#123;&#125;)</span></span><br><span class="line"><span class="comment">// 公式</span></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> b - a <span class="comment">// 降序排序</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>concat() 数组里面的拼接,参数可以是多个</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'red'</span>];</span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="string">'andy'</span>];</span><br><span class="line"><span class="comment">// console.log(arr + arr1);</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.concat(arr1, <span class="string">'pink'</span>)); <span class="comment">// 两个数组相连 合并成为一个数组</span></span><br><span class="line">输出的结果为 : [<span class="string">"red"</span>, <span class="string">"andy"</span>, <span class="string">"pink"</span>] 拼接之后的数组</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">输出的结果为 : [<span class="string">"red"</span>] 由于没有存变量,返回的就是原数组,也说明了,不会修改原数组</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>splice( , ) 删除(截取),,,,从第几个开始,删除几个    修改原数组  (与pop();和shift( )  一样)返回的是被删除的元素  </li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/10/数组的方法/">数组的方法</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-08-10, 20:36:27</p>
+        <p><span>最后更新:</span>2018-08-10, 21:04:37</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/10/数组的方法/" title="数组的方法">http://yoursite.com/2018/08/10/数组的方法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/10/数组的方法/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/10/字符串的操作/">
+                    字符串的操作
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的几种操作方法"><span class="toc-number">1.</span> <span class="toc-text">数组的几种操作方法</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"数组的方法　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/10/字符串的操作/" title="下一篇: 字符串的操作">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/数组的方法/">数组的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/字符串的操作/">字符串的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JSONP的优缺点/">JSONP的优缺点</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/移动端轮播图/">移动端轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/前端面试题整理/">前端面试题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/css中清除浮动/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/3D切割轮播图/">模板3D切割轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 李大玄
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
