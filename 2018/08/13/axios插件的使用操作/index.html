@@ -15,17 +15,32 @@
                 <meta name="author" content="李大玄" />
 
                 
-                    
-                            
-                                    
 
-                                        <meta property="og:type" content="website">
+                                        <meta name="description" content="axios Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。  特性 从浏览器中创建 XMLHttpRequests 从 node.js 创建 http 请求 支持 Promise API 拦截请求和响应 转换请求数据和响应数据 取消请求 自动转换 JSON 数据 客户端支持防御 XSRF  浏览器支持             Latest ✔ La">
+<meta property="og:type" content="article">
 <meta property="og:title" content="李大玄的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/axios插件的使用操作/index.html">
 <meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="axios Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。  特性 从浏览器中创建 XMLHttpRequests 从 node.js 创建 http 请求 支持 Promise API 拦截请求和响应 转换请求数据和响应数据 取消请求 自动转换 JSON 数据 客户端支持防御 XSRF  浏览器支持             Latest ✔ La">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img.shields.io/npm/v/axios.svg?style=flat-square">
+<meta property="og:image" content="https://img.shields.io/travis/axios/axios.svg?style=flat-square">
+<meta property="og:image" content="https://img.shields.io/coveralls/mzabriskie/axios.svg?style=flat-square">
+<meta property="og:image" content="https://img.shields.io/npm/dm/axios.svg?style=flat-square">
+<meta property="og:image" content="https://img.shields.io/gitter/room/mzabriskie/axios.svg?style=flat-square">
+<meta property="og:image" content="https://www.codetriage.com/axios/axios/badges/users.svg">
+<meta property="og:image" content="https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png">
+<meta property="og:image" content="https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png">
+<meta property="og:image" content="https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png">
+<meta property="og:image" content="https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png">
+<meta property="og:image" content="https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png">
+<meta property="og:image" content="https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png">
+<meta property="og:image" content="https://saucelabs.com/open_sauce/build_matrix/axios.svg">
+<meta property="og:updated_time" content="2018-06-12T09:31:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="李大玄的博客">
+<meta name="twitter:description" content="axios Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。  特性 从浏览器中创建 XMLHttpRequests 从 node.js 创建 http 请求 支持 Promise API 拦截请求和响应 转换请求数据和响应数据 取消请求 自动转换 JSON 数据 客户端支持防御 XSRF  浏览器支持             Latest ✔ La">
+<meta name="twitter:image" content="https://img.shields.io/npm/v/axios.svg?style=flat-square">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -53,12 +68,6 @@
                                                                                     <link rel="stylesheet" href="/css/style.css">
 
                                                                                         
-                                                                                            <style>
-                                                                                                .article {
-                                                                                                    opacity: 0;
-                                                                                                }
-                                                                                            </style>
-                                                                                            
 
                                                                                                 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
@@ -75,8 +84,8 @@
                                                                                                         var yiliaConfig = {
                                                                                                             fancybox: true,
                                                                                                             animate: true,
-                                                                                                            isHome: true,
-                                                                                                            isPost: false,
+                                                                                                            isHome: false,
+                                                                                                            isPost: true,
                                                                                                             isArchive: false,
                                                                                                             isTag: false,
                                                                                                             isCategory: false,
@@ -274,9 +283,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-axios插件的使用操作" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-axios插件的使用操作" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/08/13/axios插件的使用操作/" class="article-date">
@@ -413,609 +420,119 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2018前端面试题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/12/2018前端面试题/" class="article-date">
-      <time datetime="2018-08-11T17:47:41.499Z" itemprop="datePublished">2018-08-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/12/2018前端面试题/">2018年web前端经典面试题及答案</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              2018年web前端经典面试题及答案
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2018年web前端经典面试题及答案/">2018年web前端经典面试题及答案</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/12/2018前端面试题/#more">more >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/13/axios插件的使用操作/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-08-13, 20:17:04</p>
+        <p><span>最后更新:</span>2018-06-12, 17:31:09</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/13/axios插件的使用操作/" title="">http://yoursite.com/2018/08/13/axios插件的使用操作/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/13/axios插件的使用操作/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数组的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/10/数组的方法/" class="article-date">
-      <time datetime="2018-08-10T12:36:27.357Z" itemprop="datePublished">2018-08-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/10/数组的方法/">数组的方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              数组的方法
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组的方法/">数组的方法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/10/数组的方法/#more">more >></a>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
         </p>
-      
-      <div class="clearfix"></div>
     </div>
-    
-  </div>
-  
-</article>
 
 
 
-
-
-
-
-
-
-  
-    <article id="post-字符串的操作" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/10/字符串的操作/" class="article-date">
-      <time datetime="2018-08-10T11:59:20.180Z" itemprop="datePublished">2018-08-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/10/字符串的操作/">字符串的操作</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              字符串的操作
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串的操作/">字符串的操作</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/10/字符串的操作/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JSONP的优缺点" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/08/JSONP的优缺点/" class="article-date">
-      <time datetime="2018-08-08T15:05:28.937Z" itemprop="datePublished">2018-08-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/JSONP的优缺点/">JSONP的优缺点</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              JSONP的优缺点
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSONP的优缺点/">JSONP的优缺点</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/08/JSONP的优缺点/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JS中this关键字详解" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/08/JS中this关键字详解/" class="article-date">
-      <time datetime="2018-08-08T09:28:44.264Z" itemprop="datePublished">2018-08-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/12/2018前端面试题/">
+                    2018年web前端经典面试题及答案
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              JS中this关键字详解
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS中this关键字详解/">JS中this关键字详解</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/08/JS中this关键字详解/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-37个JavaScript基本面试问题和解答" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/08/37个JavaScript基本面试问题和解答/" class="article-date">
-      <time datetime="2018-08-08T08:39:05.587Z" itemprop="datePublished">2018-08-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              37个JavaScript基本面试问题和解答
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/08/37个JavaScript基本面试问题和解答/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript垃圾回收机制" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/08/JavaScript垃圾回收机制/" class="article-date">
-      <time datetime="2018-08-08T04:53:38.294Z" itemprop="datePublished">2018-08-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              JavaScript垃圾回收机制
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/08/JavaScript垃圾回收机制/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-对于页面适配，你应该使用px还是rem" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/08/对于页面适配，你应该使用px还是rem/" class="article-date">
-      <time datetime="2018-08-08T04:49:43.589Z" itemprop="datePublished">2018-08-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              对于页面适配，你应该使用px还是rem
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/对于页面适配，你应该使用px还是rem-em-rem-px/">对于页面适配，你应该使用px还是rem em rem px</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/08/对于页面适配，你应该使用px还是rem/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-移动端轮播图" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/08/移动端轮播图/" class="article-date">
-      <time datetime="2018-08-08T02:59:24.542Z" itemprop="datePublished">2018-08-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/移动端轮播图/">移动端轮播图</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              移动端轮播图
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端轮播图-移动端三大事件/">移动端轮播图 移动端三大事件</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/08/移动端轮播图/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
+
   
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#axios"><span class="toc-number">1.</span> <span class="toc-text">axios</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特性"><span class="toc-number">1.1.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器支持"><span class="toc-number">1.2.</span> <span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.3.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.4.</span> <span class="toc-text">案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios-API"><span class="toc-number">1.5.</span> <span class="toc-text">axios API</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-config"><span class="toc-number">1.5.0.0.1.</span> <span class="toc-text">axios(config)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-url-config"><span class="toc-number">1.5.0.0.2.</span> <span class="toc-text">axios(url[, config])</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求方法的别名"><span class="toc-number">1.5.1.</span> <span class="toc-text">请求方法的别名</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-request-config"><span class="toc-number">1.5.1.0.1.</span> <span class="toc-text">axios.request(config)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-get-url-config"><span class="toc-number">1.5.1.0.2.</span> <span class="toc-text">axios.get(url[, config])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-delete-url-config"><span class="toc-number">1.5.1.0.3.</span> <span class="toc-text">axios.delete(url[, config])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-head-url-config"><span class="toc-number">1.5.1.0.4.</span> <span class="toc-text">axios.head(url[, config])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-options-url-config"><span class="toc-number">1.5.1.0.5.</span> <span class="toc-text">axios.options(url[, config])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-post-url-data-config"><span class="toc-number">1.5.1.0.6.</span> <span class="toc-text">axios.post(url[, data[, config]])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-put-url-data-config"><span class="toc-number">1.5.1.0.7.</span> <span class="toc-text">axios.put(url[, data[, config]])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-patch-url-data-config"><span class="toc-number">1.5.1.0.8.</span> <span class="toc-text">axios.patch(url[, data[, config]])</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#注意"><span class="toc-number">1.5.1.0.8.1.</span> <span class="toc-text">注意</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并发"><span class="toc-number">1.5.2.</span> <span class="toc-text">并发</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-all-iterable"><span class="toc-number">1.5.2.0.1.</span> <span class="toc-text">axios.all(iterable)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-spread-callback"><span class="toc-number">1.5.2.0.2.</span> <span class="toc-text">axios.spread(callback)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建实例"><span class="toc-number">1.5.3.</span> <span class="toc-text">创建实例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-create-config"><span class="toc-number">1.5.3.0.1.</span> <span class="toc-text">axios.create([config])</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例方法"><span class="toc-number">1.5.4.</span> <span class="toc-text">实例方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-request-config-1"><span class="toc-number">1.5.4.0.1.</span> <span class="toc-text">axios#request(config)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-get-url-config-1"><span class="toc-number">1.5.4.0.2.</span> <span class="toc-text">axios#get(url[, config])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-delete-url-config-1"><span class="toc-number">1.5.4.0.3.</span> <span class="toc-text">axios#delete(url[, config])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-head-url-config-1"><span class="toc-number">1.5.4.0.4.</span> <span class="toc-text">axios#head(url[, config])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-options-url-config-1"><span class="toc-number">1.5.4.0.5.</span> <span class="toc-text">axios#options(url[, config])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-post-url-data-config-1"><span class="toc-number">1.5.4.0.6.</span> <span class="toc-text">axios#post(url[, data[, config]])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-put-url-data-config-1"><span class="toc-number">1.5.4.0.7.</span> <span class="toc-text">axios#put(url[, data[, config]])</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#axios-patch-url-data-config-1"><span class="toc-number">1.5.4.0.8.</span> <span class="toc-text">axios#patch(url[, data[, config]])</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请求配置"><span class="toc-number">1.6.</span> <span class="toc-text">请求配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#响应结构"><span class="toc-number">1.7.</span> <span class="toc-text">响应结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置默认值"><span class="toc-number">1.8.</span> <span class="toc-text">配置默认值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局的-axios-默认值"><span class="toc-number">1.8.1.</span> <span class="toc-text">全局的 axios 默认值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义实例默认值"><span class="toc-number">1.8.2.</span> <span class="toc-text">自定义实例默认值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置的优先顺序"><span class="toc-number">1.8.3.</span> <span class="toc-text">配置的优先顺序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拦截器"><span class="toc-number">1.9.</span> <span class="toc-text">拦截器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误处理"><span class="toc-number">1.10.</span> <span class="toc-text">错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#取消"><span class="toc-number">1.11.</span> <span class="toc-text">取消</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-application-x-www-form-urlencoded-format"><span class="toc-number">1.12.</span> <span class="toc-text">使用 application/x-www-form-urlencoded format</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器"><span class="toc-number">1.12.1.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js"><span class="toc-number">1.12.2.</span> <span class="toc-text">Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Semver"><span class="toc-number">1.13.</span> <span class="toc-text">Semver</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promises"><span class="toc-number">1.14.</span> <span class="toc-text">Promises</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TypeScript"><span class="toc-number">1.15.</span> <span class="toc-text">TypeScript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资源"><span class="toc-number">1.16.</span> <span class="toc-text">资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credits"><span class="toc-number">1.17.</span> <span class="toc-text">Credits</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议"><span class="toc-number">1.18.</span> <span class="toc-text">协议</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/12/2018前端面试题/" title="下一篇: 2018年web前端经典面试题及答案">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/13/axios插件的使用操作/">axios插件的使用操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/12/2018前端面试题/">2018年web前端经典面试题及答案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/数组的方法/">数组的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/字符串的操作/">字符串的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JSONP的优缺点/">JSONP的优缺点</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/移动端轮播图/">移动端轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/前端面试题整理/">前端面试题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/css中清除浮动/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/3D切割轮播图/">模板3D切割轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
