@@ -16,18 +16,18 @@
 
                 
 
-                                        <meta name="description" content="字符串的操作">
-<meta name="keywords" content="字符串的操作">
+                                        <meta name="description" content="全选反选不选">
+<meta name="keywords" content="全选  反选  不选">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字符串的操作">
-<meta property="og:url" content="http://yoursite.com/2018/08/10/字符串的操作/index.html">
+<meta property="og:title" content="全选反选不选">
+<meta property="og:url" content="http://yoursite.com/2018/08/14/全选反选不选/index.html">
 <meta property="og:site_name" content="李大玄的博客">
-<meta property="og:description" content="字符串的操作">
+<meta property="og:description" content="全选反选不选">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-10T12:36:20.827Z">
+<meta property="og:updated_time" content="2018-08-14T07:28:31.368Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字符串的操作">
-<meta name="twitter:description" content="字符串的操作">
+<meta name="twitter:title" content="全选反选不选">
+<meta name="twitter:description" content="全选反选不选">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +61,7 @@
                                                                                                 
                                                                                                     <title>
                                                                                                         
-                                                                                                            字符串的操作 |
+                                                                                                            全选反选不选 |
                                                                                                                 
                                                                                                                     李大玄的博客
                                                                                                     </title>
@@ -272,11 +272,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-字符串的操作" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-全选反选不选" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/08/10/字符串的操作/" class="article-date">
-      <time datetime="2018-08-10T11:59:20.180Z" itemprop="datePublished">2018-08-10</time>
+      <a href="/2018/08/14/全选反选不选/" class="article-date">
+      <time datetime="2018-08-14T05:51:18.311Z" itemprop="datePublished">2018-08-14</time>
 </a>
 
 
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      字符串的操作
+      全选反选不选
     </h1>
   
 
@@ -302,7 +302,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串的操作/">字符串的操作</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/全选-反选-不选/">全选  反选  不选</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -312,40 +312,26 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="字符串的操作方法"><a href="#字符串的操作方法" class="headerlink" title="字符串的操作方法"></a>字符串的操作方法</h3><p>字符串的所有方法,都不会修改字符串本身(字符串的长度不可变)</p>
-<ol>
-<li>首先字符串的两种创建方法 </li>
+        <h4 id="全选反选不选造作-原生js"><a href="#全选反选不选造作-原生js" class="headerlink" title="全选反选不选造作 原生js"></a>全选反选不选造作 原生js</h4><ol>
+<li>先写出表格的基本样式</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'zs'</span>;;;</span><br><span class="line">其实是  <span class="keyword">var</span> s =<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'zs'</span>);;;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>1.根据位置(索引)获取到字符: charAt(index), 返回的是字符   index是索引,从0开始….. /  了解:charCodeAt(index)  获得指定字符的ascii码</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abcdefg'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cAt</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> s = str.charAt(i);</span><br><span class="line">        <span class="built_in">console</span>.log(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">cAt(str);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>concat( ) ;  连接两个或多个字符  形如 str.a(concat(b,c….))</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'abcd'</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">'efgh'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str1.concat(str2));</span><br><span class="line"></span><br><span class="line">输出结果为 : abcdefgh</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>substr(start,  length)  ;截取字符串  从哪个开始,截取几个</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abcdefgh'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.substr(<span class="number">1</span>, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">输出的结果为 : b 意为从索引为 <span class="number">1</span> 的地方开始 , 截取的长度为 <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>indexOf(‘ a ‘);查找字符a 的位置</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abcdefg'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="number">2</span>));</span><br><span class="line">结果为 <span class="number">-1</span> 这个方法,如果能在字符串中找的到返回的结果就是 <span class="number">1</span> ,如果找不到,返回的结果就是<span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'b'</span>));</span><br><span class="line">返回的结果就是 <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>replice 替换  replace(‘a’ , ‘b’),要替换a ,替换成 b </li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abcdefgaaaa'</span>;</span><br><span class="line">    <span class="keyword">while</span> (str.indexOf(<span class="string">'a'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">       str = str.replace(<span class="string">'a'</span>, <span class="string">'!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>转大写</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'get-Element-By-Id'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.toUpperCase());</span><br><span class="line">返回结果为 :get-element-by-id</span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>转小写</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> str = <span class="string">'get-Element-By-Id'</span>;</span><br><span class="line">        <span class="comment">// console.log(str.toUpperCase());</span></span><br><span class="line">        <span class="keyword">var</span> arr = str.split(<span class="string">'-'</span>);</span><br><span class="line">        <span class="keyword">var</span> a = arr[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            a += arr[i].charAt(<span class="number">0</span>).toLowerCase() + arr[i].slice(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"> <span class="built_in">console</span>.log(a)</span><br><span class="line">返回结果为 :getelementbyid</span><br></pre></td></tr></table></figure>
-<p><strong>常用的字符串的方法也就这些了,这里只做一些基本的操作,因为没有什么难度</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">       &lt;thead&gt;</span><br><span class="line">           &lt;tr&gt;</span><br><span class="line">               &lt;th&gt;&lt;input type="checkbox" name="all"&gt;&lt;/th&gt;</span><br><span class="line">               &lt;th&gt;姓名&lt;<span class="regexp">/th&gt;</span></span><br><span class="line"><span class="regexp">               &lt;th&gt;邮箱&lt;/</span>th&gt;</span><br><span class="line">               &lt;th&gt;附属信息&lt;<span class="regexp">/th&gt;</span></span><br><span class="line"><span class="regexp">           &lt;/</span>tr&gt;</span><br><span class="line">       &lt;<span class="regexp">/thead&gt;</span></span><br><span class="line"><span class="regexp">       &lt;tbody&gt;</span></span><br><span class="line"><span class="regexp">           &lt;tr class="one"&gt;</span></span><br><span class="line"><span class="regexp">               &lt;td&gt;&lt;input type="checkbox" name="mail"&gt;&lt;/</span>td&gt;</span><br><span class="line">               &lt;td&gt;张三&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">               &lt;td&gt;邮箱&lt;/</span>td&gt;</span><br><span class="line">               &lt;td&gt;附属信息&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">           &lt;/</span>tr&gt;</span><br><span class="line">           &lt;tr <span class="class"><span class="keyword">class</span></span>=<span class="string">"two"</span>&gt;</span><br><span class="line">               &lt;td&gt;&lt;input type="checkbox" name="mail"&gt;&lt;/td&gt;</span><br><span class="line">               &lt;td&gt;张三&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">               &lt;td&gt;邮箱&lt;/</span>td&gt;</span><br><span class="line">               &lt;td&gt;附属信息&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">           &lt;/</span>tr&gt;</span><br><span class="line">           &lt;tr <span class="class"><span class="keyword">class</span></span>=<span class="string">"one"</span>&gt;</span><br><span class="line">               &lt;td&gt;&lt;input type="checkbox" name="mail"&gt;&lt;/td&gt;</span><br><span class="line">               &lt;td&gt;张三&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">               &lt;td&gt;邮箱&lt;/</span>td&gt;</span><br><span class="line">               &lt;td&gt;附属信息&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">           &lt;/</span>tr&gt;</span><br><span class="line">           &lt;tr <span class="class"><span class="keyword">class</span></span>=<span class="string">"two"</span>&gt;</span><br><span class="line">               &lt;td&gt;&lt;input type="checkbox" name="mail"&gt;&lt;/td&gt;</span><br><span class="line">               &lt;td&gt;张三&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">               &lt;td&gt;邮箱&lt;/</span>td&gt;</span><br><span class="line">               &lt;td&gt;附属信息&lt;<span class="regexp">/td&gt;</span></span><br><span class="line"><span class="regexp">           &lt;/</span>tr&gt;</span><br><span class="line">           &lt;tr&gt;</span><br><span class="line">               &lt;th&gt;</span><br><span class="line">                   &lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"all"</span> /&gt;全选</span><br><span class="line">               &lt;<span class="regexp">/th&gt;</span></span><br><span class="line"><span class="regexp">               &lt;th colspan="3"&gt;</span></span><br><span class="line"><span class="regexp">                   &lt;input type="button" value="全选" /</span>&gt;</span><br><span class="line">                   &lt;input type=<span class="string">"button"</span> value=<span class="string">"取消全选"</span> /&gt;</span><br><span class="line">                   &lt;input type=<span class="string">"button"</span> value=<span class="string">"反选"</span> /&gt;</span><br><span class="line"></span><br><span class="line">               &lt;<span class="regexp">/th&gt;</span></span><br><span class="line"><span class="regexp">           &lt;/</span>tr&gt;</span><br><span class="line">       &lt;<span class="regexp">/tbody&gt;</span></span><br><span class="line"><span class="regexp">   &lt;/</span>table&gt;</span><br></pre></td></tr></table></figure>
+<p>样式的基本操作,接下来是css 把样式写出来</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">table &#123;</span><br><span class="line">           width: <span class="number">500</span>px;</span><br><span class="line">           border-collapse: collapse;</span><br><span class="line">           border: 1px solid #ccc;</span><br><span class="line">           margin: <span class="number">0</span> auto;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       table td &#123;</span><br><span class="line">           border: #249bdb 1px solid;</span><br><span class="line">           padding: <span class="number">10</span>px;</span><br><span class="line">           text-align: center;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       table th &#123;</span><br><span class="line">           border: #249bdb 1px solid;</span><br><span class="line">           padding: <span class="number">10</span>px;</span><br><span class="line">           background-color: rgb(<span class="number">200</span>, <span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       .one &#123;</span><br><span class="line">           background-color: #9bf7d5;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       .two &#123;</span><br><span class="line">           background-color: #f3e99a;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>获取DOM元素进行操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取两个全选按钮</span></span><br><span class="line">      <span class="keyword">var</span> all1 = <span class="built_in">document</span>.getElementsByName(<span class="string">'all'</span>)[<span class="number">0</span>];</span><br><span class="line">      <span class="keyword">var</span> all2 = <span class="built_in">document</span>.getElementsByName(<span class="string">'all'</span>)[<span class="number">1</span>];</span><br><span class="line">      <span class="comment">// 全选按钮</span></span><br><span class="line">      <span class="keyword">var</span> allBtn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'input[type = button]'</span>)[<span class="number">0</span>];</span><br><span class="line">      <span class="comment">// 取消全选按钮</span></span><br><span class="line">      <span class="keyword">var</span> allBtn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'input[type = button]'</span>)[<span class="number">1</span>];</span><br><span class="line">      <span class="comment">// 取消反选选按钮</span></span><br><span class="line">      <span class="keyword">var</span> allBtn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'input[type = button]'</span>)[<span class="number">2</span>];</span><br><span class="line">      <span class="comment">// 获取子选择项</span></span><br><span class="line">      <span class="keyword">var</span> cks = <span class="built_in">document</span>.getElementsByName(<span class="string">'mail'</span>);</span><br></pre></td></tr></table></figure>
+<p>给两个全选按钮注册点击事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 左上角的全选按钮</span></span><br><span class="line">       all1.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           all2.checked = <span class="keyword">this</span>.checked;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cks.length; i++) &#123;</span><br><span class="line">               cks[i].checked = <span class="keyword">this</span>.checked;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="comment">// 左下角全选按钮</span></span><br><span class="line">       all2.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           all1.checked = <span class="keyword">this</span>.checked;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cks.length; i++) &#123;</span><br><span class="line">               cks[i].checked = <span class="keyword">this</span>.checked;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>但是由于出现了重复代码,下面进行优化 将重复代码封装一个简单的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 左上角的全选按钮</span></span><br><span class="line">        all1.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            ckeckall(all1, cks, all2)</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 左下角全选按钮</span></span><br><span class="line">        all2.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            ckeckall(all2, cks, all1)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">ckeckall</span>(<span class="params">ele1, cks, ele2</span>) </span>&#123;</span><br><span class="line">            ele2.checked = ele1.checked;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cks.length; i++) &#123;</span><br><span class="line">                cks[i].checked = ele1.checked;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>全选按钮的点击事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全选按钮</span></span><br><span class="line">       allBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           all1.checked = <span class="literal">true</span>;</span><br><span class="line">           all2.checked = <span class="literal">true</span>;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cks.length; i++) &#123;</span><br><span class="line">               cks[i].checked = <span class="literal">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br></pre></td></tr></table></figure>
+<p>全不选按钮的点击事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 取消反选按钮</span></span><br><span class="line">offBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    all1.checked = <span class="literal">false</span>;</span><br><span class="line">    all2.checked = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cks.length; i++) &#123;</span><br><span class="line">        cks[i].checked = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>每一子选项的点击事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每一个单个的子选项的点击事件</span></span><br><span class="line">        <span class="comment">// 当子选项全部选中的是时候,所有的input都是被选中的状态</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; cks.length; i++) &#123;</span><br><span class="line">            cks[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">// 点击当前项  定义一个开关</span></span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; cks.length; k++) &#123;</span><br><span class="line">                    <span class="comment">// 只要有一个没被选中  开关就变为false</span></span><br><span class="line">                    <span class="keyword">if</span> (!cks[k].checked) &#123;</span><br><span class="line">                        flag = <span class="literal">false</span>;</span><br><span class="line">                        <span class="comment">// 终止 跳出</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                all1.checked = flag;</span><br><span class="line">                all2.checked = flag;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>整体思路就是这样了,其实就是最后一步难一点,也没什么了,自己整理一下也就会了</strong></p>
+<p>最后说一句,我的博客是   <strong>webldx.GgtHub.io</strong></p>
 
       
     </div>
@@ -354,13 +340,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/08/10/字符串的操作/">字符串的操作</a></p>
+        <p><span>本文标题:</span><a href="/2018/08/14/全选反选不选/">全选反选不选</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
-        <p><span>发布时间:</span>2018-08-10, 19:59:20</p>
-        <p><span>最后更新:</span>2018-08-10, 20:36:20</p>
+        <p><span>发布时间:</span>2018-08-14, 13:51:18</p>
+        <p><span>最后更新:</span>2018-08-14, 15:28:31</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/08/10/字符串的操作/" title="字符串的操作">http://yoursite.com/2018/08/10/字符串的操作/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/10/字符串的操作/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/14/全选反选不选/" title="全选反选不选">http://yoursite.com/2018/08/14/全选反选不选/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/14/全选反选不选/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -372,16 +358,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/08/10/数组的方法/">
-                    数组的方法
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/08/08/JSONP的优缺点/">
-                    JSONP的优缺点
+                <a href="/2018/08/13/axios插件的使用操作/">
+                    
                 </a>
             </div>
         
@@ -393,7 +373,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串的操作方法"><span class="toc-number">1.</span> <span class="toc-text">字符串的操作方法</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#全选反选不选造作-原生js"><span class="toc-number">1.</span> <span class="toc-text">全选反选不选造作 原生js</span></a></li></ol>
         
     </div>
     <style>
@@ -429,7 +409,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"字符串的操作　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"全选反选不选　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -449,15 +429,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/08/10/数组的方法/" title="上一篇: 数组的方法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/08/08/JSONP的优缺点/" title="下一篇: JSONP的优缺点">
+            <a href="/2018/08/13/axios插件的使用操作/" title="下一篇: ">
                 <i class="fa fa-angle-right"></i>
             </a>
         
