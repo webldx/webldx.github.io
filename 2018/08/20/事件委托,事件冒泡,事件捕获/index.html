@@ -16,13 +16,18 @@
 
                 
 
-                                        <meta property="og:type" content="website">
-<meta property="og:title" content="李大玄的博客">
-<meta property="og:url" content="http://yoursite.com/tags/精灵图的优缺点/index.html">
+                                        <meta name="description" content="事件委托,事件冒泡,事件捕获">
+<meta name="keywords" content="事件委托, 事件冒泡, 事件捕获">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件委托,事件冒泡,事件捕获">
+<meta property="og:url" content="http://yoursite.com/2018/08/20/事件委托,事件冒泡,事件捕获/index.html">
 <meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="事件委托,事件冒泡,事件捕获">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-20T00:52:41.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李大玄的博客">
+<meta name="twitter:title" content="事件委托,事件冒泡,事件捕获">
+<meta name="twitter:description" content="事件委托,事件冒泡,事件捕获">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -56,7 +61,7 @@
                                                                                                 
                                                                                                     <title>
                                                                                                         
-                                                                                                            Tag: 精灵图的优缺点 |
+                                                                                                            事件委托,事件冒泡,事件捕获 |
                                                                                                                 
                                                                                                                     李大玄的博客
                                                                                                     </title>
@@ -69,9 +74,9 @@
                                                                                                             fancybox: true,
                                                                                                             animate: true,
                                                                                                             isHome: false,
-                                                                                                            isPost: false,
+                                                                                                            isPost: true,
                                                                                                             isArchive: false,
-                                                                                                            isTag: true,
+                                                                                                            isTag: false,
                                                                                                             isCategory: false,
                                                                                                             fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
                                                                                                             scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -267,56 +272,206 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-事件委托,事件冒泡,事件捕获" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/15/css Sprites的优缺点/" class="archive-article-date">
-      <time datetime="2018-08-15T15:40:16.220Z" itemprop="datePublished">08-15</time>
+    <div class="article-meta">
+      <a href="/2018/08/20/事件委托,事件冒泡,事件捕获/" class="article-date">
+      <time datetime="2018-08-20T00:49:08.463Z" itemprop="datePublished">2018-08-20</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/15/css Sprites的优缺点/">精灵图的优缺点</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      事件委托,事件冒泡,事件捕获
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/精灵图的优缺点/">精灵图的优缺点</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件委托-事件冒泡-事件捕获/">事件委托, 事件冒泡, 事件捕获</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="一：概念"><a href="#一：概念" class="headerlink" title="一：概念"></a>一：概念</h4><ul>
+<li><p>事件捕获指的是从document到触发事件的那个节点，即自上而下的去触发事件。</p>
+</li>
+<li><p>事件冒泡刚好相反，是从触发事件的那个节点一直到document，是自下而上的去触发事件。</p>
+</li>
+<li><p>事件委托：利用了事件冒泡的原理，在下方通过实例讲解</p>
+</li>
+<li><p>阻止事件委托和冒泡：在事件函数中执行event.stopPropagation()</p>
+<blockquote>
+<p>补充：绑定事件方法（addEventListener）的第三个参数，就是控制事件触发顺序是否为事件捕获。true,事件捕获；false,事件冒泡。默认false,即事件冒泡。所以当你对一个dom节点触发事件时，若外层的节点也设置了相应的事件函数，就会使外层的节点也触发自己的事件函数。</p>
+</blockquote>
+<p>光看概念，好像明白了，但是在实例中仍然可能判断错误，有可能你的理解就是错误的，所以最好自己通过实例测试一下</p>
+</li>
+</ul>
+<h4 id="二：实例讲解"><a href="#二：实例讲解" class="headerlink" title="二：实例讲解"></a>二：实例讲解</h4><h5 id="事件冒泡和时间捕捉："><a href="#事件冒泡和时间捕捉：" class="headerlink" title="事件冒泡和时间捕捉："></a>事件冒泡和时间捕捉：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;parent&quot;&gt;</span><br><span class="line">　　&lt;div id=&quot;child&quot; class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">       document.getElementById(&quot;parent&quot;).addEventListener(&quot;click&quot;,function(e)&#123;</span><br><span class="line">            console.log(&quot;parent事件被触发，&quot;+this.id);</span><br><span class="line">        &#125;,false);</span><br><span class="line">        document.getElementById(&quot;child&quot;).addEventListener(&quot;click&quot;,function(e)&#123;</span><br><span class="line">            console.log(&quot;child事件被触发，&quot;+this.id);</span><br><span class="line">        &#125;,false);</span><br><span class="line">&lt;/script&gt;123456789101112</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上述代码给child和parent元素都设置了点击事件，并且都是采用的事件冒泡机制。<br>1.当点击child元素时，先触发child的点击事件，再触发parent的点击事件，打印相应的内容；<br>2.当点击parent元素时，只触发parent的点击事件，因为parent元素冒泡上去没有dom元素设置了click事件的函数；</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;parent&quot;&gt;</span><br><span class="line">　　&lt;div id=&quot;child&quot; class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">       document.getElementById(&quot;parent&quot;).addEventListener(&quot;click&quot;,function(e)&#123;</span><br><span class="line">            console.log(&quot;parent事件被触发，&quot;+this.id);</span><br><span class="line">        &#125;,true);</span><br><span class="line">        document.getElementById(&quot;child&quot;).addEventListener(&quot;click&quot;,function(e)&#123;</span><br><span class="line">            console.log(&quot;child事件被触发，&quot;+this.id);</span><br><span class="line">        &#125;,true);</span><br><span class="line">&lt;/script&gt;123456789101112</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上述代码采用事件捕捉<br>1.当点击child元素时，先触发parent的点击事件，再触发child的点击事件，打印相应的内容；<br>2.当点击parent元素时，只触发parent的点击事件，因为parent元素从上面捕捉下来一直到parent元素没有dom元素设置了click事件的函数；</p>
+</blockquote>
+<p>总结：所以当点击child元素时，不论是设置的事件捕捉还是事件冒泡，都会触发parent的点击事件，除非不给parent元素设置点击事件；</p>
+<h5 id="事件委托："><a href="#事件委托：" class="headerlink" title="事件委托："></a>事件委托：</h5><blockquote>
+<p>当有多个类似的元素需要绑定事件时，一个一个去绑定即浪费时间，又不利于性能，这时候就可以用到事件委托，给他们的一个共同父级元素添加一个事件函数去处理他们所有的事件情况，根据下面代码分析;</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;1ist&quot;&gt;</span><br><span class="line">    &lt;li&gt;111&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;222&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;333&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;444&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    document.getElementById(&apos;1ist&apos;).addEventListener(&apos;click&apos;,function(e)&#123;</span><br><span class="line">    e.target.innerHTML = &quot;被点击&quot;;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;123456789101112</span><br></pre></td></tr></table></figure>
+<p>可能大家会疑惑，我们并没有给li分别设置点击函数，为什么点击相应的li却会产生效果，我们可以这么理解，虽然我们没有给li设置点击事件，但是默认的点击事件是采用的事件冒泡，冒泡到父级元素的点击事件是，用事件的target属性判断进行点击的元素</p>
+<ul>
+<li><p>e.target表示在事件冒泡中触发事件的源元素，在IE中是e.srcElement</p>
+</li>
+<li><p>并且e.target有很多属性可以操作</p>
+</li>
+</ul>
+<p>  ​</p>
+<ul>
+<li>event.target.nodeName 　　//获取事件触发元素标签name（li,p…）</li>
+<li>event.target.id　　　　　　//获取事件触发元素id</li>
+<li>event.target.className　　//获取事件触发元素classname</li>
+<li>event.target.innerHTML　　//获取事件触发元素的内容（li）</li>
+</ul>
+<p>然后进行相应操作~~这是我自己理解的。。。如果有错误的地方，欢迎在评论中告知(经测试，子元素没有定义事件函数时，仍然会进行冒泡，触发父元素的事件函数，并且冒泡和捕捉时，只有相对应 的事件会被触发，其他不被触发)</p>
+<p>最后展示下e.stopPropagation()的兼容写法（兼容IE）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function stopPropagation(e) &#123;  </span><br><span class="line">    if (e.stopPropagation) &#123;  </span><br><span class="line">        e.stopPropagation();  </span><br><span class="line">    &#125; else &#123;  </span><br><span class="line">        window.event.cancelBubble = true;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/20/事件委托,事件冒泡,事件捕获/">事件委托,事件冒泡,事件捕获</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-08-20, 08:49:08</p>
+        <p><span>最后更新:</span>2018-08-20, 08:52:41</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/20/事件委托,事件冒泡,事件捕获/" title="事件委托,事件冒泡,事件捕获">http://yoursite.com/2018/08/20/事件委托,事件冒泡,事件捕获/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/20/事件委托,事件冒泡,事件捕获/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/15/css Sprites的优缺点/">
+                    精灵图的优缺点
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一：概念"><span class="toc-number">1.</span> <span class="toc-text">一：概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二：实例讲解"><span class="toc-number">2.</span> <span class="toc-text">二：实例讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#事件冒泡和时间捕捉："><span class="toc-number">2.1.</span> <span class="toc-text">事件冒泡和时间捕捉：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#事件委托："><span class="toc-number">2.2.</span> <span class="toc-text">事件委托：</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"事件委托,事件冒泡,事件捕获　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/15/css Sprites的优缺点/" title="下一篇: 精灵图的优缺点">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/20/事件委托,事件冒泡,事件捕获/">事件委托,事件冒泡,事件捕获</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/css Sprites的优缺点/">精灵图的优缺点</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/ECMAScript 6 let和const命令/">ECMAScript 6 let和const命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/HTML常见的兼容性问题/">html常见的兼容性问题？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/14/全选反选不选/">全选反选不选</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/13/axios插件的使用操作/">axios插件的使用操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/12/2018前端面试题/">2018年web前端经典面试题及答案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/数组的方法/">数组的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/字符串的操作/">字符串的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JSONP的优缺点/">JSONP的优缺点</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/移动端轮播图/">移动端轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/前端面试题整理/">前端面试题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/css中清除浮动/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/3D切割轮播图/">模板3D切割轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
