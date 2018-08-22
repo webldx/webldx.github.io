@@ -16,13 +16,17 @@
 
                 
 
-                                        <meta property="og:type" content="website">
+                                        <meta name="description" content="命令行窗口操作电脑的两种方式：图形界面、命令行窗口。  我们平时都是通过图形界面来操作计算机，比如鼠标右键-&amp;gt;新建-&amp;gt;新建文件夹。 其实命令行窗口也是一种操作向计算机的方式。 开启命令行 win + R -&amp;gt; cmd -&amp;gt; enter 常用命令行工具 cmd powershell git bash    常用命令 pwd (print working directory)">
+<meta property="og:type" content="article">
 <meta property="og:title" content="李大玄的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/08/23/git常用命令/index.html">
 <meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="命令行窗口操作电脑的两种方式：图形界面、命令行窗口。  我们平时都是通过图形界面来操作计算机，比如鼠标右键-&amp;gt;新建-&amp;gt;新建文件夹。 其实命令行窗口也是一种操作向计算机的方式。 开启命令行 win + R -&amp;gt; cmd -&amp;gt; enter 常用命令行工具 cmd powershell git bash    常用命令 pwd (print working directory)">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-12T04:00:03.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="李大玄的博客">
+<meta name="twitter:description" content="命令行窗口操作电脑的两种方式：图形界面、命令行窗口。  我们平时都是通过图形界面来操作计算机，比如鼠标右键-&amp;gt;新建-&amp;gt;新建文件夹。 其实命令行窗口也是一种操作向计算机的方式。 开启命令行 win + R -&amp;gt; cmd -&amp;gt; enter 常用命令行工具 cmd powershell git bash    常用命令 pwd (print working directory)">
 
                                             <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -56,8 +60,6 @@
                                                                                                 
                                                                                                     <title>
                                                                                                         
-                                                                                                            Archives: 2018 |
-                                                                                                                
                                                                                                                     李大玄的博客
                                                                                                     </title>
 
@@ -69,8 +71,8 @@
                                                                                                             fancybox: true,
                                                                                                             animate: true,
                                                                                                             isHome: false,
-                                                                                                            isPost: false,
-                                                                                                            isArchive: true,
+                                                                                                            isPost: true,
+                                                                                                            isArchive: false,
                                                                                                             isTag: false,
                                                                                                             isCategory: false,
                                                                                                             fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -267,357 +269,326 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2018/08/23/git常用命令/" class="article-date">
+      <time datetime="2018-08-22T17:01:10.306Z" itemprop="datePublished">2018-08-23</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+    <div class="article-entry" itemprop="articleBody">
       
+          
+        <h2 id="命令行窗口"><a href="#命令行窗口" class="headerlink" title="命令行窗口"></a>命令行窗口</h2><p>操作电脑的两种方式：图形界面、命令行窗口。</p>
+<ul>
+<li>我们平时都是通过图形界面来操作计算机，比如鼠标右键-&gt;新建-&gt;新建文件夹。</li>
+<li>其实命令行窗口也是一种操作向计算机的方式。</li>
+<li>开启命令行 win + R -&gt; cmd -&gt; enter</li>
+<li>常用命令行工具<ul>
+<li>cmd</li>
+<li>powershell</li>
+<li>git bash</li>
+</ul>
+</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li>pwd (print working directory) 查看当前所在的目录</li>
+<li>cd (change directory) 切换目录</li>
+<li>clear 清屏</li>
+<li>ctrl + l 清屏</li>
+<li>ls (list) 查看当前目录下的内容</li>
+<li>mkdir (make directory) 创建目录</li>
+<li>rmdir (remove directory) 删除文件夹 只能删除空文件夹 不常用</li>
+<li>touch 创建文件</li>
+<li>cat 查看文件内容</li>
+<li>less 查看文件内容 <ul>
+<li>回车 向下走一行</li>
+<li>空格 向下走一屏</li>
+<li>b 向上走一屏幕</li>
+<li>q 退出</li>
+</ul>
+</li>
+<li>rm (remove) 删除文件 如 rm index.html</li>
+<li>rm -rf  删除非空目录<ul>
+<li>慎重 不经过回收站</li>
+</ul>
+</li>
+<li>mv (move) 移动文件或重命名</li>
+<li>cp (copy) 复制文件</li>
+<li>echo ‘内容’ &gt; 文件 输出内容到文件 每次输出都是覆盖原有文件内容</li>
+<li>ehco ‘内容’ &gt;&gt; 文件 输出内容到文件 每次输出都是追新内容</li>
+</ul>
+<h2 id="GIT是什么"><a href="#GIT是什么" class="headerlink" title="GIT是什么"></a><a href="git-scm.com">GIT</a>是什么</h2><p>源代码管理工具，是linux系统之父Linus Torvalds为管理linux系统内核而开发的开源的版本控制工具。</p>
+<p>在写代码的过程中提供的反悔的机会。</p>
+<p>开发过程中出现bug，越改越乱，可以选择撤销，当修改的步骤较多或者文件较多可能撤销不回去，如果编辑器在中途关闭过，就肯定撤销不回去了。想回到没改之前代码能运行的状态。</p>
+<h2 id="GIT三大区域"><a href="#GIT三大区域" class="headerlink" title="GIT三大区域"></a>GIT三大区域</h2><ul>
+<li>工作目录<ul>
+<li>存放项目代码的目录</li>
+</ul>
+</li>
+<li>暂存区<ul>
+<li>临时存放更改的了文件</li>
+<li>防止工作目录中的代码丢失</li>
+</ul>
+</li>
+<li>代码仓库<ul>
+<li>当开发的功能足以形成一个版本的时候 可以将代码形成版本提交到仓库</li>
+<li>相当于复制了一份当前的代码存储到了仓库中</li>
+</ul>
+</li>
+</ul>
+<h2 id="GIT常用命令"><a href="#GIT常用命令" class="headerlink" title="GIT常用命令"></a>GIT常用命令</h2><ul>
+<li>配置git用户名和邮箱<ul>
+<li>git config –global user.name zhangsan</li>
+<li>git config –global user.email <a href="mailto:zhangsan@163.com" target="_blank" rel="noopener">zhangsan@163.com</a></li>
+</ul>
+</li>
+<li>查看当前的git配置<ul>
+<li>git config –list</li>
+</ul>
+</li>
+<li>初始化git仓库<ul>
+<li>git init</li>
+</ul>
+</li>
+<li>查看当前仓库的状态 <ul>
+<li>git status</li>
+</ul>
+</li>
+<li>将工作目录中的文件添加到暂存区<ul>
+<li>git add </li>
+</ul>
+</li>
+<li>将暂存区中的代码提交到本地仓库 形成一个版本<ul>
+<li>git commit -m 备注 </li>
+</ul>
+</li>
+<li>查看本地仓库中的历史提交版本<ul>
+<li>git log </li>
+</ul>
+</li>
+<li>将文件从暂存区中删除<ul>
+<li>git rm –cached 文件列表 </li>
+<li>说明:<ul>
+<li>必须保证工作目录中的文件代码和暂存区中文件代码一致</li>
+<li>此时工作目录中有此文件 暂存区中没有此文件 这个文件不被git管理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用暂存区中的文件覆盖工作目录中的文件<ul>
+<li>git checkout  文件列表 </li>
+<li>说明：暂存区和工作目录都有此文件 这个文件依然被git管理</li>
+</ul>
+</li>
+<li>回滚到本地仓库中的特定版本并覆盖暂存区和工作目录<ul>
+<li>git reset –hard commitID </li>
+</ul>
+</li>
+<li>回滚到本地仓库中的特定版本不覆盖暂存区和工作目录<ul>
+<li>git reset –soft commitID</li>
+</ul>
+</li>
+<li>回滚到本地仓库中的特定版本并覆盖暂存区<ul>
+<li>git reset –mixed commitID</li>
+</ul>
+</li>
+<li>回滚中HEAD的使用<ul>
+<li>git reset –hard HEAD 使用最新的版本覆盖工作目录和暂存区</li>
+<li>git reset –hard HEAD^ 使用上一次提交的版本覆盖工作目录和暂存区</li>
+</ul>
+</li>
+<li>查看分支<ul>
+<li>git branch</li>
+</ul>
+</li>
+<li>创建分支<ul>
+<li>git branch 分支名称</li>
+</ul>
+</li>
+<li>切换分支<ul>
+<li>git checkout 分支名称</li>
+</ul>
+</li>
+<li>创建并切换分支<ul>
+<li>git checkout -b 分支名称 </li>
+</ul>
+</li>
+<li>删除分支(如果分支没有被合并不允许删除)<ul>
+<li>git branch -d 分支名称</li>
+</ul>
+</li>
+<li>删除分支(强制删除分支)<ul>
+<li>git branch -D 分支名称</li>
+</ul>
+</li>
+<li>合并分支<ul>
+<li>git merge 来源分支</li>
+</ul>
+</li>
+<li>初始化一个裸露仓库(公共代码仓库)<ul>
+<li>git init –bare </li>
+</ul>
+</li>
+<li>向远程仓库推送代码<ul>
+<li>git push 远程仓库地址 本地分支名称:远程分支名称</li>
+</ul>
+</li>
+<li>从远程仓库中拉取代码(拉取最新版本到本地 开发过程中使用)<ul>
+<li>git pull 远程仓库地址 远程分支名称:本地分支名称</li>
+</ul>
+</li>
+<li>为远程仓库地址创建别名<ul>
+<li>git remote add 别名 远程仓库地址</li>
+</ul>
+</li>
+<li>查看远程地址的详情信息<ul>
+<li>git remote -v</li>
+</ul>
+</li>
+<li>查看当前别名所对应的远程仓库地址<ul>
+<li>git remote show 别名 </li>
+</ul>
+</li>
+<li>删除当前别名及所对应的远程仓库地址<ul>
+<li>git remote remove 别名 </li>
+</ul>
+</li>
+<li>从远程仓库获取代码(拉取所有版本到本地)<ul>
+<li>git clone 远程仓库地址 项目名称 </li>
+<li>使用场景：加入到已有项目的开发中 需要先拉取所有版本到本地 再进行开发</li>
+</ul>
+</li>
+<li>冲突修复</li>
+<li>多人协作开发免登录操作 ssh-keygen</li>
+<li>gitignore忽略清单</li>
+<li>git config credential.helper manager  在第一次输入账号密码后系统会记住它 下次提交时不再需要输入账号密码</li>
+</ul>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/08/JSONP的优缺点/" class="archive-article-date">
-      <time datetime="2018-08-08T15:05:28.937Z" itemprop="datePublished">08-08</time>
-</a>
-
-
-        </div>
-         
+  </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/JSONP的优缺点/">JSONP的优缺点</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSONP的优缺点/">JSONP的优缺点</a></li></ul>
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/23/git常用命令/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-08-23, 01:01:10</p>
+        <p><span>最后更新:</span>2018-08-12, 12:00:03</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/23/git常用命令/" title="">http://yoursite.com/2018/08/23/git常用命令/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/23/git常用命令/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/08/JS中this关键字详解/" class="archive-article-date">
-      <time datetime="2018-08-08T09:28:44.264Z" itemprop="datePublished">08-08</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS中this关键字详解/">JS中this关键字详解</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/08/37个JavaScript基本面试问题和解答/" class="archive-article-date">
-      <time datetime="2018-08-08T08:39:05.587Z" itemprop="datePublished">08-08</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/08/JavaScript垃圾回收机制/" class="archive-article-date">
-      <time datetime="2018-08-08T04:53:38.294Z" itemprop="datePublished">08-08</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/08/对于页面适配，你应该使用px还是rem/" class="archive-article-date">
-      <time datetime="2018-08-08T04:49:43.589Z" itemprop="datePublished">08-08</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/对于页面适配，你应该使用px还是rem-em-rem-px/">对于页面适配，你应该使用px还是rem em rem px</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/08/移动端轮播图/" class="archive-article-date">
-      <time datetime="2018-08-08T02:59:24.542Z" itemprop="datePublished">08-08</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/移动端轮播图/">移动端轮播图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端轮播图-移动端三大事件/">移动端轮播图 移动端三大事件</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/06/封装移动端手势事件/" class="archive-article-date">
-      <time datetime="2018-08-06T10:32:25.215Z" itemprop="datePublished">08-06</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/封装移动端手势事件-touchstart-touchmove-touchend/">封装移动端手势事件 touchstart touchmove touchend</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/06/前端面试题整理/" class="archive-article-date">
-      <time datetime="2018-08-06T00:43:52.192Z" itemprop="datePublished">08-06</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/06/前端面试题整理/">前端面试题整理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端面试题整理/">前端面试题整理</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/05/css中清除浮动/" class="archive-article-date">
-      <time datetime="2018-08-05T14:38:15.552Z" itemprop="datePublished">08-05</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/05/css中清除浮动/">css清除浮动</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css清除浮动-四种方式/">css清除浮动, 四种方式</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/05/封装移动端的轻敲事件/" class="archive-article-date">
-      <time datetime="2018-08-05T08:49:21.398Z" itemprop="datePublished">08-05</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/根据用户需求分析-思路-步骤/">根据用户需求分析 思路 步骤</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="page-number" href="/archives/2018/page/4/">4</a><a class="extend next" rel="next" href="/archives/2018/page/3/">Next &raquo;</a>
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/20/事件委托,事件冒泡,事件捕获/">
+                    事件委托,事件冒泡,事件捕获
+                </a>
+            </div>
+        
     </nav>
-  
 
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行窗口"><span class="toc-number">1.</span> <span class="toc-text">命令行窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-number">2.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GIT是什么"><span class="toc-number">3.</span> <span class="toc-text">GIT是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GIT三大区域"><span class="toc-number">4.</span> <span class="toc-text">GIT三大区域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GIT常用命令"><span class="toc-number">5.</span> <span class="toc-text">GIT常用命令</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/20/事件委托,事件冒泡,事件捕获/" title="下一篇: 事件委托,事件冒泡,事件捕获">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/23/git常用命令/">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/20/事件委托,事件冒泡,事件捕获/">事件委托,事件冒泡,事件捕获</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/css Sprites的优缺点/">精灵图的优缺点</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/ECMAScript 6 let和const命令/">ECMAScript 6 let和const命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/HTML常见的兼容性问题/">html常见的兼容性问题？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/14/全选反选不选/">全选反选不选</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/13/axios插件的使用操作/">axios插件的使用操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/12/2018前端面试题/">2018年web前端经典面试题及答案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/数组的方法/">数组的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/字符串的操作/">字符串的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JSONP的优缺点/">JSONP的优缺点</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/移动端轮播图/">移动端轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/前端面试题整理/">前端面试题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/css中清除浮动/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/3D切割轮播图/">模板3D切割轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

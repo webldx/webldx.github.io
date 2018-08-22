@@ -276,6 +276,235 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/23/git常用命令/" class="article-date">
+      <time datetime="2018-08-22T17:01:10.306Z" itemprop="datePublished">2018-08-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="命令行窗口"><a href="#命令行窗口" class="headerlink" title="命令行窗口"></a>命令行窗口</h2><p>操作电脑的两种方式：图形界面、命令行窗口。</p>
+<ul>
+<li>我们平时都是通过图形界面来操作计算机，比如鼠标右键-&gt;新建-&gt;新建文件夹。</li>
+<li>其实命令行窗口也是一种操作向计算机的方式。</li>
+<li>开启命令行 win + R -&gt; cmd -&gt; enter</li>
+<li>常用命令行工具<ul>
+<li>cmd</li>
+<li>powershell</li>
+<li>git bash</li>
+</ul>
+</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li>pwd (print working directory) 查看当前所在的目录</li>
+<li>cd (change directory) 切换目录</li>
+<li>clear 清屏</li>
+<li>ctrl + l 清屏</li>
+<li>ls (list) 查看当前目录下的内容</li>
+<li>mkdir (make directory) 创建目录</li>
+<li>rmdir (remove directory) 删除文件夹 只能删除空文件夹 不常用</li>
+<li>touch 创建文件</li>
+<li>cat 查看文件内容</li>
+<li>less 查看文件内容 <ul>
+<li>回车 向下走一行</li>
+<li>空格 向下走一屏</li>
+<li>b 向上走一屏幕</li>
+<li>q 退出</li>
+</ul>
+</li>
+<li>rm (remove) 删除文件 如 rm index.html</li>
+<li>rm -rf  删除非空目录<ul>
+<li>慎重 不经过回收站</li>
+</ul>
+</li>
+<li>mv (move) 移动文件或重命名</li>
+<li>cp (copy) 复制文件</li>
+<li>echo ‘内容’ &gt; 文件 输出内容到文件 每次输出都是覆盖原有文件内容</li>
+<li>ehco ‘内容’ &gt;&gt; 文件 输出内容到文件 每次输出都是追新内容</li>
+</ul>
+<h2 id="GIT是什么"><a href="#GIT是什么" class="headerlink" title="GIT是什么"></a><a href="git-scm.com">GIT</a>是什么</h2><p>源代码管理工具，是linux系统之父Linus Torvalds为管理linux系统内核而开发的开源的版本控制工具。</p>
+<p>在写代码的过程中提供的反悔的机会。</p>
+<p>开发过程中出现bug，越改越乱，可以选择撤销，当修改的步骤较多或者文件较多可能撤销不回去，如果编辑器在中途关闭过，就肯定撤销不回去了。想回到没改之前代码能运行的状态。</p>
+<h2 id="GIT三大区域"><a href="#GIT三大区域" class="headerlink" title="GIT三大区域"></a>GIT三大区域</h2><ul>
+<li>工作目录<ul>
+<li>存放项目代码的目录</li>
+</ul>
+</li>
+<li>暂存区<ul>
+<li>临时存放更改的了文件</li>
+<li>防止工作目录中的代码丢失</li>
+</ul>
+</li>
+<li>代码仓库<ul>
+<li>当开发的功能足以形成一个版本的时候 可以将代码形成版本提交到仓库</li>
+<li>相当于复制了一份当前的代码存储到了仓库中</li>
+</ul>
+</li>
+</ul>
+<h2 id="GIT常用命令"><a href="#GIT常用命令" class="headerlink" title="GIT常用命令"></a>GIT常用命令</h2><ul>
+<li>配置git用户名和邮箱<ul>
+<li>git config –global user.name zhangsan</li>
+<li>git config –global user.email <a href="mailto:zhangsan@163.com" target="_blank" rel="noopener">zhangsan@163.com</a></li>
+</ul>
+</li>
+<li>查看当前的git配置<ul>
+<li>git config –list</li>
+</ul>
+</li>
+<li>初始化git仓库<ul>
+<li>git init</li>
+</ul>
+</li>
+<li>查看当前仓库的状态 <ul>
+<li>git status</li>
+</ul>
+</li>
+<li>将工作目录中的文件添加到暂存区<ul>
+<li>git add </li>
+</ul>
+</li>
+<li>将暂存区中的代码提交到本地仓库 形成一个版本<ul>
+<li>git commit -m 备注 </li>
+</ul>
+</li>
+<li>查看本地仓库中的历史提交版本<ul>
+<li>git log </li>
+</ul>
+</li>
+<li>将文件从暂存区中删除<ul>
+<li>git rm –cached 文件列表 </li>
+<li>说明:<ul>
+<li>必须保证工作目录中的文件代码和暂存区中文件代码一致</li>
+<li>此时工作目录中有此文件 暂存区中没有此文件 这个文件不被git管理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用暂存区中的文件覆盖工作目录中的文件<ul>
+<li>git checkout  文件列表 </li>
+<li>说明：暂存区和工作目录都有此文件 这个文件依然被git管理</li>
+</ul>
+</li>
+<li>回滚到本地仓库中的特定版本并覆盖暂存区和工作目录<ul>
+<li>git reset –hard commitID </li>
+</ul>
+</li>
+<li>回滚到本地仓库中的特定版本不覆盖暂存区和工作目录<ul>
+<li>git reset –soft commitID</li>
+</ul>
+</li>
+<li>回滚到本地仓库中的特定版本并覆盖暂存区<ul>
+<li>git reset –mixed commitID</li>
+</ul>
+</li>
+<li>回滚中HEAD的使用<ul>
+<li>git reset –hard HEAD 使用最新的版本覆盖工作目录和暂存区</li>
+<li>git reset –hard HEAD^ 使用上一次提交的版本覆盖工作目录和暂存区</li>
+</ul>
+</li>
+<li>查看分支<ul>
+<li>git branch</li>
+</ul>
+</li>
+<li>创建分支<ul>
+<li>git branch 分支名称</li>
+</ul>
+</li>
+<li>切换分支<ul>
+<li>git checkout 分支名称</li>
+</ul>
+</li>
+<li>创建并切换分支<ul>
+<li>git checkout -b 分支名称 </li>
+</ul>
+</li>
+<li>删除分支(如果分支没有被合并不允许删除)<ul>
+<li>git branch -d 分支名称</li>
+</ul>
+</li>
+<li>删除分支(强制删除分支)<ul>
+<li>git branch -D 分支名称</li>
+</ul>
+</li>
+<li>合并分支<ul>
+<li>git merge 来源分支</li>
+</ul>
+</li>
+<li>初始化一个裸露仓库(公共代码仓库)<ul>
+<li>git init –bare </li>
+</ul>
+</li>
+<li>向远程仓库推送代码<ul>
+<li>git push 远程仓库地址 本地分支名称:远程分支名称</li>
+</ul>
+</li>
+<li>从远程仓库中拉取代码(拉取最新版本到本地 开发过程中使用)<ul>
+<li>git pull 远程仓库地址 远程分支名称:本地分支名称</li>
+</ul>
+</li>
+<li>为远程仓库地址创建别名<ul>
+<li>git remote add 别名 远程仓库地址</li>
+</ul>
+</li>
+<li>查看远程地址的详情信息<ul>
+<li>git remote -v</li>
+</ul>
+</li>
+<li>查看当前别名所对应的远程仓库地址<ul>
+<li>git remote show 别名 </li>
+</ul>
+</li>
+<li>删除当前别名及所对应的远程仓库地址<ul>
+<li>git remote remove 别名 </li>
+</ul>
+</li>
+<li>从远程仓库获取代码(拉取所有版本到本地)<ul>
+<li>git clone 远程仓库地址 项目名称 </li>
+<li>使用场景：加入到已有项目的开发中 需要先拉取所有版本到本地 再进行开发</li>
+</ul>
+</li>
+<li>冲突修复</li>
+<li>多人协作开发免登录操作 ssh-keygen</li>
+<li>gitignore忽略清单</li>
+<li>git config credential.helper manager  在第一次输入账号密码后系统会记住它 下次提交时不再需要输入账号密码</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-事件委托,事件冒泡,事件捕获" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -929,70 +1158,6 @@
       
         <p class="article-more-link">
           <a href="/2018/08/10/字符串的操作/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JSONP的优缺点" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/08/JSONP的优缺点/" class="article-date">
-      <time datetime="2018-08-08T15:05:28.937Z" itemprop="datePublished">2018-08-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/JSONP的优缺点/">JSONP的优缺点</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              JSONP的优缺点
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSONP的优缺点/">JSONP的优缺点</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/08/08/JSONP的优缺点/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
