@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html >
+
+        <head>
+            
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="author" content="李大玄" />
+
+                
+
+                                        <meta name="description" content="Vue面试题整理！！！！">
+<meta name="keywords" content="Vue面试题整理！！！！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue面试题整理！！！！">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/魔板/index.html">
+<meta property="og:site_name" content="李大玄的博客">
+<meta property="og:description" content="Vue面试题整理！！！！">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fg86vh8z7dj30e809rq2t.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fg86wx862fj30gp0a5q2v.jpg">
+<meta property="og:image" content="http://www.bslxx.com/uploads/allimg/c171018/150S3TZA610-14J2.png">
+<meta property="og:updated_time" content="2018-09-16T09:39:52.920Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue面试题整理！！！！">
+<meta name="twitter:description" content="Vue面试题整理！！！！">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fg86vh8z7dj30e809rq2t.jpg">
+
+                                            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+                                            
+                                                <link rel="alternate" href="/atom.xml" title="李大玄的博客" type="application/atom+xml">
+                                                
+
+                                                    
+                                                        <link rel="shortcut icon" href="/img/favicon.ICO">
+                                                        
+
+                                                            
+                                                                <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+                                                                
+
+                                                                    
+                                                                        <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+                                                                        
+
+                                                                            
+                                                                                <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+                                                                                <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+                                                                                
+
+                                                                                    <link rel="stylesheet" href="/css/style.css">
+
+                                                                                        
+
+                                                                                                <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+                                                                                                
+                                                                                                    <title>
+                                                                                                        
+                                                                                                            Vue面试题整理！！！！ |
+                                                                                                                
+                                                                                                                    李大玄的博客
+                                                                                                    </title>
+
+                                                                                                    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+                                                                                                    <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+                                                                                                    <script>
+                                                                                                        var yiliaConfig = {
+                                                                                                            fancybox: true,
+                                                                                                            animate: true,
+                                                                                                            isHome: false,
+                                                                                                            isPost: true,
+                                                                                                            isArchive: false,
+                                                                                                            isTag: false,
+                                                                                                            isCategory: false,
+                                                                                                            fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                                                                                                            scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                                                                                                            search: false
+                                                                                                        }
+                                                                                                    </script>
+
+                                                                                                    
+                                                                                                            <script>
+                                                                                                                yiliaConfig.jquery_ui = [false];
+                                                                                                            </script>
+                                                                                                            
+
+                                                                                                                
+                                                                                                                        <script>
+                                                                                                                            yiliaConfig.rootUrl = "\/";
+                                                                                                                        </script>
+                                                                                                                        
+
+                                                                                                                            
+
+                                                                                                                                    
+
+        </head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">李大玄</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/get方法封装步骤/">$.get方法封装步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/2018年web前端经典面试题及答案/">2018年web前端经典面试题及答案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/3D切割轮播图-思路分析-代码实现/">3D切割轮播图 思路分析 代码实现</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript-6-let和const命令/">ECMAScript 6 let和const命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSONP的优缺点/">JSONP的优缺点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP中session与cookie的区别/">JSP中session与cookie的区别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS中this关键字详解/">JS中this关键字详解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NaN的定义与用法/">NaN的定义与用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue面试题整理！！！！/">Vue面试题整理！！！！</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axios插件的使用操作/">axios插件的使用操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css清除浮动-四种方式/">css清除浮动, 四种方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html常见的兼容性问题？/">html常见的兼容性问题？</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript中filter的用法/">javascript中filter的用法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础-、js介绍-、变量、-数据类型-、-分支结构/">js基础 、js介绍 、变量、 数据类型 、 分支结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown基本语法/">markdown基本语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件委托-事件冒泡-事件捕获/">事件委托, 事件冒泡, 事件捕获</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/全选-反选-不选/">全选  反选  不选</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/公式/">公式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数的创建-函数本身-函数中的this指向-函数的其它成员/">函数的创建 函数本身 函数中的this指向 函数的其它成员</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分析轮播图每一步进行操作/">分析轮播图每一步进行操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试题整理/">前端面试题整理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区别-引用/">区别 引用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型继承-借用构造函数-组合继承/">原型继承 借用构造函数 组合继承</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串的操作/">字符串的操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对于页面适配，你应该使用px还是rem-em-rem-px/">对于页面适配，你应该使用px还是rem em rem px</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/封装移动端手势事件-touchstart-touchmove-touchend/">封装移动端手势事件 touchstart touchmove touchend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建GitHub步骤/">搭建GitHub步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组去重的几种方法/">数组去重的几种方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组的方法/">数组的方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据分析-进行样式/">根据分析,进行样式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/根据用户需求分析-思路-步骤/">根据用户需求分析 思路 步骤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模板/">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端轮播图-移动端三大事件/">移动端轮播图 移动端三大事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/精灵图的优缺点/">精灵图的优缺点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域请求-服务器代理-cors-跨域资源共享-jsonp/">跨域请求 服务器代理  cors(跨域资源共享) jsonp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包-执行栈-执行队列/">闭包  执行栈 执行队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/雪花飘落/">雪花飘落</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">李大玄</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/346017689849280708.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">李大玄</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我从不幻想,我只是在努力认清现实!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-魔板" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/16/魔板/" class="article-date">
+      <time datetime="2018-09-16T09:38:44.917Z" itemprop="datePublished">2018-09-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue面试题整理！！！！
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue面试题整理！！！！/">Vue面试题整理！！！！</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="Vue面试题整理！！！！"><a href="#Vue面试题整理！！！！" class="headerlink" title="Vue面试题整理！！！！"></a>Vue面试题整理！！！！</h1><blockquote>
+<p>注意：问题重点程度不分先后，但我觉得重点的会加以说明！！！</p>
+</blockquote>
+<h1 id="一、Vue理论部分"><a href="#一、Vue理论部分" class="headerlink" title="一、Vue理论部分"></a>一、Vue理论部分</h1><h2 id="1、MVC、MVP-和-MVVM？（重点）"><a href="#1、MVC、MVP-和-MVVM？（重点）" class="headerlink" title="==1、MVC、MVP 和 MVVM？（重点）=="></a>==1、MVC、MVP 和 MVVM？（重点）==</h2><p>复杂的软件必须有清晰合理的架构，否则无法开发和维护</p>
+<p>MVC（Model-View-Controller）最常见的软件架构之一，业界有这广泛应用。</p>
+<p>后续衍生出了MVP和MVVM架构。</p>
+<p>MVC模式的意思是，软件可以分为三个部分。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fg86vh8z7dj30e809rq2t.jpg" alt=""></p>
+<ul>
+<li>视图（View）： 用户界面</li>
+<li>控制器（Controller）：业务逻辑</li>
+<li>模型（Model）：数据保存</li>
+</ul>
+<p>各个部分之间的通讯方式如下。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fg86wx862fj30gp0a5q2v.jpg" alt=""></p>
+<ol>
+<li>View传送指令到Controller</li>
+<li>Controller完成业务逻辑后，要求Model改变状态</li>
+<li>Model将新的数据发送给View，用户得到反馈</li>
+</ol>
+<p>代码展示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟 Model, View, Controller</span></span><br><span class="line"><span class="keyword">var</span> M = &#123;&#125;, V = &#123;&#125;, C = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Model 负责存放数据</span></span><br><span class="line">M.data = <span class="string">"hello world"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// View 负责将数据输出到屏幕上</span></span><br><span class="line">V.render = <span class="function">(<span class="params">M</span>) =&gt;</span> &#123; alert(M.data); &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Controller 作为一个 M 和 V 的连接</span></span><br><span class="line">C.handleOnload = <span class="function"><span class="params">()</span> =&gt;</span> &#123; V.render(M); &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在网页加载好的时候呼叫Controller</span></span><br><span class="line"><span class="built_in">window</span>.onload = C.handleOnload;</span><br></pre></td></tr></table></figure>
+<h2 id="1、说下对Vue的理解？-重点"><a href="#1、说下对Vue的理解？-重点" class="headerlink" title="==1、说下对Vue的理解？(重点)=="></a>==1、说下对Vue的理解？(重点)==</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">答：</span><br><span class="line">1、使用vue不必担心布局更改和类名重复导致的js重写，因为它是靠数据驱动双向绑定，底层是通过Object.defineProperty() 定义的数据 set、get 函数原理实现。</span><br><span class="line"></span><br><span class="line">2、组件化开发，让项目的可拓展性、移植性更好，代码重用性更高，就好像农民工建房子，拿起自己的工具包就可以开工。项目经理坐等收楼就好。</span><br><span class="line"></span><br><span class="line">3、单页应用的体验零距离接触安卓原生应用，局部组件更新界面，让用户体验更快速省时。</span><br><span class="line"></span><br><span class="line">4、js的代码无形的规范，团队合作开发代码可阅读性更高。</span><br></pre></td></tr></table></figure>
+<h2 id="2、那些项目适合使用Vue？"><a href="#2、那些项目适合使用Vue？" class="headerlink" title="==2、那些项目适合使用Vue？=="></a>==2、那些项目适合使用Vue？==</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">答：</span><br><span class="line">1、数据信息量比较多的，反之类似企业网站就无需此框架了。</span><br><span class="line"></span><br><span class="line">2、手机web和app应用多端共用一套界面的项目，因为使用vue.cli+webpack后的前端目录，非常有利于项目的跨平台部署。</span><br></pre></td></tr></table></figure>
+<h2 id="3、Vue双向数据绑定（数据驱动）的原理？（重点）"><a href="#3、Vue双向数据绑定（数据驱动）的原理？（重点）" class="headerlink" title="==3、Vue双向数据绑定（数据驱动）的原理？（重点）=="></a>==3、Vue双向数据绑定（数据驱动）的原理？（重点）==</h2><blockquote>
+<p>vue将普通的对象的属性通过Object.defineProperty转换为ES5特性之一的 getter/setter，模板中每个指令/数据绑定都有一个对应的 watcher 对象, 当修改对象值的时，首先会触发属性的setter，在setter被调用时，会触发 watcher 重新计算 ，也就会导致它的关联指令更新 DOM。</p>
+</blockquote>
+<blockquote>
+<p>Vue.js 的核心是一个响应的数据绑定系统，它让数据与 DOM 保持同步非常简单。在使用 jQuery 手工操作 DOM 时，我们的代码常常是命令式的、重复的与易错的。Vue.js 拥抱数据驱动的视图概念。通俗地讲，它意味着我们在普通 HTML 模板中使用特殊的语法将 DOM “绑定”到底层数据。一旦创建了绑定，DOM 将与数据保持同步。每当修改了数据，DOM 便相应地更新。这样我们应用中的逻辑就几乎都是直接修改数据了，不必与 DOM 更新搅在一起。这让我们的代码更容易撰写、理解与维护。</p>
+</blockquote>
+<h2 id="4、-vue-cli中怎样使用自定义的组件？有遇到过哪些问题吗？"><a href="#4、-vue-cli中怎样使用自定义的组件？有遇到过哪些问题吗？" class="headerlink" title="==4、 vue.cli中怎样使用自定义的组件？有遇到过哪些问题吗？=="></a>==4、 <strong>vue.cli中怎样使用自定义的组件？有遇到过哪些问题吗？</strong>==</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">答：第一步：在components目录新建你的组件文件（smithButton.vue），script一定要export default &#123;</span><br><span class="line"></span><br><span class="line">第二步：在需要用的页面（组件）中导入：import smithButton from ‘../components/smithButton.vue’</span><br><span class="line"></span><br><span class="line">第三步：注入到vue的子组件的components属性上面,components:&#123;smithButton&#125;</span><br><span class="line"></span><br><span class="line">第四步：在template视图view中使用，&lt;smith-button&gt;  &lt;/smith-button&gt;</span><br><span class="line">问题有：smithButton命名，使用的时候则smith-button。</span><br></pre></td></tr></table></figure>
+<h2 id="5、说下vue组件之间的通信？（重点）"><a href="#5、说下vue组件之间的通信？（重点）" class="headerlink" title="==5、说下vue组件之间的通信？（重点）=="></a>==5、<strong>说下vue组件之间的通信？</strong>（重点）==</h2><p>props、自定义事件</p>
+<h2 id="6、异步更新机制Vue-nextTick（重点！！）"><a href="#6、异步更新机制Vue-nextTick（重点！！）" class="headerlink" title="==6、异步更新机制Vue.nextTick（重点！！）=="></a>==6、异步更新机制Vue.nextTick（重点！！）==</h2><ul>
+<li>Vue 对DOM的更新是异步的！ 这个异步是在一个异步队列中进行的，不过这个异步队列会在当前的 <code>Event Loop</code> 中执行完，所以如果修改了 Data 立刻去DOM中做查询操作是不对的，这个时候DOM还没有更新，正确的做法是这样做：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vm.msg = <span class="string">'new message'</span> <span class="comment">// change data</span></span><br><span class="line">vm.$el.textContent === <span class="string">'new message'</span> <span class="comment">// false</span></span><br><span class="line">Vue.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  vm.$el.textContent === <span class="string">'new message'</span> <span class="comment">// true</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>或者这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vm.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.$el.textContent === <span class="string">'new message'</span> <span class="comment">// true</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="7、怎么定义vue-router的动态路由？怎么获取传过来的动态参数？"><a href="#7、怎么定义vue-router的动态路由？怎么获取传过来的动态参数？" class="headerlink" title="==7、怎么定义vue-router的动态路由？怎么获取传过来的动态参数？=="></a>==7、<strong>怎么定义vue-router的动态路由？怎么获取传过来的动态参数？</strong>==</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：在router目录下的index.js文件中，对path属性加上/:id。  使用router对象的params.id</span><br></pre></td></tr></table></figure>
+<h2 id="8、vue-router有哪几种导航钩子？"><a href="#8、vue-router有哪几种导航钩子？" class="headerlink" title="==8、vue-router有哪几种导航钩子？  =="></a>==8、<strong>vue-router有哪几种导航钩子？  </strong>==</h2><p>答：三种，一种是全局导航钩子(路由的前置守卫)：router.beforeEach(to,from,next)，作用：跳转前进行判断拦截。第二种：组件内的钩子；第三种：单独路由独享组件</p>
+<h2 id="9、请说下封装-vue-组件的过程？"><a href="#9、请说下封装-vue-组件的过程？" class="headerlink" title="9、请说下封装 vue 组件的过程？"></a>9、<strong>请说下封装 vue 组件的过程？</strong></h2><p>答：首先，组件可以提升整个项目的开发效率。能够把页面抽象成多个相对独立的模块，解决了我们传统项目开发：<strong>效率低</strong>、<strong>难维护</strong>、<strong>复用性</strong>等问题。</p>
+<p>然后，使用Vue.extend方法创建一个组件，然后使用Vue.component方法注册组件。子组件需要数据，可以在props中接受定义。而子组件修改好数据后，想把数据传递给父组件。可以采用emit方法。</p>
+<h2 id="10、vue-loader是什么？使用它的用途有哪些？"><a href="#10、vue-loader是什么？使用它的用途有哪些？" class="headerlink" title="10、vue-loader是什么？使用它的用途有哪些？"></a>10、<strong>vue-loader是什么？使用它的用途有哪些？</strong></h2><p>答：解析.vue文件的一个加载器，跟template/js/style转换成js模块。</p>
+<p>用途：js可以写es6、style样式可以scss或less、template可以加jade等</p>
+<h2 id="11、vuejs与angularjs的区别？"><a href="#11、vuejs与angularjs的区别？" class="headerlink" title="11、vuejs与angularjs的区别？"></a>11、<strong>vuejs与angularjs的区别？</strong></h2><p>答：<br>一、<strong>定位</strong> ：<br>虽然Vue.js被定义为MVC framework，但其实Vue本身还是一个library，加了一些其他的工具，可以被当成一个framework，而Angular 2虽然还是一个framework，但其实在设计之初，Angular 2的团队站在了更高的角度，希望做一个platform。<br><strong>二、文档</strong>：<br>vue.js的更加亲切<br><strong>三、性能：</strong><br>angular所有的数据和方法都是挂载在$scope上。而vue的数据和方法都是挂载在vue上，只是数据挂载在vue的data,方法挂载在vue的methods上，vue的代码风格更加优雅，json格式书写代码。Vue.js 有更好的性能，并且非常非常容易优化，因为它不使用脏检查。Angular，当 watcher 越来越多时会变得越来越慢，因为作用域内的每一次变化，所有 watcher 都要重新计算。</p>
+<p><strong>其它区别：</strong><br>渲染性能：Vue&gt; react &gt;angular。<br>使用场景：Vue React 覆盖中小型，大型项目。angular 一般用于大型（因为比较厚重）<strong>。</strong></p>
+<h2 id="12、你觉得哪些项目适合vue框架？"><a href="#12、你觉得哪些项目适合vue框架？" class="headerlink" title="12、你觉得哪些项目适合vue框架？"></a>12、你觉得哪些项目适合vue框架？</h2><p>答：1、数据信息量比较多的，反之类似企业网站就无需此框架了。</p>
+<p>2、手机web和app应用多端共用一套界面的项目，因为使用vue.cli+webpack后的前端目录，非常有利于项目的跨平台部署。</p>
+<h2 id="13、PC端项目你会在哪些场景使用Vue框架？"><a href="#13、PC端项目你会在哪些场景使用Vue框架？" class="headerlink" title="13、PC端项目你会在哪些场景使用Vue框架？"></a>13、PC端项目你会在哪些场景使用Vue框架？</h2><p>答：上万级数据需要瀑布流更新和搜索的时候，因为数据庞大的时候，用原生的dom操作js和html都会有列表的html布局，迭代很困难。再一个dom节点的大面积添加会影响性能。</p>
+<p>那么vue为什么解决这些问题呢？</p>
+<p>第一：只需用v-for在view层一个地方遍历数据即可，无需复制一段html代码在js和html两个地方。</p>
+<p>第二：vue通过<code>Virtual Dom</code>就是在js中模拟<code>DOM</code>对象树来优化<code>DOM</code>操作。</p>
+<h2 id="14、虚拟节点Virtual-Dom？（重点）"><a href="#14、虚拟节点Virtual-Dom？（重点）" class="headerlink" title="14、虚拟节点Virtual Dom？（重点）"></a>14、虚拟节点Virtual Dom？（重点）</h2><p>直接看这个文章：<a href="https://segmentfault.com/a/1190000008291645" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008291645</a></p>
+<h2 id="15、Vue中如何使用jsonp？"><a href="#15、Vue中如何使用jsonp？" class="headerlink" title="15、Vue中如何使用jsonp？"></a>15、Vue中如何使用jsonp？</h2><ol>
+<li><p>安装jsonp模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save jsonp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>main.js</code>引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jsonp <span class="keyword">from</span> <span class="string">'jsonp'</span></span><br><span class="line">Vue.prototype.jsonp = jsonp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写代码发起网络请求</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.jsonp(<span class="string">'https://shop.juanpi.com/gsort?key=zuixinzhekou&amp;type=1&amp;zhouyi_ids=p8_c4_l1_18_51_5&amp;machining=hotcoupon&amp;page=1&amp;rows=10&amp;dtype=JSONP&amp;cm=1&amp;cm_channel=1&amp;callback=gsort_callback'</span>, (err, data) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);        </span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><h1 id="二、生命周期相关"><a href="#二、生命周期相关" class="headerlink" title="二、生命周期相关"></a>二、生命周期相关</h1><h2 id="1、什么是Vue的生命周期？（重点）"><a href="#1、什么是Vue的生命周期？（重点）" class="headerlink" title="1、什么是Vue的生命周期？（重点）"></a>1、什么是Vue的生命周期？（重点）</h2><p>答： Vue 实例从创建到销毁的过程，就是生命周期。也就是从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，我们称这是 Vue 的生命周期。</p>
+<h2 id="2、Vue声明周期的作用是什么？（重点）"><a href="#2、Vue声明周期的作用是什么？（重点）" class="headerlink" title="2、Vue声明周期的作用是什么？（重点）"></a>2、Vue声明周期的作用是什么？（重点）</h2><p>答：它的生命周期中有多个事件钩子，让我们在控制整个Vue实例的过程时更容易形成好的逻辑。</p>
+<h2 id="3、Vue的生命周期共有几个阶段？（重点）"><a href="#3、Vue的生命周期共有几个阶段？（重点）" class="headerlink" title="3、Vue的生命周期共有几个阶段？（重点）"></a>3、Vue的生命周期共有几个阶段？（重点）</h2><p>答：总共分为8个阶段创建前/后，载入前/后，更新前/后，销毁前/后。</p>
+<p><strong>创建前/后：</strong> 在beforeCreated阶段，vue实例的挂载元素$el和数据对象data都为undefined，还未初始化。在created阶段，vue实例的数据对象data有了，$el还没有。</p>
+<p><strong>载入前/后：</strong>在beforeMount阶段，vue实例的$el和data都初始化了，但还是挂载之前为虚拟的dom节点，data.message还未替换。在mounted阶段，vue实例挂载完成，data.message成功渲染。</p>
+<p><strong>更新前/后：</strong>当data变化时，会触发beforeUpdate和updated方法。</p>
+<p><strong>销毁前/后：</strong>在执行destroy方法后，对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，但是dom结构依然存在</p>
+<h2 id="4、第一次页面加载会触发哪几个钩子？（重点）"><a href="#4、第一次页面加载会触发哪几个钩子？（重点）" class="headerlink" title="4、第一次页面加载会触发哪几个钩子？（重点）"></a>4、第一次页面加载会触发哪几个钩子？（重点）</h2><p>答：第一次页面加载时会触发 beforeCreate, created, beforeMount, mounted 这几个钩子</p>
+<h2 id="5、DOM渲染在哪个钩子中就已经完成？（重点）"><a href="#5、DOM渲染在哪个钩子中就已经完成？（重点）" class="headerlink" title="5、DOM渲染在哪个钩子中就已经完成？（重点）"></a>5、DOM渲染在哪个钩子中就已经完成？（重点）</h2><p>答：DOM 渲染在 mounted 中就已经完成了。</p>
+<h2 id="6、描述下每个钩子具体适合哪些场景？（重点）"><a href="#6、描述下每个钩子具体适合哪些场景？（重点）" class="headerlink" title="6、描述下每个钩子具体适合哪些场景？（重点）"></a>6、描述下每个钩子具体适合哪些场景？（重点）</h2><p>答：生命周期钩子的一些使用方法： beforecreate : 可以在这加个loading事件，在加载实例时触发 created : 初始化完成时的事件写在这里，如在这结束loading事件，异步请求也适宜在这里调用 mounted : 挂载元素，获取到DOM节点 updated : 如果对数据统一处理，在这里写上相应函数 beforeDestroy : 可以做一个确认停止事件的确认框 nextTick : 更新数据后立即操作。</p>
+<h1 id="三、Vuex相关"><a href="#三、Vuex相关" class="headerlink" title="三、Vuex相关"></a>三、Vuex相关</h1><h2 id="1、Vuex是什么？（重点）"><a href="#1、Vuex是什么？（重点）" class="headerlink" title="1、Vuex是什么？（重点）"></a>1、Vuex是什么？（重点）</h2><p>​    Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong>。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
+<h2 id="2、Vuex有几种属性？（重点）"><a href="#2、Vuex有几种属性？（重点）" class="headerlink" title="2、Vuex有几种属性？（重点）"></a>2、Vuex有几种属性？（重点）</h2><p>答：有五种，分别是 State、 Getter、Mutation 、Action、 Module</p>
+<h2 id="3、Vuex的State特性？（重点）"><a href="#3、Vuex的State特性？（重点）" class="headerlink" title="3、Vuex的State特性？（重点）"></a>3、Vuex的State特性？（重点）</h2><p>答：<br>一、Vuex就是一个仓库，仓库里面放了很多对象。其中state就是数据源存放地，对应于与一般Vue对象里面的data<br>二、state里面存放的数据是响应式的，Vue组件从store中读取数据，若是store中的数据发生改变，依赖这个数据的组件也会发生更新<br>三、它通过mapState把全局的 state 和 getters 映射到当前组件的 computed 计算属性中</p>
+<h2 id="4、Vuex的getter特性？（重点）"><a href="#4、Vuex的getter特性？（重点）" class="headerlink" title="4、Vuex的getter特性？（重点）"></a>4、Vuex的getter特性？（重点）</h2><p>答：<br>一、getters 可以对State进行计算操作，它就是Store的计算属性<br>二、 虽然在组件内也可以做计算属性，但是getters 可以在多组件之间复用<br>三、 如果一个状态只在一个组件内使用，是可以不用getters</p>
+<h2 id="5、-Vuex的mutation特性？（重点）"><a href="#5、-Vuex的mutation特性？（重点）" class="headerlink" title="5、 Vuex的mutation特性？（重点）"></a>5、 Vuex的mutation特性？（重点）</h2><p>答：</p>
+<p>在这里可以直接变更state里的数据（状态），是同步操作。</p>
+<h2 id="6、Vuex的Action特性？（重点）"><a href="#6、Vuex的Action特性？（重点）" class="headerlink" title="6、Vuex的Action特性？（重点）"></a>6、Vuex的Action特性？（重点）</h2><p>答：<br>一、Action 类似于 mutation，不同在于：<br>二、Action 提交的是 mutation，而不是直接变更状态。<br>三、Action 可以包含任意异步操作</p>
+<h2 id="7、Vue-js中ajax请求代码应该写在组件的methods中还是vuex的actions中？（重点）"><a href="#7、Vue-js中ajax请求代码应该写在组件的methods中还是vuex的actions中？（重点）" class="headerlink" title="7、Vue.js中ajax请求代码应该写在组件的methods中还是vuex的actions中？（重点）"></a>7、Vue.js中ajax请求代码应该写在组件的methods中还是vuex的actions中？（重点）</h2><p>答：<br>一、如果请求来的数据是不是要被其他组件公用，仅仅在请求的组件内使用，就不需要放入vuex 的state里。<br>二、如果被其他地方复用，这个很大几率上是需要的，如果需要，请将请求放入action里，方便复用，并包装成promise返回，在调用处用async await处理返回的数据。如果不要复用这个请求，那么直接写在vue文件里很方便。</p>
+<h2 id="8、不用Vuex会带来什么问题？（重点）"><a href="#8、不用Vuex会带来什么问题？（重点）" class="headerlink" title="8、不用Vuex会带来什么问题？（重点）"></a>8、不用Vuex会带来什么问题？（重点）</h2><p>答：一、可维护性会下降，你要想修改数据，你得维护三个地方二、可读性会下降，因为一个组件里的数据，你根本就看不出来是从哪来的三、增加耦合，大量的上传派发，会让耦合性大大的增加，本来Vue用Component就是为了减少耦合，现在这么用，和组件化的初衷相背。</p>
+<p><strong>但兄弟组件有大量通信的，建议一定要用</strong>，不管大项目和小项目，因为这样会省很多事</p>
+<h1 id="四、Vue-cli相关-重点"><a href="#四、Vue-cli相关-重点" class="headerlink" title="四、Vue-cli相关 (重点)"></a>四、Vue-cli相关 (重点)</h1><p>参考项目是用vue-cli的webpack模板构建的，项目地址：<a href="https://github.com/hieeyh/tong2-family" target="_blank" rel="noopener">https://github.com/hieeyh/tong2-family</a></p>
+<p>在线访问：<a href="http://119.29.57.165:8080/family" target="_blank" rel="noopener">http://119.29.57.165:8080/family</a> 该项目还用到了eCharts这个报表库</p>
+<h2 id="1、vue-cli-2-0项目结构分析"><a href="#1、vue-cli-2-0项目结构分析" class="headerlink" title="1、vue-cli 2.0项目结构分析"></a>1、vue-cli 2.0项目结构分析</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">|-- build                            // 项目构建(webpack)相关代码</span><br><span class="line">|   |-- build.js                     // 生产环境构建代码</span><br><span class="line">|   |-- check-version.js             // 检查node、npm等版本</span><br><span class="line">|   |-- dev-client.js                // 热重载相关</span><br><span class="line">|   |-- dev-server.js                // 构建本地服务器</span><br><span class="line">|   |-- utils.js                     // 构建工具相关</span><br><span class="line">|   |-- webpack.base.conf.js         // webpack基础配置</span><br><span class="line">|   |-- webpack.dev.conf.js          // webpack开发环境配置</span><br><span class="line">|   |-- webpack.prod.conf.js         // webpack生产环境配置</span><br><span class="line">|-- config                           // 项目开发环境配置</span><br><span class="line">|   |-- dev.env.js                   // 开发环境变量</span><br><span class="line">|   |-- index.js                     // 项目一些配置变量</span><br><span class="line">|   |-- prod.env.js                  // 生产环境变量</span><br><span class="line">|   |-- test.env.js                  // 测试环境变量</span><br><span class="line">|-- src                              // 源码目录</span><br><span class="line">|   |-- components                     // vue公共组件</span><br><span class="line">|   |-- store                          // vuex的状态管理</span><br><span class="line">|   |-- App.vue                        // 页面入口文件</span><br><span class="line">|   |-- main.js                        // 程序入口文件，加载各种公共组件</span><br><span class="line">|-- static                           // 静态文件，比如一些图片，json数据等</span><br><span class="line">|   |-- data                           // 群聊分析得到的数据用于数据可视化</span><br><span class="line">|-- .babelrc                         // ES6语法编译配置</span><br><span class="line">|-- .editorconfig                    // 定义代码格式</span><br><span class="line">|-- .gitignore                       // git上传需要忽略的文件格式</span><br><span class="line">|-- README.md                        // 项目说明</span><br><span class="line">|-- favicon.ico </span><br><span class="line">|-- index.html                       // 入口页面</span><br><span class="line">|-- package.json                     // 项目基本信息</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
+<h2 id="2、package-json"><a href="#2、package-json" class="headerlink" title="2、package.json"></a>2、package.json</h2><p>package.json文件是项目根目录下的一个文件，定义该项目开发所需要的各种模块以及一些项目配置信息（如项目名称、版本、描述、作者等）。</p>
+<h3 id="scripts字段"><a href="#scripts字段" class="headerlink" title="scripts字段"></a>scripts字段</h3><p>package.json文件里有一个scripts字段。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "dev": "node build/dev-server.js",</span><br><span class="line">    "build": "node build/build.js"</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>在开发环境下，在命令行中运行<code>npm run dev</code>就相当于在执行<code>node build/dev-server.js</code>。所以script字段是用来指定npm相关命令的缩写的。</p>
+<h3 id="dependencies字段和devDependencies字段"><a href="#dependencies字段和devDependencies字段" class="headerlink" title="dependencies字段和devDependencies字段"></a>dependencies字段和devDependencies字段</h3><p>dependencies字段指定了项目运行时所依赖的模块，devDependencies字段指定了项目开发时所依赖的模块。在命令行中运行npm install命令，会自动安装dependencies和devDependencies字段中的模块。<br>package.json还有很多配置相关项，想进一步了解package.json的可参考：<a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="noopener">https://docs.npmjs.com/files/package.json</a></p>
+<h2 id="3、webpack配置相关"><a href="#3、webpack配置相关" class="headerlink" title="3、webpack配置相关"></a>3、webpack配置相关</h2><h3 id="dev-server-js"><a href="#dev-server-js" class="headerlink" title="dev-server.js"></a>dev-server.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="comment">// http-proxy可以实现转发所有请求代理到后端真实API地址，以实现前后端开发完全分离</span></span><br><span class="line"><span class="comment">// 在config/index.js中可以对proxyTable想进行配置</span></span><br><span class="line"><span class="keyword">var</span> proxyMiddleware = <span class="built_in">require</span>(<span class="string">'http-proxy-middleware'</span>)</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="comment">// 热加载要使用webpack-dev-middleware在没有webpack-dev-server的时候进行热加载</span></span><br><span class="line"><span class="keyword">var</span> hotMiddleware = <span class="built_in">require</span>(<span class="string">'webpack-hot-middleware'</span>)(compiler)</span><br><span class="line"><span class="comment">// 当html-webpack-plugin模板改变是强制进行页面重新加载</span></span><br><span class="line">compiler.plugin(<span class="string">'compilation'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">compilation</span>) </span>&#123;</span><br><span class="line">  compilation.plugin(<span class="string">'html-webpack-plugin-after-emit'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data, cb</span>) </span>&#123;</span><br><span class="line">    hotMiddleware.publish(&#123; <span class="attr">action</span>: <span class="string">'reload'</span> &#125;)</span><br><span class="line">    cb()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="webpack-base-conf-js"><a href="#webpack-base-conf-js" class="headerlink" title="webpack.base.conf.js"></a>webpack.base.conf.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="built_in">module</span>.export = &#123;</span><br><span class="line">    <span class="comment">// 编译入口文件</span></span><br><span class="line">    entry: &#123;&#125;,</span><br><span class="line">    <span class="comment">// 编译输出路径</span></span><br><span class="line">    output: &#123;&#125;,</span><br><span class="line">    <span class="comment">// 一些解决方案配置</span></span><br><span class="line">    resolve: &#123;&#125;,</span><br><span class="line">    resolveLoader: &#123;&#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        <span class="comment">// 各种不同类型文件加载器配置</span></span><br><span class="line">        loaders: &#123;</span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line">        <span class="comment">// js文件用babel转码</span></span><br><span class="line">        &#123;</span><br><span class="line">            test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">            loader: <span class="string">'babel'</span>,</span><br><span class="line">            include: projectRoot,</span><br><span class="line">            <span class="comment">// 哪些文件不需要转码</span></span><br><span class="line">            exclude: <span class="regexp">/node_modules/</span></span><br><span class="line">        &#125;,</span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// vue文件一些相关配置</span></span><br><span class="line">    vue: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="check-version-js"><a href="#check-version-js" class="headerlink" title="check-version.js"></a>check-version.js</h3><p>这个文件主要是用来检测当前环境中的node和npm版本和我们需要的是否一致的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载语义化版本测试库</span></span><br><span class="line"><span class="keyword">var</span> semver = <span class="built_in">require</span>(<span class="string">'semver'</span>)</span><br><span class="line"><span class="comment">// 定制控制台日志的输入样式</span></span><br><span class="line"><span class="keyword">var</span> chalk = <span class="built_in">require</span>(<span class="string">'chalk'</span>)</span><br><span class="line"><span class="comment">// 引入package.json文件</span></span><br><span class="line"><span class="keyword">var</span> packageConfig = <span class="built_in">require</span>(<span class="string">'../package.json'</span>)</span><br><span class="line"><span class="keyword">var</span> exec = <span class="function"><span class="keyword">function</span> (<span class="params">cmd</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">'child_process'</span>)</span><br><span class="line">    .execSync(cmd).toString().trim()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 定义node和npm版本需求所组成的数组</span></span><br><span class="line"><span class="keyword">var</span> versionRequirements = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'node'</span>,</span><br><span class="line">    currentVersion: semver.clean(process.version),</span><br><span class="line">    versionRequirement: packageConfig.engines.node</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'npm'</span>,</span><br><span class="line">    currentVersion: exec(<span class="string">'npm --version'</span>),</span><br><span class="line">    versionRequirement: packageConfig.engines.npm</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> warnings = []</span><br><span class="line">  <span class="comment">// 依次判断版本是否符合要求</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; versionRequirements.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> mod = versionRequirements[i]</span><br><span class="line">    <span class="keyword">if</span> (!semver.satisfies(mod.currentVersion, mod.versionRequirement)) &#123;</span><br><span class="line">      warnings.push(mod.name + <span class="string">': '</span> +</span><br><span class="line">        chalk.red(mod.currentVersion) + <span class="string">' should be '</span> +</span><br><span class="line">        chalk.green(mod.versionRequirement)</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4、-babelrc"><a href="#4、-babelrc" class="headerlink" title="4、 .babelrc"></a>4、 .babelrc</h2><p>Babel解释器的配置文件，存放在根目录下。Babel是一个转码器，项目里需要用它将ES6代码转为ES5代码。这里有一篇阮一峰老师写的相关文章供参考：<a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="noopener">Babel 入门教程</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定转码规则</span></span><br><span class="line"><span class="string">"presets"</span>: [<span class="string">"es2015"</span>, <span class="string">"stage-2"</span>],</span><br><span class="line"><span class="comment">// 转码的一些插件</span></span><br><span class="line"><span class="string">"plugins"</span>: [<span class="string">"transform-runtime"</span>],</span><br><span class="line"><span class="string">"comments"</span>: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="5、-editorconfig"><a href="#5、-editorconfig" class="headerlink" title="5、.editorconfig"></a>5、.editorconfig</h2><p>该文件定义项目的编码规范，编辑器的行为会与.editorconfig 文件中定义的一致，并且其优先级比编辑器自身的设置要高，这在多人合作开发项目时十分有用而且必要。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[*]    <span class="comment">// 对所有文件应用下面的规则</span></span><br><span class="line">charset = utf<span class="number">-8</span>                    <span class="comment">// 编码规则用utf-8</span></span><br><span class="line">indent_style = space               <span class="comment">// 缩进用空格</span></span><br><span class="line">indent_size = <span class="number">2</span>                    <span class="comment">// 缩进数量为2个空格</span></span><br><span class="line">end_of_line = lf                   <span class="comment">// 换行符格式</span></span><br><span class="line">insert_final_newline = <span class="literal">true</span>        <span class="comment">// 是否在文件的最后插入一个空行</span></span><br><span class="line">trim_trailing_whitespace = <span class="literal">true</span>    <span class="comment">// 是否删除行尾的空格</span></span><br></pre></td></tr></table></figure>
+<p>了解更多请参考官方配置文档<a href="http://editorconfig.org/" target="_blank" rel="noopener">http://editorconfig.org/</a></p>
+<h1 id="五、前端模块化"><a href="#五、前端模块化" class="headerlink" title="五、前端模块化"></a>五、前端模块化</h1><h2 id="1、CommonJS"><a href="#1、CommonJS" class="headerlink" title="1、CommonJS"></a>1、CommonJS</h2><p>服务器端的 Node.js 遵循 <a href="http://wiki.commonjs.org/wiki/CommonJS" target="_blank" rel="noopener">CommonJS规范</a>，该规范的核心思想是允许模块通过 <code>require</code> 方法来同步加载所要依赖的其他模块，然后通过 <code>exports</code> 或 <code>module.exports</code> 来导出需要暴露的接口。</p>
+<p><strong>使用</strong></p>
+<p><strong>引入模块</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>导出模块</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.test1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">exports.test2 = &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>优缺点</strong></p>
+<p><strong>优点</strong></p>
+<ul>
+<li>服务器端模块便于重用</li>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener">NPM</a>中已经有超过45万个可以使用的模块包</li>
+<li>简单并容易使用</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>同步的模块加载方式不适合浏览器环境，同步意味着阻塞加载，浏览器资源是异步加载的</li>
+<li>不能非阻塞的并行加载多个模块</li>
+</ul>
+<p><strong> 实现 </strong></p>
+<ul>
+<li>服务器端的 <a href="http://www.nodejs.org/" target="_blank" rel="noopener">Node.js</a></li>
+<li><a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a>，浏览器端的 CommonJS 实现，可以使用 NPM 的模块，但是编译打包后的文件体积可能很大</li>
+<li><a href="https://github.com/medikoo/modules-webmake" target="_blank" rel="noopener">modules-webmake</a>，类似Browserify，还不如 Browserify 灵活</li>
+<li><a href="https://github.com/substack/wreq" target="_blank" rel="noopener">wreq</a>，Browserify 的前身</li>
+</ul>
+<h2 id="2、AMD"><a href="#2、AMD" class="headerlink" title="2、AMD"></a>2、AMD</h2><p><a href="https://github.com/amdjs/amdjs-api" target="_blank" rel="noopener">Asynchronous Module Definition</a> 规范其实只有一个主要接口，<code>define(id?, dependencies?, factory)</code>，它要在声明模块的时候指定所有的依赖<code>dependencies</code>，并且还要当做形参传到<code>factory</code>中，对于依赖的模块提前执行，依赖前置。AMD是提前执行，它本身依赖的模块会比它本身提前加载完成，而CMD是依赖执行 当我们的代码执行到require这一步的时候才会引进我们的所要依赖的模块，CMD跟AMD非常的相似，但是语法跟commonjs由非常相似</p>
+<p><strong>使用</strong></p>
+<p><strong>定义模块</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'module'</span>, [<span class="string">'dep1'</span>, <span class="string">'dep2'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">d1, d2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>引入模块</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">'module'</span>, <span class="string">'../file'</span>], funtion(<span class="built_in">module</span>, file) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>优缺点</strong></p>
+<p><strong>优点</strong></p>
+<ul>
+<li>适合在浏览器环境中异步加载模块</li>
+<li>可以并行加载多个模块</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li><p>提高了开发成本，代码的阅读和书写比较困难，模块定义方式的语义不顺畅</p>
+</li>
+<li><p>不符合通用的模块化思维方式，是一种妥协的实现</p>
+<p>​</p>
+</li>
+</ul>
+<p><strong>实现</strong></p>
+<ul>
+<li><a href="http://requirejs.org/" target="_blank" rel="noopener">RequireJS</a></li>
+<li><a href="https://github.com/cujojs/curl" target="_blank" rel="noopener">curl</a></li>
+</ul>
+<h2 id="3、CMD"><a href="#3、CMD" class="headerlink" title="3、CMD"></a>3、CMD</h2><p><a href="https://github.com/cmdjs/specification/blob/master/draft/module.md" target="_blank" rel="noopener">Common Module Definition</a> 规范和 AMD 很相似，尽量保持简单，并与 CommonJS 和 Node.js 的 Modules 规范保持了很大的兼容性。</p>
+<p><strong>使用</strong></p>
+<p><strong>定义</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">    <span class="keyword">var</span> Sprinning = <span class="built_in">require</span>(<span class="string">'./spinning'</span>);</span><br><span class="line">    exports.test1 = &#123;&#125;;</span><br><span class="line">    <span class="built_in">module</span>.exports = &#123;&#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>引入</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">    $(<span class="string">'div'</span>)...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>优缺点</strong></p>
+<p><strong>优点</strong></p>
+<ul>
+<li>依赖就近，延迟执行</li>
+<li>可以很容易在Node.js中运行</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>依赖SPM打包，模块的加载逻辑偏重</li>
+</ul>
+<p><strong>实现</strong></p>
+<ul>
+<li><a href="http://seajs.org/" target="_blank" rel="noopener">Sea.js</a></li>
+<li><a href="https://github.com/cloudcome/coolie" target="_blank" rel="noopener">coolie</a></li>
+</ul>
+<h2 id="4、ES6-模块"><a href="#4、ES6-模块" class="headerlink" title="4、ES6 模块"></a>4、ES6 模块</h2><p>EcmaScript6 标准增加了 JavaScript 语言层面的模块体系定义。<a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="noopener">ES6 模块</a>的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。</p>
+<p><strong>使用</strong></p>
+<p><strong>定义</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    a: <span class="number">10</span>,</span><br><span class="line">    b: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>引入</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'jquery'</span>;</span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br></pre></td></tr></table></figure>
+<p><strong>优缺点</strong></p>
+<p><strong>优点</strong></p>
+<ul>
+<li>容易进行静态分析</li>
+<li>面向未来的ECMAScript标准</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li><p>原生浏览器还没有实现标准</p>
+</li>
+<li><p>全新的命令字，新版的Node.js才支持</p>
+<p>​</p>
+</li>
+</ul>
+<p><strong>实现</strong></p>
+<ul>
+<li><a href="https://babeljs.io/" target="_blank" rel="noopener">Babel</a></li>
+</ul>
+<h2 id="期望的模块系统"><a href="#期望的模块系统" class="headerlink" title="期望的模块系统"></a>期望的模块系统</h2><p>可以兼容多种模块风格，尽量可以利用已有的代码，不仅仅只是 JavaScript 模块化，还有 CSS、图片、字体等资源也需要模块化。</p>
+<h1 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h1><h2 id="1、Vue在各地企业的需求占比"><a href="#1、Vue在各地企业的需求占比" class="headerlink" title="1、Vue在各地企业的需求占比"></a>1、Vue在各地企业的需求占比</h2><p><img src="http://www.bslxx.com/uploads/allimg/c171018/150S3TZA610-14J2.png" alt=""></p>
+<p>其中广东、北京、上海三个省份是企业需求最多，还有学者最多的三个省份。</p>
+<p>现在我们来具体透析下前三个省份中，具体的市区分布情况：</p>
+<p><strong>1、广东省的vue在各市区的前三位：</strong></p>
+<p><strong>深圳、广州、江门，</strong>佛山、东莞、珠海分别紧随其后。</p>
+<p><strong>2、浙江省的vue在各市区的前三位：</strong></p>
+<p><strong>杭圳、金华、宁波，</strong>温州、台州、嘉兴分别紧随其后。</p>
+<p><strong>3、江苏省的vue在各市区的前三位：</strong></p>
+<p><strong>南京、金华、宁波，</strong>连云港、泰州、盐城分别紧随其后。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/09/16/魔板/">Vue面试题整理！！！！</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">李大玄</a></p>
+        <p><span>发布时间:</span>2018-09-16, 17:38:44</p>
+        <p><span>最后更新:</span>2018-09-16, 17:39:52</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/09/16/魔板/" title="Vue面试题整理！！！！">http://yoursite.com/2018/09/16/魔板/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/09/16/魔板/　　作者: 李大玄" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/09/16/axios插件的使用操作/">
+                    axios插件的使用操作
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue面试题整理！！！！"><span class="toc-number">1.</span> <span class="toc-text">Vue面试题整理！！！！</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Vue理论部分"><span class="toc-number">2.</span> <span class="toc-text">一、Vue理论部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、MVC、MVP-和-MVVM？（重点）"><span class="toc-number">2.1.</span> <span class="toc-text">==1、MVC、MVP 和 MVVM？（重点）==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1、说下对Vue的理解？-重点"><span class="toc-number">2.2.</span> <span class="toc-text">==1、说下对Vue的理解？(重点)==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、那些项目适合使用Vue？"><span class="toc-number">2.3.</span> <span class="toc-text">==2、那些项目适合使用Vue？==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、Vue双向数据绑定（数据驱动）的原理？（重点）"><span class="toc-number">2.4.</span> <span class="toc-text">==3、Vue双向数据绑定（数据驱动）的原理？（重点）==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、-vue-cli中怎样使用自定义的组件？有遇到过哪些问题吗？"><span class="toc-number">2.5.</span> <span class="toc-text">==4、 vue.cli中怎样使用自定义的组件？有遇到过哪些问题吗？==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、说下vue组件之间的通信？（重点）"><span class="toc-number">2.6.</span> <span class="toc-text">==5、说下vue组件之间的通信？（重点）==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、异步更新机制Vue-nextTick（重点！！）"><span class="toc-number">2.7.</span> <span class="toc-text">==6、异步更新机制Vue.nextTick（重点！！）==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、怎么定义vue-router的动态路由？怎么获取传过来的动态参数？"><span class="toc-number">2.8.</span> <span class="toc-text">==7、怎么定义vue-router的动态路由？怎么获取传过来的动态参数？==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、vue-router有哪几种导航钩子？"><span class="toc-number">2.9.</span> <span class="toc-text">==8、vue-router有哪几种导航钩子？  ==</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9、请说下封装-vue-组件的过程？"><span class="toc-number">2.10.</span> <span class="toc-text">9、请说下封装 vue 组件的过程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10、vue-loader是什么？使用它的用途有哪些？"><span class="toc-number">2.11.</span> <span class="toc-text">10、vue-loader是什么？使用它的用途有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11、vuejs与angularjs的区别？"><span class="toc-number">2.12.</span> <span class="toc-text">11、vuejs与angularjs的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12、你觉得哪些项目适合vue框架？"><span class="toc-number">2.13.</span> <span class="toc-text">12、你觉得哪些项目适合vue框架？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13、PC端项目你会在哪些场景使用Vue框架？"><span class="toc-number">2.14.</span> <span class="toc-text">13、PC端项目你会在哪些场景使用Vue框架？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14、虚拟节点Virtual-Dom？（重点）"><span class="toc-number">2.15.</span> <span class="toc-text">14、虚拟节点Virtual Dom？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15、Vue中如何使用jsonp？"><span class="toc-number">2.16.</span> <span class="toc-text">15、Vue中如何使用jsonp？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">3.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、生命周期相关"><span class="toc-number">4.</span> <span class="toc-text">二、生命周期相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、什么是Vue的生命周期？（重点）"><span class="toc-number">4.1.</span> <span class="toc-text">1、什么是Vue的生命周期？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、Vue声明周期的作用是什么？（重点）"><span class="toc-number">4.2.</span> <span class="toc-text">2、Vue声明周期的作用是什么？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、Vue的生命周期共有几个阶段？（重点）"><span class="toc-number">4.3.</span> <span class="toc-text">3、Vue的生命周期共有几个阶段？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、第一次页面加载会触发哪几个钩子？（重点）"><span class="toc-number">4.4.</span> <span class="toc-text">4、第一次页面加载会触发哪几个钩子？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、DOM渲染在哪个钩子中就已经完成？（重点）"><span class="toc-number">4.5.</span> <span class="toc-text">5、DOM渲染在哪个钩子中就已经完成？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、描述下每个钩子具体适合哪些场景？（重点）"><span class="toc-number">4.6.</span> <span class="toc-text">6、描述下每个钩子具体适合哪些场景？（重点）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Vuex相关"><span class="toc-number">5.</span> <span class="toc-text">三、Vuex相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Vuex是什么？（重点）"><span class="toc-number">5.1.</span> <span class="toc-text">1、Vuex是什么？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、Vuex有几种属性？（重点）"><span class="toc-number">5.2.</span> <span class="toc-text">2、Vuex有几种属性？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、Vuex的State特性？（重点）"><span class="toc-number">5.3.</span> <span class="toc-text">3、Vuex的State特性？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、Vuex的getter特性？（重点）"><span class="toc-number">5.4.</span> <span class="toc-text">4、Vuex的getter特性？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、-Vuex的mutation特性？（重点）"><span class="toc-number">5.5.</span> <span class="toc-text">5、 Vuex的mutation特性？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、Vuex的Action特性？（重点）"><span class="toc-number">5.6.</span> <span class="toc-text">6、Vuex的Action特性？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、Vue-js中ajax请求代码应该写在组件的methods中还是vuex的actions中？（重点）"><span class="toc-number">5.7.</span> <span class="toc-text">7、Vue.js中ajax请求代码应该写在组件的methods中还是vuex的actions中？（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、不用Vuex会带来什么问题？（重点）"><span class="toc-number">5.8.</span> <span class="toc-text">8、不用Vuex会带来什么问题？（重点）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Vue-cli相关-重点"><span class="toc-number">6.</span> <span class="toc-text">四、Vue-cli相关 (重点)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、vue-cli-2-0项目结构分析"><span class="toc-number">6.1.</span> <span class="toc-text">1、vue-cli 2.0项目结构分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#项目结构"><span class="toc-number">6.1.1.</span> <span class="toc-text">项目结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、package-json"><span class="toc-number">6.2.</span> <span class="toc-text">2、package.json</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#scripts字段"><span class="toc-number">6.2.1.</span> <span class="toc-text">scripts字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dependencies字段和devDependencies字段"><span class="toc-number">6.2.2.</span> <span class="toc-text">dependencies字段和devDependencies字段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、webpack配置相关"><span class="toc-number">6.3.</span> <span class="toc-text">3、webpack配置相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dev-server-js"><span class="toc-number">6.3.1.</span> <span class="toc-text">dev-server.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-base-conf-js"><span class="toc-number">6.3.2.</span> <span class="toc-text">webpack.base.conf.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#check-version-js"><span class="toc-number">6.3.3.</span> <span class="toc-text">check-version.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、-babelrc"><span class="toc-number">6.4.</span> <span class="toc-text">4、 .babelrc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、-editorconfig"><span class="toc-number">6.5.</span> <span class="toc-text">5、.editorconfig</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、前端模块化"><span class="toc-number">7.</span> <span class="toc-text">五、前端模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、CommonJS"><span class="toc-number">7.1.</span> <span class="toc-text">1、CommonJS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、AMD"><span class="toc-number">7.2.</span> <span class="toc-text">2、AMD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、CMD"><span class="toc-number">7.3.</span> <span class="toc-text">3、CMD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、ES6-模块"><span class="toc-number">7.4.</span> <span class="toc-text">4、ES6 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#期望的模块系统"><span class="toc-number">7.5.</span> <span class="toc-text">期望的模块系统</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、其他"><span class="toc-number">8.</span> <span class="toc-text">五、其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Vue在各地企业的需求占比"><span class="toc-number">8.1.</span> <span class="toc-text">1、Vue在各地企业的需求占比</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Vue面试题整理！！！！　| 李大玄的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/09/16/axios插件的使用操作/" title="下一篇: axios插件的使用操作">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/魔板/">Vue面试题整理！！！！</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/axios插件的使用操作/">axios插件的使用操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/23/git常用命令/">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/20/事件委托,事件冒泡,事件捕获/">事件委托,事件冒泡,事件捕获</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/css Sprites的优缺点/">精灵图的优缺点</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/ECMAScript 6 let和const命令/">ECMAScript 6 let和const命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/HTML常见的兼容性问题/">html常见的兼容性问题？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/14/全选反选不选/">全选反选不选</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/12/2018前端面试题/">2018年web前端经典面试题及答案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/数组的方法/">数组的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/10/字符串的操作/">字符串的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JSONP的优缺点/">JSONP的优缺点</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JS中this关键字详解/">JS中this关键字详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/37个JavaScript基本面试问题和解答/">37个JavaScript基本面试问题和解答</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/JavaScript垃圾回收机制/">JavaScript垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/对于页面适配，你应该使用px还是rem/">对于页面适配，你应该使用px还是rem</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/08/移动端轮播图/">移动端轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/封装移动端手势事件/">封装移动端手势事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/前端面试题整理/">前端面试题整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/css中清除浮动/">css清除浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/封装移动端的轻敲事件/">封装移动端的轻敲事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/3D切割轮播图/">模板3D切割轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/js中的函数进价/">js中的函数进价</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/函数中的继承/">函数中的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/markdown基本语法/">markdown基本语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/H5新增的API/">模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/29/内置对象公式/">公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/28/雪花飘落/">雪花飘落</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/数组去重的几种方法/">数组去重的几种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/session和cookie的区别/">JSP中session与cookie的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/Include和require的区别/">include和require区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/17/jQuery版轮播图/">jQuery版轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/js中filter的使用/">javascript中filter的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/跨域请求/">跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/封装$,get()方法/">$.get方法封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/09/NAN的定义与用法/">NaN的定义与用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/06/分享几个面试题/">几道面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JS原生轮播图/">JS 原生轮播图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/如何创建私人Git/">如何创建私人Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/05/JavaScript基础/">JavaScript基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/04/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 李大玄
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
